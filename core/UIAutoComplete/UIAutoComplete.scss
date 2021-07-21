@@ -1,0 +1,76 @@
+.fautocomplete {
+  min-width: 200px;
+}
+
+.fautocomplete-input {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid var(--btn-bg);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  min-height: var(--input-height);
+  min-width: 32px;
+  outline: 0 !important;
+  outline-style: none;
+  position: relative;
+  touch-action: manipulation;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+
+  > input {
+    height: 100%;
+    width: 100%;
+    outline: 0 !important;
+    border: 0;
+    background-color: transparent;
+    padding: 0 var(--input-spacing);
+  }
+
+  &:hover,
+  &.--active {
+    border-color: var(--primary);
+  }
+
+  &:disabled,
+  &:disabled:hover {
+    background-color: var(--bg-disabled);
+    border-color: var(--bg-disabled);
+    color: var(--color-disabled);
+    cursor: not-allowed !important;
+
+    * {
+      pointer-events: none !important;
+    }
+  }
+}
+
+.fautocomplete-loading {
+  position: absolute;
+  left: auto;
+  right: 9px;
+  top: 6px;
+}
+
+.fautocomplete-overlay {
+  background-color: var(--bg);
+  box-shadow: var(--popover-box-shadow);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  padding: 8px 0;
+  max-height: 300px;
+  overflow-y: overlay;
+}
+
+.fautocomplete-overlay::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+.fautocomplete-overlay::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgba(141, 141, 141, 0.35), rgba(141, 141, 141, 0.5), rgba(141, 141, 141, 0.35));
+  border-radius: 999px;
+}
+
+.fautocomplete-overlay::-webkit-scrollbar-track {
+  background: transparent;
+}
