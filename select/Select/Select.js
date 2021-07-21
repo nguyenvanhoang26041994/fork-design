@@ -1,5 +1,5 @@
-import React, { useRef, useState, useCallback, useContext, useEffect, useMemo, useImperativeHandle } from 'react';
-import { omit, debounce, trim, reduce } from 'lodash';
+import React, { useCallback, useContext, useMemo } from 'react';
+import { omit } from 'lodash';
 
 import UISelect from '../../core/Select';
 import { useSingleSelect } from '../hooks';

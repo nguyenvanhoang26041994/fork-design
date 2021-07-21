@@ -1,26 +1,24 @@
 import { useState, useEffect } from 'react';
 
-import useCommonSelectValue from './useCommonSelectValue';
-import useCommonUIRef from './useCommonUIRef';
-import useCommonAsyncSelect from './useCommonAsyncSelect';
 import useAsyncUIRef from './useAsyncUIRef';
-import useCommonSingleSelect from './useCommonSingleSelect';
 import useRestNativeProps from './useRestNativeProps';
+
+import useCommon from './useCommon';
+import useSingleCommon from './useSingleCommon';
+import useAsyncCommon from './useAsyncCommon';
 
 const useAsyncSingleSelect = (props, ref) => {
   const {
     isControlled,
     value,
     setValue,
-  } = useCommonSelectValue(props, ref);
-  const {
     searchboxRef,
     UIRef,
     bounds,
     UIActive,
     setUIActive,
     onHidden,
-  } = useCommonUIRef();
+  } = useCommon(props, ref);
 
   const {
     localRef,
@@ -29,7 +27,7 @@ const useAsyncSingleSelect = (props, ref) => {
     loaders,
     setLoaders,
     _onBottomIntersecting,
-  } = useCommonAsyncSelect(props, {
+  } = useAsyncCommon(props, {
     searchboxRef,
   });
 
@@ -50,7 +48,7 @@ const useAsyncSingleSelect = (props, ref) => {
 
   const {
     hideOverlay,
-  } = useCommonSingleSelect(props, {
+  } = useSingleCommon(props, {
     UIRef,
     value,
     selectedOption,

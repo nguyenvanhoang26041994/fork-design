@@ -1,6 +1,6 @@
-import React, { useRef, useState, useCallback, useContext, useEffect, useMemo, useImperativeHandle } from 'react';
+import React, { useCallback, useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { debounce, omit, trim } from 'lodash';
+import { omit } from 'lodash';
 
 import UISelect from '../../core/Select';
 import Loader from '../../core/Loader';

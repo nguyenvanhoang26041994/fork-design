@@ -1,6 +1,6 @@
 import { useRef, useCallback, useEffect } from 'react';
 
-const useCommonSingleSelect = (props, {
+const useSingleCommon = (props, {
   UIRef,
   value,
   selectedOption,
@@ -27,4 +27,4 @@ const useCommonSingleSelect = (props, {
   };
 };
 
-export default useCommonSingleSelect;
+export default useSingleCommon;

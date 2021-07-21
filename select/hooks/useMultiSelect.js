@@ -1,12 +1,8 @@
-import { useMemo } from 'react';
-
-import useRestNativeProps from './useRestNativeProps';
-
 import useCommon from './useCommon';
-import useSingleCommon from './useSingleCommon';
+import useMultipleCommon from './useMultipleCommon';
 import useStaticCommon from './useStaticCommon';
 
-const useSingleSelect = (props, ref) => {
+const useMultiSelect = (props, ref) => {
   const {
     isControlled,
     value,
@@ -18,6 +14,17 @@ const useSingleSelect = (props, ref) => {
     setUIActive,
     onHidden,
   } = useCommon(props, ref);
+  const {
+    _value,
+    removeSingleValue,
+    toggleSingleValue,
+    onClickOutside,
+    onMultipleClick,
+  } = useMultipleCommon(props, {
+    value,
+    setValue,
+    UIRef,
+  });
   const {
     searchText,
     setSearchText,
@@ -31,28 +38,6 @@ const useSingleSelect = (props, ref) => {
     setUIActive,
   });
 
-  const selectedOption = useMemo(() => _options[value], [_options, value]);
-
-  const {
-    localRef,
-    hideOverlay,
-  } = useSingleCommon(props, {
-    UIRef,
-    value,
-    selectedOption,
-  });
-
-  const restNativeProps = useRestNativeProps(props);
-  const UIProps = {
-    ref: UIRef,
-    active: UIActive,
-    ...restNativeProps
-  };
-  const searchboxProps = {
-    ref: searchboxRef,
-    onChange: onDebouceSearchboxChange,
-  };
-
   return {
     isControlled,
     value,
@@ -63,6 +48,11 @@ const useSingleSelect = (props, ref) => {
     UIActive,
     setUIActive,
     onHidden,
+    _value,
+    removeSingleValue,
+    toggleSingleValue,
+    onClickOutside,
+    onMultipleClick,
     searchText,
     setSearchText,
     searchRegex,
@@ -70,12 +60,7 @@ const useSingleSelect = (props, ref) => {
     onShown,
     onSearchboxChange,
     onDebouceSearchboxChange,
-    selectedOption,
-    localRef,
-    hideOverlay,
-    UIProps,
-    searchboxProps,
   };
 };
 
-export default useSingleSelect;
+export default useMultiSelect;

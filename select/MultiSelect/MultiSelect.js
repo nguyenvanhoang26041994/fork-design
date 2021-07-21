@@ -1,11 +1,11 @@
-import React, { useRef, useState, useCallback, useContext, useEffect, useMemo, useImperativeHandle } from 'react';
+import React, { useRef, useCallback, useContext, useEffect, useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import { omit, debounce, trim, reduce, map } from 'lodash';
+import { omit, reduce, map } from 'lodash';
 
 import UISelect from '../../core/Select';
 import Chip from '../../core/Chip';
-import { useCommonSelectValue, useCommonMultiSelectUIRef, useStaticUIRef } from '../hooks';
+import { useMultiSelect } from '../hooks';
 
 const { Overlay, OverlayHeader, OverlayBody, Option, Multiple, Searchbox } = UISelect;
 const Context = React.createContext({
@@ -26,30 +26,23 @@ const MultiSelect = React.forwardRef((props, ref) => {
   const {
     value,
     setValue,
-    omitProps,
-  } = useCommonSelectValue(props);
-  const {
     searchboxRef,
     UIRef,
     bounds,
     UIActive,
-    setUIActive,
     onHidden,
+     _value,
+    removeSingleValue,
+    toggleSingleValue,
     onClickOutside,
     onMultipleClick,
-  } = useCommonMultiSelectUIRef();
-  const {
     searchText,
-    setSearchText,
     searchRegex,
     _options,
     onShown,
-    onSearchboxChange,
     onDebouceSearchboxChange,
-  } = useStaticUIRef(props, {
-    searchboxRef,
-    setUIActive,
-  });
+  } = useMultiSelect(props, ref);
+
   const {
     render,
     renderSearchbox,
@@ -58,52 +51,12 @@ const MultiSelect = React.forwardRef((props, ref) => {
     delay,
     children,
     ...otherProps
-  } = omitProps;
+  } = props;
 
   const localRef = useRef({
     isRendered: false,
     prevValue: null,
   });
-  
-  // Still value but in object shape
-  const _value = useMemo(() => {
-    return reduce(value, (rs, item) => {
-      rs[item] = true;
-      return rs;
-    }, {})
-  }, [value]);
-
-  // remove one item from array value
-  const removeSingleValue = useCallback((singleValue) => {
-    setValue(prev => prev.filter(item => {
-      return item !== singleValue;
-    }));
-  }, [setValue]);
-
-  // toogle(remove or add) one item from array value
-  const toggleSingleValue = useCallback((singleValue) => {
-    setValue((prev) => {
-      const next = [];
-      let isPrevContained = false;
-      for (let i = 0; i < prev.length; i++) {
-        if (prev[i] === singleValue) {
-          isPrevContained = true;
-          continue;
-        }
-
-        if (prev[i] !== singleValue) {
-          next.push(prev[i]);
-          continue;
-        }
-      }
-
-      if (!isPrevContained) {
-        next.push(singleValue);
-      }
-
-      return next;
-    });
-  }, [setValue]);
 
   // selected options(map to array value but contain more information such as name, avatar, ...etc)
   const selectedOptions = useMemo(() => {

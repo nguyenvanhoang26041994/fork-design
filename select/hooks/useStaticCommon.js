@@ -1,7 +1,7 @@
 import { useState, useMemo, useCallback } from 'react';
 import { reduce, debounce, trim } from 'lodash';
 
-const useStaticUIRef = (props, {
+const useStaticCommon = (props, {
   searchboxRef,
   setUIActive,
 }) => {
@@ -35,4 +35,4 @@ const useStaticUIRef = (props, {
   };
 };
 
-export default useStaticUIRef;
+export default useStaticCommon;

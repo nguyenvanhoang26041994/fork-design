@@ -1,7 +1,7 @@
 import { useRef, useState, useMemo } from 'react';
 import { trim } from 'lodash';
 
-const useCommonAsyncSelect = (props, {
+const useAsyncCommon = (props, {
   searchboxRef,
 }) => {
   const localRef = useRef({
@@ -48,4 +48,4 @@ const useCommonAsyncSelect = (props, {
   };
 };
 
-export default useCommonAsyncSelect;
+export default useAsyncCommon;
