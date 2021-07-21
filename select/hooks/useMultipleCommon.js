@@ -1,7 +1,8 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useEffect } from 'react';
 import { reduce } from 'lodash';
 
 const useMultipleCommon = (props, {
+  localRef,
   value,
   setValue,
   UIRef,
@@ -59,6 +60,15 @@ const useMultipleCommon = (props, {
   }, []);
 
   const onClickOutside = useCallback(instance => instance.hide(), []);
+
+  localRef.current.onChanged = props.onChanged;
+  useEffect(() => {
+    if (localRef.current.isRendered) {
+      localRef.current.onChanged(value);
+    }
+    localRef.current.prevValue = value;
+    localRef.current.isRendered = true;
+  }, [value]);
 
   return {
     _value,

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import useRestNativeProps from './useRestNativeProps';
 
@@ -32,6 +32,9 @@ const useAsyncSingleSelect = (props, ref) => {
     loaders,
     setLoaders,
     _onBottomIntersecting,
+    onShown,
+    onSearchboxChange,
+    onDebouceSearchboxChange,
   } = useAsyncCommon(props, {
     localRef,
     searchboxRef,
@@ -47,7 +50,6 @@ const useAsyncSingleSelect = (props, ref) => {
     localRef,
     UIRef,
     value,
-    selectedOption,
   });
 
   // make cache selected option

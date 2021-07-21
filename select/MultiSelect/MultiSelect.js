@@ -38,25 +38,10 @@ const MultiSelect = React.forwardRef((props, ref) => {
     onMultipleClick,
     searchText,
     searchRegex,
-    _options,
     onShown,
     onDebouceSearchboxChange,
+    selectedOptions,
   } = useMultiSelect(props, ref);
-
-  // selected options(map to array value but contain more information such as name, avatar, ...etc)
-  const selectedOptions = useMemo(() => {
-    return map(value, (item) => {
-      return _options[item];
-    });
-  }, [_options, value]);
-
-  useEffect(() => {
-    if (localRef.current.isRendered && localRef.current.prevValue !== value) {
-      onChanged(value);
-    }
-    localRef.current.prevValue = value;
-    localRef.current.isRendered = true;
-  }, [value, selectedOptions, onChanged]);
 
   const {
     render,
@@ -68,10 +53,6 @@ const MultiSelect = React.forwardRef((props, ref) => {
     ...otherProps
   } = props;
 
-  const localRef = useRef({
-    isRendered: false,
-    prevValue: null,
-  });
   return (
     <Context.Provider value={{
       selectedOptions,

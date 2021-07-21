@@ -31,6 +31,7 @@ const useAsyncMultiSelect = (props, ref) => {
     onClickOutside,
     onMultipleClick,
   } = useMultipleCommon(props, {
+    localRef,
     value,
     setValue,
     UIRef,
@@ -84,7 +85,6 @@ const useAsyncMultiSelect = (props, ref) => {
     }
 
     if (!valueDontHaveOptionYet.length) {
-      console.log(nextSelectedOptions);
       localRef.current.setSelectedOptions(nextSelectedOptions);
     } else {
       localRef.current.setLoaders(prev => ({

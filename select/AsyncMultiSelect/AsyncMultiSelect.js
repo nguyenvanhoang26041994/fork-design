@@ -31,7 +31,6 @@ const AsyncMultiSelect = React.forwardRef((props, ref) => {
     toggleSingleValue,
     onClickOutside,
     onMultipleClick,
-    localRef,
     displayOptions,
     loaders,
     _onBottomIntersecting,
@@ -39,15 +38,6 @@ const AsyncMultiSelect = React.forwardRef((props, ref) => {
     onDebouceSearchboxChange,
     selectedOptions,
   } = useAsyncMultiSelect(props, ref);
-
-  useEffect(() => {
-    if (localRef.current.isRendered && localRef.current.prevValue !== value) {
-      onChanged(value);
-    }
-
-    localRef.current.prevValue = value;
-    localRef.current.isRendered = true;
-  }, [value, onChanged]);
 
   const {
     render,

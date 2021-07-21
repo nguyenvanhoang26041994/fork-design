@@ -43,7 +43,6 @@ const useSingleSelect = (props, ref) => {
     localRef,
     UIRef,
     value,
-    selectedOption,
   });
 
   const restNativeProps = useRestNativeProps(props);

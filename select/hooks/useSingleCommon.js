@@ -3,19 +3,19 @@ import { useCallback, useEffect } from 'react';
 const useSingleCommon = (props, {
   UIRef,
   value,
-  selectedOption,
   localRef,
 }) => {
   // force to hide overlay when user select option
   const hideOverlay = useCallback(() => UIRef.current._tippy.hide(), [UIRef]);
 
+  localRef.current.onChanged = props.onChanged;
   useEffect(() => {
-    if (localRef.current.isRendered && localRef.current.prevValue !== value) {
-      props.onChanged(value);
+    if (localRef.current.isRendered) {
+      localRef.current.onChanged(value);
     }
     localRef.current.prevValue = value;
     localRef.current.isRendered = true;
-  }, [value, selectedOption, props.onChanged]);
+  }, [value]);
 
   return {
     localRef,
