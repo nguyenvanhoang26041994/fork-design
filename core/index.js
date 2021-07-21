@@ -30,7 +30,7 @@ export { default as Radio } from './Radio';
 export { default as Searchbox } from './Searchbox';
 export { default as Skeleton } from './Skeleton';
 export { default as Stepper } from './Stepper';
-export { default as Select } from './Select';
+export { default as UISelect } from './UISelect';
 export { default as Sticky } from './Sticky';
 export { default as Switch } from './Switch';
 export { default as Tabs } from './Tabs';

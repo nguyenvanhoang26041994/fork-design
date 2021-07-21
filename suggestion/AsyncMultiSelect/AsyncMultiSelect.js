@@ -2,7 +2,7 @@ import React, { useState, useCallback, useContext, useEffect, useMemo } from 're
 import PropTypes from 'prop-types';
 import { omit, reduce } from 'lodash';
 
-import UISelect from '../../core/Select';
+import UISelect from '../../core/UISelect';
 import Loader from '../../core/Loader';
 import Chip from '../../core/Chip';
 

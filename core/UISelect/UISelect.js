@@ -7,7 +7,7 @@ import Searchbox from '../Searchbox';
 import ChevronDown from '../../icons/ChevronDown';
 import Loader from '../Loader';
 
-const Select = ({ className, overlay, ...otherProps }) => {
+const UISelect = ({ className, overlay, ...otherProps }) => {
   return (
     <Overlay
       className={cn('fselect-overlay-container', className)}
@@ -18,7 +18,7 @@ const Select = ({ className, overlay, ...otherProps }) => {
   );
 };
 
-Select.Searchbox = React.forwardRef(({ className, ...otherProps }, ref) => {
+UISelect.Searchbox = React.forwardRef(({ className, ...otherProps }, ref) => {
   return (
     <Searchbox
       ref={ref}
@@ -27,7 +27,7 @@ Select.Searchbox = React.forwardRef(({ className, ...otherProps }, ref) => {
     />
   );
 });
-Select.Option = ({ className, onSelect, value, active, hide, ...otherProps }) => {
+UISelect.Option = ({ className, onSelect, value, active, hide, ...otherProps }) => {
   const _onClick = useCallback(() => onSelect(value), [onSelect, value]);
   return (
     <button
@@ -40,7 +40,7 @@ Select.Option = ({ className, onSelect, value, active, hide, ...otherProps }) =>
     />
   );
 };
-Select.Overlay = ({ className, ...otherProps }) => {
+UISelect.Overlay = ({ className, ...otherProps }) => {
   return (
     <div
       className={cn('fselect-overlay', className)}
@@ -48,7 +48,7 @@ Select.Overlay = ({ className, ...otherProps }) => {
     />
   );
 };
-Select.OverlayHeader = ({ className, ...otherProps }) => {
+UISelect.OverlayHeader = ({ className, ...otherProps }) => {
   return (
     <div
       className={cn('fselect-overlay-header', className)}
@@ -56,7 +56,7 @@ Select.OverlayHeader = ({ className, ...otherProps }) => {
     />
   );
 };
-Select.OverlayBody = React.forwardRef(({ className, children, onBottomIntersecting, ...otherProps }, ref) => {
+UISelect.OverlayBody = React.forwardRef(({ className, children, onBottomIntersecting, ...otherProps }, ref) => {
   const _ref = ref || useRef();
   const bottomRef = useRef();
   const localRef = useRef({
@@ -97,7 +97,7 @@ Select.OverlayBody = React.forwardRef(({ className, children, onBottomIntersecti
     </div>
   );
 });
-Select.OverlayFooter = ({ className, ...otherProps }) => {
+UISelect.OverlayFooter = ({ className, ...otherProps }) => {
   return (
     <div
       className={cn('fselect-overlay-footer', className)}
@@ -105,7 +105,7 @@ Select.OverlayFooter = ({ className, ...otherProps }) => {
     />
   );
 };
-Select.Single = React.forwardRef(({ children, className, active, disabled, loading, ...otherProps }, ref) => {
+UISelect.Single = React.forwardRef(({ children, className, active, disabled, loading, ...otherProps }, ref) => {
   return (
     <button
       ref={ref}
@@ -120,7 +120,7 @@ Select.Single = React.forwardRef(({ children, className, active, disabled, loadi
     </button>
   );
 });
-Select.Multiple = React.forwardRef(({ children, className, active, disabled, loading, ...otherProps }, ref) => {
+UISelect.Multiple = React.forwardRef(({ children, className, active, disabled, loading, ...otherProps }, ref) => {
   return (
     <button
       ref={ref}
@@ -134,7 +134,7 @@ Select.Multiple = React.forwardRef(({ children, className, active, disabled, loa
   );
 });
 
-Select.defaultProps = {
+UISelect.defaultProps = {
   placement: 'bottom-start',
   trigger: 'click',
   hideOnClick: true,
@@ -143,4 +143,4 @@ Select.defaultProps = {
   offset: [0, 5]
 };
 
-export default Select;
+export default UISelect;

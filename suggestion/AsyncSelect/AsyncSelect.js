@@ -2,9 +2,9 @@ import React, { useCallback, useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { omit } from 'lodash';
 
-import UISelect from '../../core/Select';
+import UISelect from '../../core/UISelect';
 import Loader from '../../core/Loader';
-import { useAsyncSingleSelect } from '../hooks';
+import useAsyncSingleSelect from '../hooks/useAsyncSingleSelect';
 
 const { Overlay, OverlayHeader, OverlayBody, Option, Single, Searchbox } = UISelect;
 

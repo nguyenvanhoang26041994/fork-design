@@ -1,11 +1,11 @@
-import React, { useRef, useCallback, useContext, useEffect, useMemo } from 'react';
+import React, {  useCallback, useContext, useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import { omit, reduce, map } from 'lodash';
+import { omit } from 'lodash';
 
-import UISelect from '../../core/Select';
+import UISelect from '../../core/UISelect';
 import Chip from '../../core/Chip';
-import { useMultiSelect } from '../hooks';
+import useMultiSelect from '../hooks/useMultiSelect';
 
 const { Overlay, OverlayHeader, OverlayBody, Option, Multiple, Searchbox } = UISelect;
 const Context = React.createContext({
