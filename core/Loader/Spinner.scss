@@ -1,0 +1,28 @@
+.floader-spinner {
+  align-items: center;
+  color: var(--primary);
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.floader-spinner-spin {
+  animation: spin 0.5s linear infinite;
+  border-color: transparent;
+  border-left-color: currentColor;
+  border-radius: 999px;
+  border-style: solid;
+  border-width: calc(var(--spinner-size) / 12);
+  display: inline-block;
+  height: var(--spinner-size);
+  width: var(--spinner-size);
+}

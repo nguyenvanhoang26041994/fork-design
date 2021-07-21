@@ -1,0 +1,40 @@
+.fnotification {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  padding: 14px;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+
+  &:hover {
+    background-color: var(--skeleton-color);
+  }
+}
+
+.fnotification-has-dot:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  left: auto;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background-color: var(--primary);
+}
+
+.fnotification-avatar {
+  --badge-avatar-width: 30px;
+  .fbadge-ui {
+    width: var(--badge-avatar-width);
+    height: var(--badge-avatar-width);
+    background-color: var(--primary);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+  }
+}

@@ -1,0 +1,7 @@
+.fgrid {
+  display: grid !important;
+  width: 100%;
+  grid-auto-rows: var(--grid-cell-size);
+  grid-gap: var(--grid-gap);
+  // padding: var(--grid-gap);
+}

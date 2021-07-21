@@ -1,0 +1,69 @@
+@import '../../vars';
+
+.flex-no-wrap {
+  flex-wrap: nowrap !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse !important;
+}
+
+@media (min-width: $query-sm) {
+  .sm\:flex-wrap {
+    flex-wrap: wrap !important;
+  }
+
+  .sm\:flex-wrap-reverse {
+    flex-wrap: wrap-reverse !important;
+  }
+
+  .sm\:flex-no-wrap {
+    flex-wrap: nowrap !important;
+  }
+}
+
+@media (min-width: $query-md) {
+  .md\:flex-wrap {
+    flex-wrap: wrap !important;
+  }
+
+  .md\:flex-wrap-reverse {
+    flex-wrap: wrap-reverse !important;
+  }
+
+  .md\:flex-no-wrap {
+    flex-wrap: nowrap !important;
+  }
+}
+
+@media (min-width: $query-lg) {
+  .lg\:flex-wrap {
+    flex-wrap: wrap !important;
+  }
+
+  .lg\:flex-wrap-reverse {
+    flex-wrap: wrap-reverse !important;
+  }
+
+  .lg\:flex-no-wrap {
+    flex-wrap: nowrap !important;
+  }
+}
+
+@media (min-width: $query-xl) {
+  .xl\:flex-wrap {
+    flex-wrap: wrap !important;
+  }
+
+  .xl\:flex-wrap-reverse {
+    flex-wrap: wrap-reverse !important;
+  }
+
+  .xl\:flex-no-wrap {
+    flex-wrap: nowrap !important;
+  }
+}

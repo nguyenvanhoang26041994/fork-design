@@ -1,0 +1,39 @@
+.finput,
+.ftextbox,
+.fpassword,
+.finput-number {
+  background-color: var(--input--bg);
+  border: 0;
+  border: 1px solid var(--skeleton-color);
+  border-radius: var(--border-radius);
+  height: var(--input-height);
+  outline: 0 !important;
+  padding: 0 var(--input-spacing);
+  transition: box-shadow 0.25s, border-color 0.25s, background-color 0.25s;
+  box-sizing: border-box;
+  width: 100%;
+
+  &:-internal-autofill-selected {
+    background-color: var(--input--bg) !important;
+    color: currentColor !important;
+  }
+
+  &::placeholder {
+    color: var(--text-color--placeholder);
+    font-style: italic;
+  }
+
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:focus {
+    background-color: var(--input--disabled-bg);
+    border-color: transparent;
+    color: var(--input--disabled-color);
+    cursor: not-allowed;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: var(--primary);
+  }
+}

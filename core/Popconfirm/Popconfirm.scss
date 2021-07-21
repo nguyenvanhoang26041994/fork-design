@@ -1,0 +1,11 @@
+.fpopconfirm {
+  .tippy-arrow {
+    color: var(--bg);
+  }
+
+  .tippy-content {
+    border-radius: var(--border-radius-medium);
+    background-color: var(--bg);
+    box-shadow: var(--popover-box-shadow);
+  }
+}

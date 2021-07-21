@@ -1,0 +1,46 @@
+.fchip {
+  align-items: center;
+  background-color: var(--chip-bg);
+  border-radius: var(--border-radius);
+  display: flex;
+  height: 2.25em;
+  user-select: none;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: var(--chip-hover-bg);
+  }
+}
+
+.fchip-child {
+  margin-top: 0.125em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  display: flex;
+  align-items: center;
+}
+
+.fchip-close {
+  align-items: center;
+  background-color: var(--chip-close-bg);
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin-right: 0.3em;
+  padding: 0.15em;
+
+  .ficon {
+    font-size: 0.8em;
+    stroke-width: 2;
+  }
+}
+
+.fchip-rounded {
+  border-radius: 999px;
+}
+
+.fchip-clickable {
+  cursor: pointer;
+}

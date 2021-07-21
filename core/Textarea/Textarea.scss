@@ -1,0 +1,31 @@
+.ftextarea {
+  background-color: var(--input--bg);
+  border: 0;
+  border: 1px solid var(--skeleton-color);
+  border-radius: var(--border-radius);
+  min-height: var(--input-height);
+  outline: 0 !important;
+  padding: var(--input-spacing);
+  transition: box-shadow 0.25s, border-color 0.25s, background-color 0.25s;
+  width: 100%;
+
+  &::placeholder {
+    color: var(--text-color--placeholder);
+    font-style: italic;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: var(--primary);
+  }
+
+  &:disabled {
+    border-color: transparent;
+    color: var(--input--disabled-color);
+    cursor: not-allowed;
+  }
+}
+
+.ftextarea-rounded {
+  border-radius: var(--input-height);
+}

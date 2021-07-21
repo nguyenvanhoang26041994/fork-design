@@ -1,0 +1,115 @@
+.ftimeline {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .ftimeline-item:last-child {
+    .ftimeline-btn {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.ftimeline-reverse {
+  flex-direction: column-reverse; // lastest will go up
+
+  .ftimeline-item:first-child {
+    .ftimeline-btn {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .ftimeline-item:last-child {
+    .ftimeline-btn {
+      &::after {
+        display: block;
+      }
+    }
+  }
+}
+
+.ftimeline-item {
+  display: flex;
+  min-height: 5em;
+  position: relative;
+}
+
+.ftimeline-btn {
+  display: flex;
+  flex: 0;
+  flex-direction: column;
+  height: 100%;
+
+  .ficon {
+    background-color: var(--bg);
+    border-radius: 999px;
+    display: block;
+    overflow: visible;
+    z-index: 1;
+  }
+
+  &::after {
+    background-color: var(--skeleton-color);
+    content: '';
+    flex: 1;
+    margin-left: 50%;
+    width: 1px;
+  }
+}
+
+.ftimeline-content {
+  flex: 1;
+  padding: 0 0.5em;
+}
+
+.ftimeline > .ftimeline-item {
+  &:last-child {
+    min-height: 0;
+
+    .ftimeline-btn .ficon {
+      color: var(--primary--400);
+    }
+  }
+}
+
+// RIGHT
+.ftimeline-right {
+  .ftimeline-item {
+    flex-direction: row-reverse;
+  }
+
+  .ftimeline-content {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+// ALTERNATE
+.ftimeline-alternate {
+  .ftimeline-item {
+    &::before {
+      content: '';
+      flex: 1;
+      padding: 0 0.5em;
+    }
+  }
+
+  .ftimeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}
+
+//REVERSE
+.ftimeline-reverse {
+  flex-direction: column-reverse; // lastest will go up
+
+  & > .ftimeline-item {
+    &:nth-child(1) {
+      min-height: 0;
+    }
+  }
+}

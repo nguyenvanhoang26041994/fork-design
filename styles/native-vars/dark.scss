@@ -1,0 +1,48 @@
+.dark-mode {
+  --body-bg: #181818;
+  --bg: #242526;
+  --bg-secondary: #242526;
+  --bg-disabled: #4f5151;
+  --color: var(--white);
+  --heading-color: #fff;
+  --color-disabled: #848585;
+  --color-low-emphasis: #aaaaaa;
+
+  --border-color: #343638;
+
+  --danger: var(--red-6);
+  --danger-hover: var(--red-5);
+  --danger-disabled: var(--red-2);
+
+  --primary: var(--blue-6);
+  --primary-hover: var(--blue-5);
+  --primary-disabled: var(--blue-2);
+
+  // BUTTON
+  --btn-bg: #4b4c4f;
+  --btn-bg-hover: #696a6b;
+  --btn-text-color: #444950;
+
+  // SWITCH
+  --switch-lever-color-disabled: #424242;
+
+  // AVATAR
+  --avatar-bg: #2e3031;
+
+  // POPOVER
+  --popover-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(0, 0, 0, 0.2);
+
+  // SKELETON
+  --skeleton-color: #343638;
+  --skeleton-animation-bg-1: rgba(36, 37, 38, 0.35);
+  --skeleton-animation-bg-2: rgba(36, 37, 38, 0);
+  --skeleton-animation-bg-3: rgba(36, 37, 38, 0.35);
+
+  // PROGRESS
+  --progress-rail: #181818;
+
+  // CHIP
+  --chip-bg: #4b4c4f;
+  --chip-hover-bg: #696a6b;
+  --chip-close-bg: #818286;
+}

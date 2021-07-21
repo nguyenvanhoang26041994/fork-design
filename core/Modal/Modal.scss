@@ -1,0 +1,16 @@
+.fmodal-backdrop {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.fmodal-backdrop-close-animation {
+  // animation: zoomOut 0.25s;
+  background-color: transparent;
+}
+
+.fmodal {
+  // animation: zoomIn 0.25s;
+  box-shadow: none;
+  position: absolute;
+}

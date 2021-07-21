@@ -1,0 +1,32 @@
+.fdrawer-backdrop-close-animation {
+  background-color: transparent;
+}
+
+.fdrawer {
+  height: 100vh;
+  max-width: 100vw;
+  overflow: scroll;
+  position: absolute;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.fdrawer.animated {
+  * {
+    animation-delay: 3s !important;
+  }
+}
+
+.fdrawer-backdrop-left {
+  .fdrawer {
+    left: 0;
+  }
+}
+
+.fdrawer-backdrop-right {
+  .fdrawer {
+    right: 0;
+  }
+}

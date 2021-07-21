@@ -1,0 +1,72 @@
+.fdialog {
+  position: relative;
+  background-color: var(--bg);
+  border-radius: var(--border-radius-medium);
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  min-width: 300px;
+  position: relative;
+}
+
+.fdialog-body {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 0 14px 14px 14px;
+
+  &:hover {
+    overflow-y: overlay;
+  }
+}
+
+.fdialog-body::-webkit-scrollbar {
+  width: 8px !important;
+}
+.fdialog-body::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgba(141, 141, 141, 0.35), rgba(141, 141, 141, 0.5), rgba(141, 141, 141, 0.35));
+  border-radius: 999px;
+}
+.fdialog-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.fdialog-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  justify-content: space-between;
+  min-height: 48px;
+  padding: 0 14px;
+}
+
+.fdialog-closer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: auto;
+  margin: 8px;
+}
+
+.fdialog-footer {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 14px 14px 14px;
+
+  > *:not(:last-child) {
+    margin-right: 5px;
+  }
+}
+
+.fdialog-backdrop {
+  // backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: var(--zindex-drawer);
+}

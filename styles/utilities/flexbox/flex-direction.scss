@@ -1,0 +1,89 @@
+@import '../../vars';
+
+.flex-row {
+  flex-direction: row !important;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse !important;
+}
+
+.flex-col {
+  flex-direction: column !important;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse !important;
+}
+
+@media (min-width: $query-sm) {
+  .sm\:flex-row {
+    flex-direction: row !important;
+  }
+
+  .sm\:flex-row-reverse {
+    flex-direction: row-reverse !important;
+  }
+
+  .sm\:flex-col {
+    flex-direction: column !important;
+  }
+
+  .sm\:flex-col-reverse {
+    flex-direction: column-reverse !important;
+  }
+}
+
+@media (min-width: $query-md) {
+  .md\:flex-row {
+    flex-direction: row !important;
+  }
+
+  .md\:flex-row-reverse {
+    flex-direction: row-reverse !important;
+  }
+
+  .md\:flex-col {
+    flex-direction: column !important;
+  }
+
+  .md\:flex-col-reverse {
+    flex-direction: column-reverse !important;
+  }
+}
+
+@media (min-width: $query-lg) {
+  .lg\:flex-row {
+    flex-direction: row !important;
+  }
+
+  .lg\:flex-row-reverse {
+    flex-direction: row-reverse !important;
+  }
+
+  .lg\:flex-col {
+    flex-direction: column !important;
+  }
+
+  .lg\:flex-col-reverse {
+    flex-direction: column-reverse !important;
+  }
+}
+
+@media (min-width: $query-xl) {
+  .xl\:flex-row {
+    flex-direction: row !important;
+  }
+
+  .xl\:flex-row-reverse {
+    flex-direction: row-reverse !important;
+  }
+
+  .xl\:flex-col {
+    flex-direction: column !important;
+  }
+
+  .xl\:flex-col-reverse {
+    flex-direction: column-reverse !important;
+  }
+}

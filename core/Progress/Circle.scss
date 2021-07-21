@@ -1,0 +1,59 @@
+.fcircle-progress {
+  --circle-progress-value: 0;
+  --circle-progress-size: 120px;
+  --circle-progress-stroke-width: calc(var(--circle-progress-size) / 30);
+  --circle-progress-color: var(--primary);
+  --circle-progress-bg-color: transparent;
+  --circle-progress-rail-color: var(--progress-rail);
+  border-radius: 999px;
+  position: relative;
+  user-select: none;
+}
+
+.fcircle-progress-svg {
+  position: relative;
+  transform: rotate(-90deg);
+  z-index: 1;
+}
+
+.fcircle-progress,
+.fcircle-progress-svg {
+  height: calc(var(--circle-progress-size) + (2 * var(--circle-progress-stroke-width)));
+  width: calc(var(--circle-progress-size) + (2 * var(--circle-progress-stroke-width)));
+}
+
+.fcircle-progress-rail {
+  stroke: var(--circle-progress-rail-color);
+}
+
+.fcircle-progress-value {
+  stroke: var(--circle-progress-color);
+  stroke-dashoffset: calc((2 * 3.141592653589793 * (var(--circle-progress-size) / 2)) * (1 + var(--circle-progress-value) / 100));
+  transition: stroke-dashoffset 0.5s;
+}
+
+.fcircle-progress-rail,
+.fcircle-progress-value {
+  cx: calc((var(--circle-progress-size) + (2 * var(--circle-progress-stroke-width))) / 2);
+  cy: calc((var(--circle-progress-size) + (2 * var(--circle-progress-stroke-width))) / 2);
+  fill: none;
+  r: calc(var(--circle-progress-size) / 2);
+  stroke-dasharray: calc(2 * 3.141592653589793 * (var(--circle-progress-size) / 2));
+  stroke-linecap: round;
+  stroke-width: var(--circle-progress-stroke-width);
+}
+
+.fcircle-progress-children {
+  align-items: center;
+  background-color: var(--circle-progress-bg-color);
+  border-radius: 999px;
+  display: flex;
+  height: var(--circle-progress-size);
+  justify-content: center;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  vertical-align: middle;
+  width: var(--circle-progress-size);
+}

@@ -1,0 +1,26 @@
+.ftabs-tab {
+  align-items: center;
+  border-bottom: 0.0625em solid transparent;
+  color: var(--color-low-emphasis);
+  cursor: pointer;
+  display: flex;
+  height: 2.125em;
+  justify-content: center;
+  outline: 0 !important;
+  outline-style: none;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  touch-action: manipulation;
+  user-select: none;
+
+  &:disabled {
+    cursor: not-allowed !important;
+  }
+}
+
+.ftabs-tab-active {
+  border-bottom-color: var(--primary);
+  color: var(--color);
+  font-weight: 600;
+}
+

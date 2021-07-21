@@ -1,0 +1,169 @@
+@import '../../vars';
+
+.flex-1 {
+  flex: 1 1 0 !important;
+}
+
+.flex-auto {
+  flex: 1 1 auto !important;
+}
+
+.flex-initial {
+  flex: 0 1 auto !important;
+}
+
+.flex-none {
+  flex: none !important;
+}
+
+.flex-grow {
+  flex-grow: 1 !important;
+}
+
+.flex-shrink {
+  flex-shrink: 1 !important;
+}
+
+.flex-no-grow {
+  flex-grow: 0 !important;
+}
+
+.flex-no-shrink {
+  flex-shrink: 0 !important;
+}
+
+@media (min-width: $query-sm) {
+  .sm\:flex-1 {
+    flex: 1 1 0% !important;
+  }
+
+  .sm\:flex-auto {
+    flex: 1 1 auto !important;
+  }
+
+  .sm\:flex-initial {
+    flex: 0 1 auto !important;
+  }
+
+  .sm\:flex-none {
+    flex: none !important;
+  }
+
+  .sm\:flex-grow {
+    flex-grow: 1 !important;
+  }
+
+  .sm\:flex-shrink {
+    flex-shrink: 1 !important;
+  }
+
+  .sm\:flex-no-grow {
+    flex-grow: 0 !important;
+  }
+
+  .sm\:flex-no-shrink {
+    flex-shrink: 0 !important;
+  }
+}
+
+@media (min-width: $query-md) {
+  .md\:flex-1 {
+    flex: 1 1 0% !important;
+  }
+
+  .md\:flex-auto {
+    flex: 1 1 auto !important;
+  }
+
+  .md\:flex-initial {
+    flex: 0 1 auto !important;
+  }
+
+  .md\:flex-none {
+    flex: none !important;
+  }
+
+  .md\:flex-grow {
+    flex-grow: 1 !important;
+  }
+
+  .md\:flex-shrink {
+    flex-shrink: 1 !important;
+  }
+
+  .md\:flex-no-grow {
+    flex-grow: 0 !important;
+  }
+
+  .md\:flex-no-shrink {
+    flex-shrink: 0 !important;
+  }
+}
+
+@media (min-width: $query-lg) {
+  .lg\:flex-1 {
+    flex: 1 1 0% !important;
+  }
+
+  .lg\:flex-auto {
+    flex: 1 1 auto !important;
+  }
+
+  .lg\:flex-initial {
+    flex: 0 1 auto !important;
+  }
+
+  .lg\:flex-none {
+    flex: none !important;
+  }
+
+  .lg\:flex-grow {
+    flex-grow: 1 !important;
+  }
+
+  .lg\:flex-shrink {
+    flex-shrink: 1 !important;
+  }
+
+  .lg\:flex-no-grow {
+    flex-grow: 0 !important;
+  }
+
+  .lg\:flex-no-shrink {
+    flex-shrink: 0 !important;
+  }
+}
+
+@media (min-width: $query-xl) {
+  .xl\:flex-1 {
+    flex: 1 1 0% !important;
+  }
+
+  .xl\:flex-auto {
+    flex: 1 1 auto !important;
+  }
+
+  .xl\:flex-initial {
+    flex: 0 1 auto !important;
+  }
+
+  .xl\:flex-none {
+    flex: none !important;
+  }
+
+  .xl\:flex-grow {
+    flex-grow: 1 !important;
+  }
+
+  .xl\:flex-shrink {
+    flex-shrink: 1 !important;
+  }
+
+  .xl\:flex-no-grow {
+    flex-grow: 0 !important;
+  }
+
+  .xl\:flex-no-shrink {
+    flex-shrink: 0 !important;
+  }
+}

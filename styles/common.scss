@@ -1,0 +1,44 @@
+@import './vars';
+@import './native-vars/index';
+
+html {
+  font-size: 14px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: var(--body-bg);
+  color: var(--color-low-emphasis);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+.common-scrollbar {
+  overflow-x: hidden !important;
+  overflow-y: overlay !important;
+}
+
+.common-scrollbar--hover {
+  overflow-y: hidden !important;
+
+  &:hover {
+    overflow-y: overlay !important;
+  }
+}
+
+.common-scrollbar::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+.common-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgba(141, 141, 141, 0.35), rgba(141, 141, 141, 0.5), rgba(141, 141, 141, 0.35));
+  border-radius: 999px;
+}
+
+.common-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}

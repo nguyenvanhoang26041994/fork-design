@@ -1,0 +1,58 @@
+.fskele {
+  background-color: var(--skeleton-color);
+}
+
+.fskele-circle {
+  --size: 2.5em;
+  border-radius: 999px;
+  height: var(--size);
+  margin-bottom: 0.5rem;
+  width: var(--size);
+}
+
+.fskele-rect,
+.fskele-p {
+  border-radius: var(--border-radius);
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.fskele-rect {
+  min-height: 1.5rem;
+}
+
+.fskele-p {
+  height: 1.5rem !important;
+}
+
+@keyframes skeleton-loading {
+  0% {
+      transform: translate3d(-30%, 0, 0);
+  }
+
+  100% {
+      transform: translate3d(30%, 0, 0);
+  }
+}
+
+.fskele-animated {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+    width: 500%;
+    margin-left: -250%;
+    background: linear-gradient(to right, var(--skeleton-animation-bg-1) 46%, var(--skeleton-animation-bg-2) 50%, var(--skeleton-animation-bg-3) 54%) 50% 50%;
+    animation: skeleton-loading 0.8s linear infinite;
+    content: " ";
+    pointer-events: none;
+  }
+}

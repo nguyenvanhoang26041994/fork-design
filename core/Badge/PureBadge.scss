@@ -1,0 +1,98 @@
+.fbadge {
+  display: inline-block;
+  position: relative;
+}
+
+.fbadge-ui {
+  border: 2px solid var(--bg);
+  position: absolute;
+}
+.fbadge-ui-rounded {
+  border-radius: 999px;
+}
+
+// PLACEMENT SUPPORT
+.fbadge-top-end .fbadge-ui,
+.fbadge-right-start .fbadge-ui {
+  right: 0;
+  top: 0;
+  transform: translate(50%, -50%);
+}
+
+.fbadge-right .fbadge-ui {
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+
+.fbadge-bottom-end .fbadge-ui,
+.fbadge-right-end .fbadge-ui {
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 50%);
+}
+
+.fbadge-bottom .fbadge-ui {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.fbadge-bottom-start .fbadge-ui,
+.fbadge-left-end .fbadge-ui {
+  bottom: 0;
+  left: 0;
+  transform: translate(-50%, 50%);
+}
+
+.fbadge-left .fbadge-ui {
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fbadge-left-start .fbadge-ui,
+.fbadge-top-start .fbadge-ui {
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+}
+
+.fbadge-top .fbadge-ui {
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+}
+
+// OVERLAP SUPPORT
+.fbadge-overlap.fbadge-top-end,
+.fbadge-overlap.fbadge-right-start {
+  .fbadge-ui {
+    right: 14%;
+    top: 14%;
+  }
+}
+
+.fbadge-overlap.fbadge-right-end,
+.fbadge-overlap.fbadge-bottom-end {
+  .fbadge-ui {
+    bottom: 14%;
+    right: 14%;
+  }
+}
+
+.fbadge-overlap.fbadge-left-end,
+.fbadge-overlap.fbadge-bottom-start {
+  .fbadge-ui {
+    bottom: 14%;
+    left: 14%;
+  }
+}
+
+.fbadge-overlap.fbadge-left-start,
+.fbadge-overlap.fbadge-top-start {
+  .fbadge-ui {
+    left: 14%;
+    top: 14%;
+  }
+}

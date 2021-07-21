@@ -1,0 +1,14 @@
+.favatar-group {
+  --avatar-group-size: 40px;
+  display: inline-flex;
+
+  .favatar {
+    --avatar-size: var(--avatar-group-size);
+    border: calc(var(--avatar-group-size) / 20) solid var(--bg);
+    
+  }
+
+  > * {
+    margin-right: -0.75em;
+  }
+}

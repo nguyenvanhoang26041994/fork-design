@@ -1,0 +1,13 @@
+.fpopover {
+  .tippy-arrow {
+    color: var(--bg);
+  }
+
+  .tippy-content {
+    padding: 7px;
+    border-radius: var(--border-radius-medium);
+    color: var(--color);
+    background-color: var(--bg);
+    box-shadow: var(--popover-box-shadow);
+  }
+}

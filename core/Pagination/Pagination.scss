@@ -1,0 +1,14 @@
+.fpagination {
+  align-items: center;
+  display: flex;
+
+  .fbtn {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  > *:not(:last-child) {
+    margin-right: 3px;
+  }
+}
+

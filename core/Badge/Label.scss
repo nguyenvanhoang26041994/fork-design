@@ -1,0 +1,17 @@
+.fbadge-label {
+  --badge-label-size: 2em;
+  background-color: var(--red-7);
+  border-radius: 999px;
+  color: #fff;
+  font-family: sans-serif;
+  height: var(--badge-label-size);
+  min-width: var(--badge-label-size);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.fbadge-label-display {
+  padding: 0 0.5em;
+  white-space: nowrap;
+}

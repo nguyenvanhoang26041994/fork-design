@@ -1,0 +1,125 @@
+.fselect {
+  min-width: 200px;
+}
+.fselect-single,
+.fselect-multiple {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid var(--btn-bg);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  min-height: var(--input-height);
+  min-width: 32px;
+  outline: 0 !important;
+  outline-style: none;
+  position: relative;
+  touch-action: manipulation;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+
+  &:hover,
+  &.--active {
+    border-color: var(--primary);
+  }
+
+  &:disabled,
+  &:disabled:hover {
+    background-color: var(--bg-disabled);
+    border-color: var(--bg-disabled);
+    color: var(--color-disabled);
+    cursor: not-allowed !important;
+
+    * {
+      pointer-events: none !important;
+    }
+  }
+}
+.fselect-single {
+  padding-left: 14px;
+  padding-right: 32px;
+}
+.fselect-multiple {
+  padding: 2px;
+  flex-wrap: wrap;
+
+  > * {
+    margin: 2px;
+  }
+}
+
+.fselect-single-icon {
+  position: absolute;
+  left: auto;
+  right: 9px;
+  top: 9px;
+}
+
+.fselect-multiple-loading,
+.fselect-single-loading {
+  position: absolute;
+  left: auto;
+  right: 9px;
+  top: 6px;
+}
+
+.fselect-overlay {
+  background-color: var(--bg);
+  box-shadow: var(--popover-box-shadow);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  padding: 8px 0;
+}
+
+.fselect-option {
+  min-height: 38px;
+  outline: 0 !important;
+  outline-style: none;
+  padding-left: 14px;
+  padding-right: 14px;
+  position: relative;
+  touch-action: manipulation;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover:not(:disabled),
+  &.fselect-option-active {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+}
+.fselect-option-hide {
+  display: none !important;
+}
+.fselect-overlay-header {
+  padding-bottom: 8px;
+}
+.fselect-overlay-body {
+  max-height: 300px;
+  overflow-y: overlay;
+}
+.fselect-overlay-body::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+.fselect-overlay-body::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgba(141, 141, 141, 0.35), rgba(141, 141, 141, 0.5), rgba(141, 141, 141, 0.35));
+  border-radius: 999px;
+}
+
+.fselect-overlay-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.fselect-overlay-footer {
+  padding-top: 8px;
+}
+.fselect-searchbox {
+  .fsearchbox-textbox {
+    border-radius: 0;
+    border-color: transparent;
+    background-color: var(--body-bg);
+  }
+}

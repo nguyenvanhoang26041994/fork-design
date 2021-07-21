@@ -1,0 +1,689 @@
+@import '../vars.scss';
+
+.w-1 {
+  width: 0.25rem !important;
+}
+
+.w-2 {
+  width: 0.5rem !important;
+}
+
+.w-3 {
+  width: 0.75rem !important;
+}
+
+.w-4 {
+  width: 1rem !important;
+}
+
+.w-6 {
+  width: 1.5rem !important;
+}
+
+.w-8 {
+  width: 2rem !important;
+}
+
+.w-10 {
+  width: 2.5rem !important;
+}
+
+.w-12 {
+  width: 3rem !important;
+}
+
+.w-16 {
+  width: 4rem !important;
+}
+
+.w-24 {
+  width: 6rem !important;
+}
+
+.w-32 {
+  width: 8rem !important;
+}
+
+.w-48 {
+  width: 12rem !important;
+}
+
+.w-64 {
+  width: 16rem !important;
+}
+
+.w-auto {
+  width: auto !important;
+}
+
+.w-px {
+  width: 1px !important;
+}
+
+.w-1\/2,
+.w-6\/12 {
+  width: 50% !important;
+}
+
+.w-1\/3,
+.w-4\/12 {
+  width: 33.33333% !important;
+}
+
+.w-2\/3,
+.w-8\/12 {
+  width: 66.66667% !important;
+}
+
+.w-1\/4,
+.w-3\/12 {
+  width: 25% !important;
+}
+
+.w-3\/4,
+.w-9\/12 {
+  width: 75% !important;
+}
+
+.w-1\/5 {
+  width: 20% !important;
+}
+
+.w-2\/5 {
+  width: 40% !important;
+}
+
+.w-3\/5	{
+  width: 60% !important;
+}
+
+.w-4\/5	{
+  width: 80% !important;
+}
+
+.w-1\/6,
+.w-2\/12	{
+  width: 16.66667% !important;
+}
+
+.w-5\/6,
+.w-10\/12	{
+  width: 83.33333% !important;
+}
+
+.w-1\/12 {
+  width: 8.33333% !important;
+}
+
+.w-5\/12 {
+  width: 41.66667% !important;
+}
+
+.w-7\/12 {
+  width: 58.33333% !important;
+}
+
+.w-11\/12 {
+  width: 91.66667% !important;
+}
+
+.w-full,
+.w-12\/12	{
+  width: 100% !important;
+}
+
+.w-screen	{
+  width: 100vw !important;
+}
+
+@media (min-width: $query-sm) {
+  .sm\:w-1 {
+    width: 0.25rem !important;
+  }
+
+  .sm\:w-2 {
+    width: 0.5rem !important;
+  }
+
+  .sm\:w-3 {
+    width: 0.75rem !important;
+  }
+
+  .sm\:w-4 {
+    width: 1rem !important;
+  }
+
+  .sm\:w-6 {
+    width: 1.5rem !important;
+  }
+
+  .sm\:w-8 {
+    width: 2rem !important;
+  }
+
+  .sm\:w-10 {
+    width: 2.5rem !important;
+  }
+
+  .sm\:w-12 {
+    width: 3rem !important;
+  }
+
+  .sm\:w-16 {
+    width: 4rem !important;
+  }
+
+  .sm\:w-24 {
+    width: 6rem !important;
+  }
+
+  .sm\:w-32 {
+    width: 8rem !important;
+  }
+
+  .sm\:w-48 {
+    width: 12rem !important;
+  }
+
+  .sm\:w-64 {
+    width: 16rem !important;
+  }
+
+  .sm\:w-auto {
+    width: auto !important;
+  }
+
+  .sm\:w-px {
+    width: 1px !important;
+  }
+
+  .sm\:w-1\/2,
+  .sm\:w-6\/12 {
+    width: 50% !important;
+  }
+
+  .sm\:w-1\/3,
+  .sm\:w-4\/12 {
+    width: 33.33333% !important;
+  }
+
+  .sm\:w-2\/3,
+  .sm\:w-8\/12 {
+    width: 66.66667% !important;
+  }
+
+  .sm\:w-1\/4,
+  .sm\:w-3\/12 {
+    width: 25% !important;
+  }
+
+  .sm\:w-3\/4,
+  .sm\:w-9\/12 {
+    width: 75% !important;
+  }
+
+  .sm\:w-1\/5 {
+    width: 20% !important;
+  }
+
+  .sm\:w-2\/5 {
+    width: 40% !important;
+  }
+
+  .sm\:w-3\/5	{
+    width: 60% !important;
+  }
+
+  .sm\:w-4\/5	{
+    width: 80% !important;
+  }
+
+  .sm\:w-1\/6,
+  .sm\:w-2\/12	{
+    width: 16.66667% !important;
+  }
+
+  .sm\:w-5\/6,
+  .sm\:w-10\/12	{
+    width: 83.33333% !important;
+  }
+
+  .sm\:w-1\/12 {
+    width: 8.33333% !important;
+  }
+
+  .sm\:w-5\/12 {
+    width: 41.66667% !important;
+  }
+
+  .sm\:w-7\/12 {
+    width: 58.33333% !important;
+  }
+
+  .sm\:w-11\/12 {
+    width: 91.66667% !important;
+  }
+
+  .sm\:w-full,
+  .sm\:w-12\/12	{
+    width: 100% !important;
+  }
+
+  .sm\:w-screen	{
+    width: 100vw !important;
+  }
+}
+
+@media (min-width: $query-md) {
+  .md\:w-1 {
+    width: 0.25rem !important;
+  }
+
+  .md\:w-2 {
+    width: 0.5rem !important;
+  }
+
+  .md\:w-3 {
+    width: 0.75rem !important;
+  }
+
+  .md\:w-4 {
+    width: 1rem !important;
+  }
+
+  .md\:w-6 {
+    width: 1.5rem !important;
+  }
+
+  .md\:w-8 {
+    width: 2rem !important;
+  }
+
+  .md\:w-10 {
+    width: 2.5rem !important;
+  }
+
+  .md\:w-12 {
+    width: 3rem !important;
+  }
+
+  .md\:w-16 {
+    width: 4rem !important;
+  }
+
+  .md\:w-24 {
+    width: 6rem !important;
+  }
+
+  .md\:w-32 {
+    width: 8rem !important;
+  }
+
+  .md\:w-48 {
+    width: 12rem !important;
+  }
+
+  .md\:w-64 {
+    width: 16rem !important;
+  }
+
+  .md\:w-auto {
+    width: auto !important;
+  }
+
+  .md\:w-px {
+    width: 1px !important;
+  }
+
+  .md\:w-1\/2,
+  .md\:w-6\/12 {
+    width: 50% !important;
+  }
+
+  .md\:w-1\/3,
+  .md\:w-4\/12 {
+    width: 33.33333% !important;
+  }
+
+  .md\:w-2\/3,
+  .md\:w-8\/12 {
+    width: 66.66667% !important;
+  }
+
+  .md\:w-1\/4,
+  .md\:w-3\/12 {
+    width: 25% !important;
+  }
+
+  .md\:w-3\/4,
+  .md\:w-9\/12 {
+    width: 75% !important;
+  }
+
+  .md\:w-1\/5 {
+    width: 20% !important;
+  }
+
+  .md\:w-2\/5 {
+    width: 40% !important;
+  }
+
+  .md\:w-3\/5	{
+    width: 60% !important;
+  }
+
+  .md\:w-4\/5	{
+    width: 80% !important;
+  }
+
+  .md\:w-1\/6,
+  .md\:w-2\/12	{
+    width: 16.66667% !important;
+  }
+
+  .md\:w-5\/6,
+  .md\:w-10\/12	{
+    width: 83.33333% !important;
+  }
+
+  .md\:w-1\/12 {
+    width: 8.33333% !important;
+  }
+
+  .md\:w-5\/12 {
+    width: 41.66667% !important;
+  }
+
+  .md\:w-7\/12 {
+    width: 58.33333% !important;
+  }
+
+  .md\:w-11\/12 {
+    width: 91.66667% !important;
+  }
+
+  .md\:w-full,
+  .md\:w-12\/12	{
+    width: 100% !important;
+  }
+
+  .md\:w-screen	{
+    width: 100vw !important;
+  }
+}
+
+@media (min-width: $query-lg) {
+  .lg\:w-1 {
+    width: 0.25rem !important;
+  }
+
+  .lg\:w-2 {
+    width: 0.5rem !important;
+  }
+
+  .lg\:w-3 {
+    width: 0.75rem !important;
+  }
+
+  .lg\:w-4 {
+    width: 1rem !important;
+  }
+
+  .lg\:w-6 {
+    width: 1.5rem !important;
+  }
+
+  .lg\:w-8 {
+    width: 2rem !important;
+  }
+
+  .lg\:w-10 {
+    width: 2.5rem !important;
+  }
+
+  .lg\:w-12 {
+    width: 3rem !important;
+  }
+
+  .lg\:w-16 {
+    width: 4rem !important;
+  }
+
+  .lg\:w-24 {
+    width: 6rem !important;
+  }
+
+  .lg\:w-32 {
+    width: 8rem !important;
+  }
+
+  .lg\:w-48 {
+    width: 12rem !important;
+  }
+
+  .lg\:w-64 {
+    width: 16rem !important;
+  }
+
+  .lg\:w-auto {
+    width: auto !important;
+  }
+
+  .lg\:w-px {
+    width: 1px !important;
+  }
+
+  .lg\:w-1\/2,
+  .lg\:w-6\/12 {
+    width: 50% !important;
+  }
+
+  .lg\:w-1\/3,
+  .lg\:w-4\/12 {
+    width: 33.33333% !important;
+  }
+
+  .lg\:w-2\/3,
+  .lg\:w-8\/12 {
+    width: 66.66667% !important;
+  }
+
+  .lg\:w-1\/4,
+  .lg\:w-3\/12 {
+    width: 25% !important;
+  }
+
+  .lg\:w-3\/4,
+  .lg\:w-9\/12 {
+    width: 75% !important;
+  }
+
+  .lg\:w-1\/5 {
+    width: 20% !important;
+  }
+
+  .lg\:w-2\/5 {
+    width: 40% !important;
+  }
+
+  .lg\:w-3\/5	{
+    width: 60% !important;
+  }
+
+  .lg\:w-4\/5	{
+    width: 80% !important;
+  }
+
+  .lg\:w-1\/6,
+  .lg\:w-2\/12	{
+    width: 16.66667% !important;
+  }
+
+  .lg\:w-5\/6,
+  .lg\:w-10\/12	{
+    width: 83.33333% !important;
+  }
+
+  .lg\:w-1\/12 {
+    width: 8.33333% !important;
+  }
+
+  .lg\:w-5\/12 {
+    width: 41.66667% !important;
+  }
+
+  .lg\:w-7\/12 {
+    width: 58.33333% !important;
+  }
+
+  .lg\:w-11\/12 {
+    width: 91.66667% !important;
+  }
+
+  .lg\:w-full,
+  .lg\:w-12\/12	{
+    width: 100% !important;
+  }
+
+  .lg\:w-screen	{
+    width: 100vw !important;
+  }
+}
+
+@media (min-width: $query-xl) {
+  .xl\:w-1 {
+    width: 0.25rem !important;
+  }
+
+  .xl\:w-2 {
+    width: 0.5rem !important;
+  }
+
+  .xl\:w-3 {
+    width: 0.75rem !important;
+  }
+
+  .xl\:w-4 {
+    width: 1rem !important;
+  }
+
+  .xl\:w-6 {
+    width: 1.5rem !important;
+  }
+
+  .xl\:w-8 {
+    width: 2rem !important;
+  }
+
+  .xl\:w-10 {
+    width: 2.5rem !important;
+  }
+
+  .xl\:w-12 {
+    width: 3rem !important;
+  }
+
+  .xl\:w-16 {
+    width: 4rem !important;
+  }
+
+  .xl\:w-24 {
+    width: 6rem !important;
+  }
+
+  .xl\:w-32 {
+    width: 8rem !important;
+  }
+
+  .xl\:w-48 {
+    width: 12rem !important;
+  }
+
+  .xl\:w-64 {
+    width: 16rem !important;
+  }
+
+  .xl\:w-auto {
+    width: auto !important;
+  }
+
+  .xl\:w-px {
+    width: 1px !important;
+  }
+
+  .xl\:w-1\/2,
+  .xl\:w-6\/12 {
+    width: 50% !important;
+  }
+
+  .xl\:w-1\/3,
+  .xl\:w-4\/12 {
+    width: 33.33333% !important;
+  }
+
+  .xl\:w-2\/3,
+  .xl\:w-8\/12 {
+    width: 66.66667% !important;
+  }
+
+  .xl\:w-1\/4,
+  .xl\:w-3\/12 {
+    width: 25% !important;
+  }
+
+  .xl\:w-3\/4,
+  .xl\:w-9\/12 {
+    width: 75% !important;
+  }
+
+  .xl\:w-1\/5 {
+    width: 20% !important;
+  }
+
+  .xl\:w-2\/5 {
+    width: 40% !important;
+  }
+
+  .xl\:w-3\/5	{
+    width: 60% !important;
+  }
+
+  .xl\:w-4\/5	{
+    width: 80% !important;
+  }
+
+  .xl\:w-1\/6,
+  .xl\:w-2\/12	{
+    width: 16.66667% !important;
+  }
+
+  .xl\:w-5\/6,
+  .xl\:w-10\/12	{
+    width: 83.33333% !important;
+  }
+
+  .xl\:w-1\/12 {
+    width: 8.33333% !important;
+  }
+
+  .xl\:w-5\/12 {
+    width: 41.66667% !important;
+  }
+
+  .xl\:w-7\/12 {
+    width: 58.33333% !important;
+  }
+
+  .xl\:w-11\/12 {
+    width: 91.66667% !important;
+  }
+
+  .xl\:w-full,
+  .xl\:w-12\/12	{
+    width: 100% !important;
+  }
+
+  .xl\:w-screen	{
+    width: 100vw !important;
+  }
+}

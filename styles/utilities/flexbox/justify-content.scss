@@ -1,0 +1,109 @@
+@import '../../vars';
+
+.justify-start {
+  justify-content: flex-start !important;
+}
+
+.justify-center {
+  justify-content: center !important;
+}
+
+.justify-end {
+  justify-content: flex-end !important;
+}
+
+.justify-between {
+  justify-content: space-between !important;
+}
+
+.justify-around {
+  justify-content: space-around !important;
+}
+
+@media (min-width: $query-sm) {
+  .sm\:justify-start {
+    justify-content: flex-start !important;
+  }
+
+  .sm\:justify-end {
+    justify-content: flex-end !important;
+  }
+
+  .sm\:justify-center {
+    justify-content: center !important;
+  }
+
+  .sm\:justify-between {
+    justify-content: space-between !important;
+  }
+
+  .sm\:justify-around {
+    justify-content: space-around !important;
+  }
+}
+
+@media (min-width: $query-md) {
+  .md\:justify-start {
+    justify-content: flex-start !important;
+  }
+
+  .md\:justify-end {
+    justify-content: flex-end !important;
+  }
+
+  .md\:justify-center {
+    justify-content: center !important;
+  }
+
+  .md\:justify-between {
+    justify-content: space-between !important;
+  }
+
+  .md\:justify-around {
+    justify-content: space-around !important;
+  }
+}
+
+@media (min-width: $query-lg) {
+  .lg\:justify-start {
+    justify-content: flex-start !important;
+  }
+
+  .lg\:justify-end {
+    justify-content: flex-end !important;
+  }
+
+  .lg\:justify-center {
+    justify-content: center !important;
+  }
+
+  .lg\:justify-between {
+    justify-content: space-between !important;
+  }
+
+  .lg\:justify-around {
+    justify-content: space-around !important;
+  }
+}
+
+@media (min-width: $query-xl) {
+  .xl\:justify-start {
+    justify-content: flex-start !important;
+  }
+
+  .xl\:justify-end {
+    justify-content: flex-end !important;
+  }
+
+  .xl\:justify-center {
+    justify-content: center !important;
+  }
+
+  .xl\:justify-between {
+    justify-content: space-between !important;
+  }
+
+  .xl\:justify-around {
+    justify-content: space-around !important;
+  }
+}

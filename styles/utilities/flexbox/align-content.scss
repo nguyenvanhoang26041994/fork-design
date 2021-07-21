@@ -1,0 +1,110 @@
+@import '../../vars';
+
+.content-start {
+  align-content: flex-start !important;
+}
+
+.content-center {
+  align-content: center !important;
+}
+
+.content-end {
+  align-content: flex-end !important;
+}
+
+.content-between {
+  align-content: space-between !important;
+}
+
+.content-around {
+  align-content: space-around !important;
+}
+
+@media (min-width: $query-sm) {
+  .sm\:content-center {
+    align-content: center !important;
+  }
+
+  .sm\:content-start {
+    align-content: flex-start !important;
+  }
+
+  .sm\:content-end {
+    align-content: flex-end !important;
+  }
+
+  .sm\:content-between {
+    align-content: space-between !important;
+  }
+
+  .sm\:content-around {
+    align-content: space-around !important;
+  }
+}
+
+
+@media (min-width: $query-md) {
+  .md\:content-center {
+    align-content: center !important;
+  }
+
+  .md\:content-start {
+    align-content: flex-start !important;
+  }
+
+  .md\:content-end {
+    align-content: flex-end !important;
+  }
+
+  .md\:content-between {
+    align-content: space-between !important;
+  }
+
+  .md\:content-around {
+    align-content: space-around !important;
+  }
+}
+
+@media (min-width: $query-lg) {
+  .lg\:content-center {
+    align-content: center !important;
+  }
+
+  .lg\:content-start {
+    align-content: flex-start !important;
+  }
+
+  .lg\:content-end {
+    align-content: flex-end !important;
+  }
+
+  .lg\:content-between {
+    align-content: space-between !important;
+  }
+
+  .lg\:content-around {
+    align-content: space-around !important;
+  }
+}
+
+@media (min-width: $query-xl) {
+  .xl\:content-center {
+    align-content: center !important;
+  }
+
+  .xl\:content-start {
+    align-content: flex-start !important;
+  }
+
+  .xl\:content-end {
+    align-content: flex-end !important;
+  }
+
+  .xl\:content-between {
+    align-content: space-between !important;
+  }
+
+  .xl\:content-around {
+    align-content: space-around !important;
+  }
+}

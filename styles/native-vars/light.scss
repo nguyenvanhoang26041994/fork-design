@@ -1,0 +1,48 @@
+.light-mode {
+  --body-bg: #f4f8f9;
+  --bg: #fff;
+  --bg-secondary: #f8f8f8;
+  --bg-disabled: #eceef3;
+  --color: #333;
+  --heading-color: #000;
+  --color-disabled: #bcc0c4;
+  --color-low-emphasis: #65676b;
+
+  --border-color: #ced4da;
+
+  --danger: var(--red-6);
+  --danger-hover: var(--red-5);
+  --danger-disabled: var(--red-2);
+
+  --primary: var(--blue-6);
+  --primary-hover: var(--blue-5);
+  --primary-disabled: var(--blue-2);
+
+  // BUTTON
+  --btn-bg: #eceef3;
+  --btn-bg-hover: #e4e6eb;
+  --btn-text-color: #444950;
+
+  // SWITCH
+  --switch-lever-color-disabled: #bdbdbd;
+
+  // AVATAR
+  --avatar-bg: #e4e6eb;
+
+  // POPOVER
+  --popover-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  // SKELETON
+  --skeleton-color: #ced4da;
+  --skeleton-animation-bg-1: rgba(255, 255, 255, 0);
+  --skeleton-animation-bg-2: rgba(255, 255, 255, 0.35);
+  --skeleton-animation-bg-3: rgba(255, 255, 255, 0);
+
+  // PROGRESS
+  --progress-rail: #f4f8f9;
+
+  // CHIP
+  --chip-bg: #eceef3;
+  --chip-hover-bg: #e4e6eb;
+  --chip-close-bg: #d3d5d8;
+}

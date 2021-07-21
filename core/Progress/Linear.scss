@@ -1,0 +1,54 @@
+.flinear-progress {
+  --linear-progress-value: 0;
+  --linear-progress-size: 3px;
+  --linear-progress-color: var(--primary);
+  --linear-progress-rail-color: var(--progress-rail);
+  height: var(--linear-progress-size);
+  position: relative;
+  width: 100%;
+}
+
+.flinear-progress-rail {
+  background-color: var(--linear-progress-rail-color);
+  border-radius: 999px;
+  height: var(--linear-progress-size);
+  position: absolute;
+  width: 100%;
+}
+
+.flinear-progress-value {
+  background-color: var(--linear-progress-color);
+  border-radius: 999px;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  transition: width 0.25s;
+  width: var(--linear-progress-value);
+}
+
+@keyframes linear-loading {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+.flinear-progress-animated {
+  .flinear-progress-value {
+    &::before {
+      animation: linear-loading 1s linear infinite;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 999px;
+      content: '';
+      display: block;
+      height: 100%;
+      left: -100%;
+      position: absolute;
+      width: 33%;
+    }
+  }
+}

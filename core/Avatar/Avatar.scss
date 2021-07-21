@@ -1,0 +1,21 @@
+.favatar {
+  --avatar-size: 42px;
+  align-items: center;
+  background-color: var(--avatar-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  font-size: calc(var(--avatar-size) / 3);
+  font-weight: 600;
+  height: var(--avatar-size);
+  justify-content: center;
+  width: var(--avatar-size);
+}
+
+.favatar-square {
+  border-radius: var(--border-radius);
+}
+
+.favatar-circle {
+  border-radius: 999px;
+}

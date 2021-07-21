@@ -1,0 +1,15 @@
+.fbadge-dot {
+  --badge-dot-size: 15px;
+  background-color: var(--red-7);
+  border-radius: 999px;
+  height: var(--badge-dot-size);
+  width: var(--badge-dot-size);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.fbadge-dot-transparent {
+  background-color: transparent;;
+  border-color: transparent;
+}

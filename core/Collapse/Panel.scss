@@ -1,0 +1,61 @@
+.fpanel {
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  transition: margin 0.25s;
+}
+
+.fpanel-disabled {
+  .fpanel-title {
+    cursor: not-allowed !important;
+    color: var(--color-disabled);
+
+    &:hover {
+      background-color: unset;
+    }
+
+    > * {
+      pointer-events: none;
+    }
+  }
+}
+
+.fpanel-active {
+  border-radius: var(--border-radius);
+
+  .fpanel-icon {
+    transform: translateY(-50%) rotate(-180deg);
+  }
+}
+
+.fpanel-title {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  outline: 0 !important;
+  padding-left: 14px;
+  padding-right: 14px;
+  position: relative;
+  transition: color 0.25s;
+  user-select: none;
+  color: var(--heading-color);
+
+  &:hover {
+    background-color: var(--btn-bg);
+  }
+}
+
+.fpanel-icon {
+  margin-right: 14px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.25s;
+}
+
+.fpanel-content {
+  box-sizing: border-box;
+  display: block;
+}

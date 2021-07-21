@@ -1,0 +1,14 @@
+@import './Tab.scss';
+@import './Panel.scss';
+
+.ftabs {
+  background-color: var(--bg);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  padding-top: 1em;
+  z-index: 1;
+}
