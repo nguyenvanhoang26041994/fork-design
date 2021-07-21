@@ -21,25 +21,25 @@ const AsyncSelect = React.forwardRef((props, ref) => {
   const {
     value,
     setValue,
-    searchboxRef,
-    UIRef,
     bounds,
-    UIActive,
     onHidden,
     displayOptions,
     loaders,
     _onBottomIntersecting,
     onShown,
-    onDebouceSearchboxChange,
     selectedOption,
     hideOverlay,
+    UIProps,
+    searchboxProps,
+  } = useAsyncSingleSelect(props, ref);
+
+  const {
     render,
     renderSearchbox,
     children,
     valueKey,
     nameKey,
-    otherProps
-  } = useAsyncSingleSelect(props, ref);
+  } = props;
 
   return (
     <Context.Provider value={{
@@ -53,15 +53,9 @@ const AsyncSelect = React.forwardRef((props, ref) => {
             {renderSearchbox && (
               <OverlayHeader>
                 {typeof renderSearchbox === 'boolean'
-                ? AsyncSelect.renderSearchbox({
-                  ref: searchboxRef,
-                  onChange: onDebouceSearchboxChange,
-                  loading: !loaders.isFirstOptionsLoading && loaders.isOptionsLoading,
-                }) : renderSearchbox({
-                  ref: searchboxRef,
-                  onChange: onDebouceSearchboxChange,
-                  loading: !loaders.isFirstOptionsLoading && loaders.isOptionsLoading,
-                })}
+                  ? AsyncSelect.renderSearchbox(searchboxProps)
+                  : renderSearchbox(searchboxProps)
+                }
               </OverlayHeader>
             )}
             <OverlayBody onBottomIntersecting={_onBottomIntersecting}>
@@ -89,12 +83,7 @@ const AsyncSelect = React.forwardRef((props, ref) => {
         onShown={onShown}
         onHidden={onHidden}
       >
-        {render({
-          ...otherProps,
-          ref: UIRef,
-          active: UIActive,
-          loading: loaders.isSelectedLoading,
-        }, selectedOption)}
+        {render(UIProps, selectedOption)}
       </UISelect>
     </Context.Provider>
   );
@@ -107,6 +96,7 @@ AsyncSelect.propTypes = {
   getOptions: PropTypes.func.isRequired,
   valueKey: PropTypes.string.isRequired,
   nameKey: PropTypes.string.isRequired,
+  onBottomIntersecting: PropTypes.oneOfType([PropTypes.bool, PropTypes.func])
 };
 AsyncSelect.defaultProps = {
   delay: 500, // Delay time when you typing ing seachbox
@@ -119,6 +109,7 @@ AsyncSelect.defaultProps = {
     </AsyncSelect.Single>
   ),
   renderSearchbox: false,
+  onBottomIntersecting: false,
 };
 AsyncSelect.Option = ({ value, ...otherProps}) => {
   const {

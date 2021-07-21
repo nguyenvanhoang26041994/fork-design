@@ -22,23 +22,23 @@ const Select = React.forwardRef((props, ref) => {
   const {
     value,
     setValue,
-    searchboxRef,
-    UIRef,
     bounds,
-    UIActive,
     onHidden,
     searchText,
     searchRegex,
     onShown,
-    onDebouceSearchboxChange,
     hideOverlay,
     selectedOption,
+    UIProps,
+    searchboxProps,
+  } = useSingleSelect(props, ref);
+
+  const {
     render,
     renderSearchbox,
     filter,
     children,
-    otherProps,
-  } = useSingleSelect(props, ref);
+  } = props;
 
   return (
     <Context.Provider value={{
@@ -56,13 +56,8 @@ const Select = React.forwardRef((props, ref) => {
             {renderSearchbox && (
               <OverlayHeader>
                 {typeof renderSearchbox === 'boolean'
-                ? Select.renderSearchbox({
-                  ref: searchboxRef,
-                  onChange: onDebouceSearchboxChange,
-                }) : renderSearchbox({
-                  ref: searchboxRef,
-                  onChange: onDebouceSearchboxChange,
-                })}
+                ? Select.renderSearchbox(searchboxProps)
+                : renderSearchbox(searchboxProps)}
               </OverlayHeader>
             )}
             <OverlayBody>
@@ -73,11 +68,7 @@ const Select = React.forwardRef((props, ref) => {
         onShown={onShown}
         onHidden={onHidden}
       >
-        {render({
-          ...otherProps,
-          ref: UIRef,
-          active: UIActive,
-        }, selectedOption)}
+        {render(UIProps, selectedOption)}
       </UISelect>
     </Context.Provider>
   );
