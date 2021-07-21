@@ -26,31 +26,25 @@ const MultiSelect = React.forwardRef((props, ref) => {
   const {
     value,
     setValue,
-    searchboxRef,
-    UIRef,
     bounds,
-    UIActive,
     onHidden,
      _value,
     removeSingleValue,
     toggleSingleValue,
     onClickOutside,
-    onMultipleClick,
     searchText,
     searchRegex,
     onShown,
-    onDebouceSearchboxChange,
     selectedOptions,
+    UIProps,
+    searchboxProps,
   } = useMultiSelect(props, ref);
 
   const {
     render,
     renderSearchbox,
-    onChanged,
     filter,
-    delay,
     children,
-    ...otherProps
   } = props;
 
   return (
@@ -73,13 +67,9 @@ const MultiSelect = React.forwardRef((props, ref) => {
             {renderSearchbox && (
               <OverlayHeader>
                 {typeof renderSearchbox === 'boolean'
-                ? MultiSelect.renderSearchbox({
-                  ref: searchboxRef,
-                  onChange: onDebouceSearchboxChange,
-                }) : renderSearchbox({
-                  ref: searchboxRef,
-                  onChange: onDebouceSearchboxChange,
-                })}
+                  ? MultiSelect.renderSearchbox(searchboxProps)
+                  : renderSearchbox(searchboxProps)
+                }
               </OverlayHeader>
             )}
             <OverlayBody>
@@ -93,12 +83,7 @@ const MultiSelect = React.forwardRef((props, ref) => {
         trigger="manual"
         onClickOutside={onClickOutside}
       >
-        {render({
-          ...otherProps,
-          ref: UIRef,
-          active: UIActive,
-          onClick: onMultipleClick
-        }, selectedOptions)}
+        {render(UIProps, selectedOptions)}
       </UISelect>
     </Context.Provider>
   );

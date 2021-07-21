@@ -21,36 +21,27 @@ const Context = React.createContext({
 const AsyncMultiSelect = React.forwardRef((props, ref) => {
   const {
     value,
-    searchboxRef,
-    UIRef,
     bounds,
-    UIActive,
     onHidden,
     _value,
     removeSingleValue,
     toggleSingleValue,
     onClickOutside,
-    onMultipleClick,
     displayOptions,
     loaders,
     _onBottomIntersecting,
     onShown,
-    onDebouceSearchboxChange,
     selectedOptions,
+    UIProps,
+    searchboxProps,
   } = useAsyncMultiSelect(props, ref);
 
   const {
     render,
     renderSearchbox,
-    onChanged,
-    delay,
     children,
-    getOptionsByValue,
-    getOptions,
-    onBottomIntersecting,
     valueKey,
     nameKey,
-    ...otherProps
   } = props;
 
   return (
@@ -68,15 +59,9 @@ const AsyncMultiSelect = React.forwardRef((props, ref) => {
             {renderSearchbox && (
               <OverlayHeader>
                 {typeof renderSearchbox === 'boolean'
-                ? AsyncMultiSelect.renderSearchbox({
-                  ref: searchboxRef,
-                  onChange: onDebouceSearchboxChange,
-                  loading: !loaders.isFirstOptionsLoading && loaders.isOptionsLoading,
-                }) : renderSearchbox({
-                  ref: searchboxRef,
-                  onChange: onDebouceSearchboxChange,
-                  loading: !loaders.isFirstOptionsLoading && loaders.isOptionsLoading,
-                })}
+                  ? AsyncMultiSelect.renderSearchbox(searchboxProps)
+                  : renderSearchbox(searchboxProps)
+                }
               </OverlayHeader>
             )}
             <OverlayBody onBottomIntersecting={_onBottomIntersecting}>
@@ -107,13 +92,7 @@ const AsyncMultiSelect = React.forwardRef((props, ref) => {
         trigger="manual"
         onClickOutside={onClickOutside}
       >
-        {render({
-          ...otherProps,
-          ref: UIRef,
-          active: UIActive,
-          onClick: onMultipleClick,
-          loading: loaders.isSelectedLoading,
-        }, selectedOptions, {
+        {render(UIProps, selectedOptions, {
           valueKey,
           nameKey,
         })}

@@ -1,5 +1,6 @@
 import { useMemo, useRef } from 'react';
 
+import useRestNativeProps from './useRestNativeProps';
 import useCommon from './useCommon';
 import useMultipleCommon from './useMultipleCommon';
 import useStaticCommon from './useStaticCommon';
@@ -52,6 +53,18 @@ const useMultiSelect = (props, ref) => {
     });
   }, [_options, value]);
 
+  const restNativeProps = useRestNativeProps(props);
+  const UIProps = {
+    ref: UIRef,
+    active: UIActive,
+    onClick: onMultipleClick,
+    ...restNativeProps
+  };
+  const searchboxProps = {
+    ref: searchboxRef,
+    onChange: onDebouceSearchboxChange,
+  };
+
   return {
     isControlled,
     value,
@@ -75,6 +88,8 @@ const useMultiSelect = (props, ref) => {
     onSearchboxChange,
     onDebouceSearchboxChange,
     selectedOptions,
+    UIProps,
+    searchboxProps,
   };
 };
 

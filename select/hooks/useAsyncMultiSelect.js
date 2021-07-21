@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { reduce } from 'lodash';
 
+import useRestNativeProps from './useRestNativeProps';
 import useCommon from './useCommon';
 import useMultipleCommon from './useMultipleCommon';
 import useAsyncCommon from './useAsyncCommon';
@@ -124,6 +125,20 @@ const useAsyncMultiSelect = (props, ref) => {
     }
   }, [value]);
 
+  const restNativeProps = useRestNativeProps(props);
+  const UIProps = {
+    ref: UIRef,
+    active: UIActive,
+    onClick: onMultipleClick,
+    loading: loaders.isSelectedLoading,
+    ...restNativeProps
+  };
+  const searchboxProps = {
+    ref: searchboxRef,
+    onChange: onDebouceSearchboxChange,
+    loading: !loaders.isFirstOptionsLoading && loaders.isOptionsLoading,
+  };
+
   return {
     isControlled,
     value,
@@ -150,6 +165,8 @@ const useAsyncMultiSelect = (props, ref) => {
     onDebouceSearchboxChange,
     selectedOptions,
     setSelectedOptions,
+    UIProps,
+    searchboxProps,
   };
 };
 
