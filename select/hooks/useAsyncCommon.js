@@ -1,12 +1,18 @@
 import { useState, useMemo, useCallback } from 'react';
 import { trim, debounce } from 'lodash';
 
+/**
+ * 
+ * @param {*} props 
+ * @param {*} param1 
+ * USING for AsyncSelect and AsycnMultiSelect
+ */
 const useAsyncCommon = (props, {
   searchboxRef,
   setUIActive,
   localRef,
 }) => {
-  const [displayOptions, setDisplayOptions] = useState([]);
+  const [displayOptions, setDisplayOptions] = useState([]); // list display options
   const [loaders, setLoaders] = useState({
     isFirstOptionsLoading: true, // the loading for first time component load display options
     isSelectedLoading: false,
@@ -17,6 +23,7 @@ const useAsyncCommon = (props, {
     isOptionsFailure: false,
   });
 
+  // when user scroll to the bottom of display options list will trigger this callback
   const _onBottomIntersecting = useMemo(() => {
     if (!props.onBottomIntersecting) {
       return false;
@@ -32,6 +39,7 @@ const useAsyncCommon = (props, {
     }
   }, [props.onBottomIntersecting, setDisplayOptions]);
 
+  // callback when user typing in searchbox
   const onSearchboxChange = useCallback(e => {
     setLoaders(prev => ({
       ...prev,
@@ -61,8 +69,8 @@ const useAsyncCommon = (props, {
 
   const onDebouceSearchboxChange = useMemo(() => debounce(onSearchboxChange, props.delay), [onSearchboxChange, props.delay]);
 
-      // loading display options for first time user open the overlay that contain display options.
-    // it mean we don't need to load list display options when we don't need it yet
+  // loading display options for first time user open the overlay that contain display options.
+  // it mean we don't need to load list display options when we don't need it yet
   const onShown = useCallback(() => {
     setUIActive(true);
     searchboxRef.current && searchboxRef.current.focus();
@@ -104,7 +112,6 @@ const useAsyncCommon = (props, {
   ]);
 
   return {
-    localRef,
     displayOptions,
     setDisplayOptions,
     loaders,

@@ -1,14 +1,12 @@
-export { default as useAsyncSingleSelect } from './useAsyncSingleSelect';
 
 export { default as useSingleSelect } from './useSingleSelect';
-export { default as useRestNativeProps } from './useRestNativeProps';
+export { default as useAsyncSingleSelect } from './useAsyncSingleSelect';
 export { default as useMultiSelect } from './useMultiSelect';
+export { default as useAsyncMultiSelect } from './useAsyncMultiSelect';
+export { default as useRestNativeProps } from './useRestNativeProps';
 
-
-/**
- * useCommon ca 4 cai deu co
- * useSingleCommon 2 cai single deu co
- * useMultipleCommon 2 cai multiple de co
- * useAsyncCommon 2 cai async deu co
- * useStaticCommon 2 cai static deu co
- */
+export { default as useCommon } from './useCommon';
+export { default as useStaticCommon } from './useStaticCommon';
+export { default as useAsyncCommon } from './useAsyncCommon';
+export { default as useSingleCommon } from './useSingleCommon';
+export { default as useMultipleCommon } from './useMultipleCommon';

@@ -20,6 +20,7 @@ const useCommon = (props, ref) => {
   const [UIActive, setUIActive] = useState(false);
   const onHidden = useCallback(() => setUIActive(false), [setUIActive]);
   
+  // Export controlled to outside of component
   useImperativeHandle(ref, () => ({
     value,
     _select: {
