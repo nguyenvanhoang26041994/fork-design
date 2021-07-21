@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 
 import useRestNativeProps from './useRestNativeProps';
 
@@ -7,6 +7,10 @@ import useSingleCommon from './useSingleCommon';
 import useStaticCommon from './useStaticCommon';
 
 const useSingleSelect = (props, ref) => {
+  const localRef = useRef({
+    isRendered: false,
+    prevValue: null,
+  });
   const {
     isControlled,
     value,
@@ -34,9 +38,9 @@ const useSingleSelect = (props, ref) => {
   const selectedOption = useMemo(() => _options[value], [_options, value]);
 
   const {
-    localRef,
     hideOverlay,
   } = useSingleCommon(props, {
+    localRef,
     UIRef,
     value,
     selectedOption,

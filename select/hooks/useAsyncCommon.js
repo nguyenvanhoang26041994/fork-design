@@ -1,18 +1,11 @@
-import { useRef, useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { trim, debounce } from 'lodash';
 
 const useAsyncCommon = (props, {
   searchboxRef,
   setUIActive,
+  localRef,
 }) => {
-  const localRef = useRef({
-    isLoadOptionsFirstTimeDone: false,
-    isRendered: false,
-    prevValue: null,
-    observer: null,
-    options: {}, // caching options
-  });
-
   const [displayOptions, setDisplayOptions] = useState([]);
   const [loaders, setLoaders] = useState({
     isFirstOptionsLoading: true, // the loading for first time component load display options

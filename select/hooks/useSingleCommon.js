@@ -1,15 +1,11 @@
-import { useRef, useCallback, useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 
 const useSingleCommon = (props, {
   UIRef,
   value,
   selectedOption,
-  localRef: _localRef,
+  localRef,
 }) => {
-  const localRef = _localRef || useRef({
-    isRendered: false,
-    prevValue: null,
-  });
   // force to hide overlay when user select option
   const hideOverlay = useCallback(() => UIRef.current._tippy.hide(), [UIRef]);
 

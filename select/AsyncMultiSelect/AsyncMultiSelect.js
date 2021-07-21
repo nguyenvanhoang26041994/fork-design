@@ -25,7 +25,6 @@ const AsyncMultiSelect = React.forwardRef((props, ref) => {
     UIRef,
     bounds,
     UIActive,
-    setUIActive,
     onHidden,
     _value,
     removeSingleValue,
@@ -34,14 +33,21 @@ const AsyncMultiSelect = React.forwardRef((props, ref) => {
     onMultipleClick,
     localRef,
     displayOptions,
-    setDisplayOptions,
     loaders,
-    setLoaders,
     _onBottomIntersecting,
     onShown,
-    onSearchboxChange,
     onDebouceSearchboxChange,
+    selectedOptions,
   } = useAsyncMultiSelect(props, ref);
+
+  useEffect(() => {
+    if (localRef.current.isRendered && localRef.current.prevValue !== value) {
+      onChanged(value);
+    }
+
+    localRef.current.prevValue = value;
+    localRef.current.isRendered = true;
+  }, [value, onChanged]);
 
   const {
     render,
@@ -56,83 +62,6 @@ const AsyncMultiSelect = React.forwardRef((props, ref) => {
     nameKey,
     ...otherProps
   } = props;
-
-  // selected option(mapping to the value but contain more infomation to display in UI such as name, avatar, ..etc)
-  const [selectedOptions, setSelectedOptions] = useState([]);
-  useEffect(() => {
-    selectedOptions.map((option) => {
-      localRef.current.options[option[valueKey]] = option;
-    });
-    displayOptions.map((option) => {
-      localRef.current.options[option[valueKey]] = option;
-    });
-  }, [selectedOptions, displayOptions, valueKey]);
-
-  localRef.current.setLoaders = setLoaders;
-  localRef.current.getOptionsByValue = getOptionsByValue;
-  localRef.current.setSelectedOptions = setSelectedOptions;
-  useEffect(() => {
-    let nextSelectedOptions = [];
-    const valueDontHaveOptionYet = [];
-    for (let i = 0; i < value.length; i++) {
-      const key = value[i];
-      const optionFromCache = localRef.current.options[key];
-      if (optionFromCache) {
-        nextSelectedOptions.push(optionFromCache)
-      } else {
-        nextSelectedOptions.push(key);
-        valueDontHaveOptionYet.push(key);
-      }
-    }
-
-    if (!valueDontHaveOptionYet.length) {
-      localRef.current.setSelectedOptions(nextSelectedOptions);
-    } else {
-      localRef.current.setLoaders(prev => ({
-        ...prev,
-        isSelectedLoading: true,
-        isSelectedSuccess: false,
-        isSelectedFailure: false,
-      }));
-      localRef.current.getOptionsByValue({
-        selectedValue: valueDontHaveOptionYet,
-      }).then((options) => {
-        localRef.current.setLoaders(prev => ({
-          ...prev,
-          isSelectedLoading: false,
-          isSelectedSuccess: true,
-          isSelectedFailure: false,
-        }));
-        const _options = reduce(options, (rs, option) => {
-          rs[option[valueKey]] = option;
-          return rs;
-        }, {});
-        nextSelectedOptions = nextSelectedOptions.map((option) => {
-          if (typeof option === 'object') {
-            return option;
-          }
-          return _options[option];
-        });
-        localRef.current.setSelectedOptions(nextSelectedOptions);
-      }).catch(() => {
-        localRef.current.setLoaders(prev => ({
-          ...prev,
-          isSelectedLoading: false,
-          isSelectedSuccess: false,
-          isSelectedFailure: true,
-        }));
-      });
-    }
-  }, [value]);
-
-  useEffect(() => {
-    if (localRef.current.isRendered && localRef.current.prevValue !== value) {
-      onChanged(value);
-    }
-
-    localRef.current.prevValue = value;
-    localRef.current.isRendered = true;
-  }, [value, onChanged]);
 
   return (
     <Context.Provider value={{

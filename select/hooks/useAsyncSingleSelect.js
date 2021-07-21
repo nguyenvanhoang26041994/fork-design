@@ -7,6 +7,13 @@ import useSingleCommon from './useSingleCommon';
 import useAsyncCommon from './useAsyncCommon';
 
 const useAsyncSingleSelect = (props, ref) => {
+  const localRef = useRef({
+    isLoadOptionsFirstTimeDone: false,
+    isRendered: false,
+    prevValue: null,
+    observer: null,
+    options: {}, // caching options
+  });
   const {
     isControlled,
     value,
@@ -20,16 +27,15 @@ const useAsyncSingleSelect = (props, ref) => {
   } = useCommon(props, ref);
 
   const {
-    localRef,
     displayOptions,
     setDisplayOptions,
     loaders,
     setLoaders,
     _onBottomIntersecting,
   } = useAsyncCommon(props, {
+    localRef,
     searchboxRef,
     setUIActive,
-
   });
 
   // selected option(mapping to the value but contain more infomation to display in UI such as name, avatar, ..etc)
@@ -38,10 +44,10 @@ const useAsyncSingleSelect = (props, ref) => {
   const {
     hideOverlay,
   } = useSingleCommon(props, {
+    localRef,
     UIRef,
     value,
     selectedOption,
-    localRef,
   });
 
   // make cache selected option
