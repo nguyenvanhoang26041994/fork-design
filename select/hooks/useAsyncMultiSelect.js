@@ -2,8 +2,6 @@ import useCommon from './useCommon';
 import useMultipleCommon from './useMultipleCommon';
 import useAsyncCommon from './useAsyncCommon';
 
-import useAsyncUIRef from './useAsyncUIRef';
-
 const useAsyncMultiSelect = (props, ref) => {
   const {
     isControlled,
@@ -35,20 +33,12 @@ const useAsyncMultiSelect = (props, ref) => {
     loaders,
     setLoaders,
     _onBottomIntersecting,
-  } = useAsyncCommon(props, {
-    searchboxRef,
-  });
-
-  const {
     onShown,
     onSearchboxChange,
     onDebouceSearchboxChange,
-  } = useAsyncUIRef(props, {
-    localRef,
+  } = useAsyncCommon(props, {
     searchboxRef,
     setUIActive,
-    setLoaders,
-    setDisplayOptions,
   });
 
   return {

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-import useAsyncUIRef from './useAsyncUIRef';
 import useRestNativeProps from './useRestNativeProps';
 
 import useCommon from './useCommon';
@@ -29,18 +28,8 @@ const useAsyncSingleSelect = (props, ref) => {
     _onBottomIntersecting,
   } = useAsyncCommon(props, {
     searchboxRef,
-  });
-
-  const {
-    onShown,
-    onSearchboxChange,
-    onDebouceSearchboxChange,
-  } = useAsyncUIRef(props, {
-    localRef,
-    searchboxRef,
     setUIActive,
-    setLoaders,
-    setDisplayOptions,
+
   });
 
   // selected option(mapping to the value but contain more infomation to display in UI such as name, avatar, ..etc)

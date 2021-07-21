@@ -1,5 +1,4 @@
 export { default as useAsyncSingleSelect } from './useAsyncSingleSelect';
-export { default as useAsyncUIRef } from './useAsyncUIRef';
 export { default as useCommonSelectValue } from './useCommonSelectValue';
 
 export { default as useSingleSelect } from './useSingleSelect';
