@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useCallback } from 'react';
 import cn from 'classnames';
 
 import Overlay from '../Overlay';
@@ -16,18 +16,32 @@ const UIAutoComplete = ({ className, overlay, ...otherProps }) => {
 };
 UIAutoComplete.defaultProps = {
   placement: 'bottom-start',
-  trigger: 'manual',
-  hideOnClick: false,
+  trigger: 'click',
+  hideOnClick: true,
   arrow: false,
   maxWidth: 'none',
   offset: [0, 5]
 };
-
-UIAutoComplete.AutoCompleteInput = React.forwardRef(({ className, loading, ...otherProps }, ref) => {
+UIAutoComplete.Option = ({ className, onSelect, value, active, hide, ...otherProps }) => {
+  const _onClick = useCallback(() => onSelect(value), [onSelect, value]);
   return (
-    <button className={cn('fautocomplete-input', className)}>
+    <button
+      className={cn('fautocomplete-option', {
+        'fautocomplete-option-active': active,
+        'fautocomplete-option-hide': hide,
+      }, className)}
+      onClick={_onClick}
+      {...otherProps}
+    />
+  );
+};
+
+UIAutoComplete.AutoCompleteInput = React.forwardRef(({ className, inputRef, onChange, loading, ...otherProps }, ref) => {
+  return (
+    <button className={cn('fautocomplete-input', className)} ref={ref}>
       <input
-        ref={ref}
+        ref={inputRef}
+        onChange={onChange}
         {...otherProps}
       />
       {loading && <Loader.Spinner className="fautocomplete-loading" />}

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 
-import useRestNativeProps from './useRestNativeProps';
+import useRestNativeProps from '../useRestNativeProps';
 
 import useCommon from './useCommon';
 import useSingleCommon from './useSingleCommon';

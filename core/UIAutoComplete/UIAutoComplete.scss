@@ -2,6 +2,30 @@
   min-width: 200px;
 }
 
+.fautocomplete-option {
+  min-height: 38px;
+  outline: 0 !important;
+  outline-style: none;
+  padding-left: 14px;
+  padding-right: 14px;
+  position: relative;
+  touch-action: manipulation;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover:not(:disabled),
+  &.fautocomplete-option-active {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+}
+.fautocomplete-option-hide {
+  display: none !important;
+}
+
 .fautocomplete-input {
   width: 100%;
   background-color: transparent;

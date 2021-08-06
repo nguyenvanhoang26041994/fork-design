@@ -1,65 +1,57 @@
-import React, {  useCallback, useContext, useMemo } from 'react';
-import cn from 'classnames';
+import React, { useCallback, useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { omit } from 'lodash';
 
-import UISelect from '../../core/UISelect';
-import Chip from '../../core/Chip';
-import useMultiSelect from '../hooks/useMultiSelect';
+import UISelect from '../UISelect';
+import Loader from '../Loader';
+import Chip from '../Chip';
+
+import useAsyncMultiSelect from '../../hooks/select-hooks/useAsyncMultiSelect';
 
 const { Overlay, OverlayHeader, OverlayBody, Option, Multiple, Searchbox } = UISelect;
 const Context = React.createContext({
-  selectedOptions: null,
   value: [],
-  setValue: f => f,
   toggleSingleValue: f => f,
   removeSingleValue: f => f,
-  filter: f => f,
-  searchText: '',
-  searchRegex: null,
   computed: {
     _value: {},
   },
 });
 
-const MultiSelect = React.forwardRef((props, ref) => {
+const AsyncMultiSelect = React.forwardRef((props, ref) => {
   const {
     value,
-    setValue,
     bounds,
     onHidden,
-     _value,
+    _value,
     removeSingleValue,
     toggleSingleValue,
     onClickOutside,
-    searchText,
-    searchRegex,
+    displayOptions,
+    loaders,
+    _onBottomIntersecting,
     onShown,
     selectedOptions,
     UIProps,
     searchboxProps,
-  } = useMultiSelect(props, ref);
+  } = useAsyncMultiSelect(props, ref);
 
   const {
     render,
     renderSearchbox,
-    filter,
     children,
+    valueKey,
+    nameKey,
   } = props;
 
   return (
     <Context.Provider value={{
-      selectedOptions,
       value,
-      setValue,
       toggleSingleValue,
       removeSingleValue,
-      filter,
-      searchText,
-      searchRegex,
       computed: {
         _value,
-      },
+      }
     }}>
       <UISelect
         overlay={(
@@ -67,13 +59,30 @@ const MultiSelect = React.forwardRef((props, ref) => {
             {renderSearchbox && (
               <OverlayHeader>
                 {typeof renderSearchbox === 'boolean'
-                  ? MultiSelect.renderSearchbox(searchboxProps)
+                  ? AsyncMultiSelect.renderSearchbox(searchboxProps)
                   : renderSearchbox(searchboxProps)
                 }
               </OverlayHeader>
             )}
-            <OverlayBody>
-              {children}
+            <OverlayBody onBottomIntersecting={_onBottomIntersecting}>
+              {loaders.isFirstOptionsLoading
+                ? (
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    padding: '10px',
+                  }}>
+                    <Loader.Spinner />
+                  </div>
+                ) : displayOptions.map((option, index) => {
+                  return children({
+                    key: option[valueKey],
+                    value: option[valueKey],
+                    data: option,
+                    children: option[nameKey]
+                  }, option, index);
+                })}
             </OverlayBody>
           </Overlay>
         )}
@@ -83,49 +92,50 @@ const MultiSelect = React.forwardRef((props, ref) => {
         trigger="manual"
         onClickOutside={onClickOutside}
       >
-        {render(UIProps, selectedOptions)}
+        {render(UIProps, selectedOptions, {
+          valueKey,
+          nameKey,
+        })}
       </UISelect>
     </Context.Provider>
   );
 });
 
-MultiSelect.Multiple = Multiple;
-MultiSelect.renderSearchbox = props => <MultiSelect.Searchbox {...props} />;
-MultiSelect.displayName = 'MultiSelect';
-MultiSelect.propTypes = {};
-MultiSelect.defaultProps = {
+
+
+AsyncMultiSelect.Multiple = Multiple;
+AsyncMultiSelect.renderSearchbox = props => <AsyncMultiSelect.Searchbox {...props} />;
+AsyncMultiSelect.displayName = 'AsyncMultiSelect';
+AsyncMultiSelect.propTypes = {
+  valueKey: PropTypes.string.isRequired,
+  nameKey: PropTypes.string.isRequired,
+};
+AsyncMultiSelect.defaultProps = {
   delay: 200,
   onChanged: f => f,
   setValue: f => f,
   defaultValue: [],
 
+  children: props => <AsyncMultiSelect.Option {...props} />,
+
   // default render the main UI
-  render: (props, selectedOptions) => (
-    <MultiSelect.Multiple {...props}>
-      {selectedOptions.map((optionProps) => (
-        <MultiSelect.Chip closable key={optionProps.value} value={optionProps.value}>
-          {optionProps.children}
-        </MultiSelect.Chip>
+  render: (props, selectedOptions, { valueKey, nameKey }) => (
+    <AsyncMultiSelect.Multiple {...props}>
+      {selectedOptions.map((option) => (
+        <AsyncMultiSelect.Chip closable key={option[valueKey]} value={option[valueKey]}>
+          {option[nameKey]}
+        </AsyncMultiSelect.Chip>
       ))}
-    </MultiSelect.Multiple>
+    </AsyncMultiSelect.Multiple>
   ),
 
   // render searchbox
   // set true will render default searchbox
   // callback when you want custom the searchbox
   renderSearchbox: false,
-
-  // the logic to show/hide display option 
-  filter: (props, { searchRegex }) => {
-    if (typeof props.children === 'string') {
-      return searchRegex.test(props.children);
-    }
-
-    return !!props.children;
-  },
 };
 
-MultiSelect.Chip = ({ value, ...otherProps }) => {
+AsyncMultiSelect.Chip = ({ value, ...otherProps }) => {
   const { removeSingleValue } = useContext(Context);
   const onClick = useCallback((e) => {
     e.preventDefault();
@@ -144,12 +154,9 @@ MultiSelect.Chip = ({ value, ...otherProps }) => {
   );
 };
 
-MultiSelect.Option = ({ value, ...otherProps }) => {
+AsyncMultiSelect.Option = ({ value, ...otherProps }) => {
   const {
     toggleSingleValue,
-    filter,
-    searchText,
-    searchRegex,
     computed: {
       _value,
     },
@@ -158,33 +165,18 @@ MultiSelect.Option = ({ value, ...otherProps }) => {
     toggleSingleValue(value);
   }, [value, toggleSingleValue]);
 
-  const hide = useMemo(() => !filter({
-    value,
-    ...otherProps
-  }, {
-    searchText,
-    searchRegex
-  }), [
-    value,
-    otherProps,
-    filter,
-    searchText,
-    searchRegex,
-  ]);
-
   const _otherProps = useMemo(() => omit(otherProps, ['data']), [otherProps]);
   return (
     <Option
       onClick={onClick}
       active={_value[value]}
-      hide={hide}
       {..._otherProps}
     />
   );
 };
-MultiSelect.Option.defaultProps = {
+AsyncMultiSelect.Option.defaultProps = {
   value: '',
 };
 
-MultiSelect.Searchbox = Searchbox;
-export default MultiSelect;
+AsyncMultiSelect.Searchbox = Searchbox;
+export default AsyncMultiSelect;

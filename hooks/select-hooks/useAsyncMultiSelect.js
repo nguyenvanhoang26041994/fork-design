@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { reduce } from 'lodash';
 
-import useRestNativeProps from './useRestNativeProps';
+import useRestNativeProps from '../useRestNativeProps';
 import useCommon from './useCommon';
 import useMultipleCommon from './useMultipleCommon';
 import useAsyncCommon from './useAsyncCommon';

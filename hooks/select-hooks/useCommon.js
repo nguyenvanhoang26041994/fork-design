@@ -4,7 +4,7 @@ import {
   useCallback,
   useImperativeHandle
 } from 'react';
-import usePureMeansure from '../../hooks/usePureMeansure';
+import usePureMeansure from '../usePureMeansure';
 
 const useCommon = (props, ref) => {
   const isControlled = useRef('value' in props);

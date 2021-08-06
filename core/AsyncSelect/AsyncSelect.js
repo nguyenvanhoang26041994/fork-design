@@ -2,9 +2,9 @@ import React, { useCallback, useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { omit } from 'lodash';
 
-import UISelect from '../../core/UISelect';
-import Loader from '../../core/Loader';
-import useAsyncSingleSelect from '../hooks/useAsyncSingleSelect';
+import UISelect from '../UISelect';
+import Loader from '../Loader';
+import useAsyncSingleSelect from '../../hooks/select-hooks/useAsyncSingleSelect';
 
 const { Overlay, OverlayHeader, OverlayBody, Option, Single, Searchbox } = UISelect;
 
@@ -76,7 +76,8 @@ const AsyncSelect = React.forwardRef((props, ref) => {
                     data: option,
                     children: option[nameKey],
                   }, option, index);
-                })}
+                })
+              }
             </OverlayBody>
           </Overlay>
         )}

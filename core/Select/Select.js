@@ -1,8 +1,8 @@
 import React, { useCallback, useContext, useMemo } from 'react';
 import { omit } from 'lodash';
 
-import UISelect from '../../core/UISelect';
-import useSingleSelect from '../hooks/useSingleSelect';
+import UISelect from '../UISelect';
+import useSingleSelect from '../../hooks/select-hooks/useSingleSelect';
 
 const { Overlay, OverlayHeader, OverlayBody, Option, Single, Searchbox } = UISelect;
 const Context = React.createContext({

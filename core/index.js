@@ -1,6 +1,5 @@
 export { default as Alert } from './Alert';
 export { default as Animated } from './Animated';
-export { default as Autocomplete } from './Autocomplete';
 export { default as Avatar } from './Avatar';
 export { default as AvatarGroup } from './AvatarGroup';
 export { default as Badge } from './Badge';
@@ -39,3 +38,8 @@ export { default as Textbox } from './Textbox';
 export { default as Timeline } from './Timeline';
 export { default as Tooltip } from './Tooltip';
 export { default as Image } from './Image';
+export { default as Select } from './Select';
+export { default as AsyncSelect } from './AsyncSelect';
+export { default as MultiSelect } from './MultiSelect';
+export { default as AsyncMultiSelect } from './AsyncMultiSelect';
+export { default as AutoComplete } from './AutoComplete';
