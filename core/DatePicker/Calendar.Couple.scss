@@ -1,0 +1,26 @@
+.fui-couple-calendar {
+  background-color: var(--btn-bg);
+  border-radius: 0.75em;
+  box-shadow: var(--popup--shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.fui-couple-calendar-body {
+  display: flex;
+
+  .fui-calendar {
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+.fui-couple-calendar-footer {
+  display: flex;
+  padding: 0.5em 1em;
+
+  > * {
+    margin-right: 0.5rem;
+  }
+}

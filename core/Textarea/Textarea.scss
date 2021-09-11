@@ -10,8 +10,7 @@
   width: 100%;
 
   &::placeholder {
-    color: var(--text-color--placeholder);
-    font-style: italic;
+    color: var(--placeholder-text-color);
   }
 
   &:hover,

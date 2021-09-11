@@ -5,7 +5,7 @@
 .fselect-multiple {
   width: 100%;
   background-color: transparent;
-  border: 1px solid var(--btn-bg);
+  border: 1px solid var(--skeleton-color);
   border-radius: var(--border-radius);
   cursor: pointer;
   min-height: var(--input-height);
@@ -36,7 +36,7 @@
   }
 }
 .fselect-single {
-  padding-left: 14px;
+  padding-left: var(--input-spacing);;
   padding-right: 32px;
 }
 .fselect-multiple {
@@ -85,6 +85,7 @@
   cursor: pointer;
   width: 100%;
 
+  &.fselect-option.selected,
   &:hover:not(:disabled),
   &.fselect-option-active {
     background-color: var(--primary);

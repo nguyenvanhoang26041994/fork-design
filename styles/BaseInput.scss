@@ -2,6 +2,7 @@
 .ftextbox,
 .fpassword,
 .finput-number {
+  color: var(--input-text-color);
   background-color: var(--input--bg);
   border: 0;
   border: 1px solid var(--skeleton-color);
@@ -19,8 +20,7 @@
   }
 
   &::placeholder {
-    color: var(--text-color--placeholder);
-    font-style: italic;
+    color: var(--placeholder-text-color);
   }
 
   &:disabled,

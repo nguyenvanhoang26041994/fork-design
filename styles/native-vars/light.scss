@@ -1,6 +1,7 @@
 .light-mode {
   --body-bg: #f4f8f9;
   --bg: #fff;
+  --bg-hover: #f4f4f4;
   --bg-secondary: #f8f8f8;
   --bg-disabled: #eceef3;
   --color: #333;
@@ -45,4 +46,8 @@
   --chip-bg: #eceef3;
   --chip-hover-bg: #e4e6eb;
   --chip-close-bg: #d3d5d8;
+
+  // INPUT
+  --input-text-color: #000;
+  --placeholder-text-color: #ced4da;
 }

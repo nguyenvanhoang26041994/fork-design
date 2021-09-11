@@ -1,6 +1,7 @@
 .dark-mode {
   --body-bg: #181818;
   --bg: #242526;
+  --bg-hover: #444;
   --bg-secondary: #242526;
   --bg-disabled: #4f5151;
   --color: var(--white);
@@ -45,4 +46,8 @@
   --chip-bg: #4b4c4f;
   --chip-hover-bg: #696a6b;
   --chip-close-bg: #818286;
+
+  // INPUT
+  --input-text-color: #fff;
+  --placeholder-text-color: #343638;
 }
