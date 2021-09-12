@@ -15,7 +15,7 @@
 .fpincode-input {
   outline: 0 !important;
   border: 1px solid var(--border-color);
-  border-radius: var(--border-radius-medium);
+  border-radius: var(--border-radius);
   width: 2em;
   height: 2em;
   font-size: var(--pincode-size);
@@ -24,4 +24,12 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
+
+  &::placeholder {
+    font-size: 1.5em;
+    position: absolute;
+    top: 0.45em;
+    left: 0.45em;
+  }
 }
