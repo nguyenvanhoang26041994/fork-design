@@ -1,0 +1,27 @@
+.fpincode {
+  --pincode-size: 20px;
+  display: flex;
+
+  .fpincode-input:not(:nth-child(1)) {
+    margin-left: 0.25em;
+  }
+}
+.fpincode-valid {
+  .fpincode-input {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+}
+.fpincode-input {
+  outline: 0 !important;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-medium);
+  width: 2em;
+  height: 2em;
+  font-size: var(--pincode-size);
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

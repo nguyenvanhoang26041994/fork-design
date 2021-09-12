@@ -24,6 +24,7 @@ export { default as Popover } from './Popover';
 export { default as Portal } from './Portal';
 export { default as Progress } from './Progress';
 export { default as PureConfirm } from './PureConfirm';
+export { default as Pincode } from './Pincode';
 export { default as Popconfirm } from './Popconfirm';
 export { default as Radio } from './Radio';
 export { default as Searchbox } from './Searchbox';
