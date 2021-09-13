@@ -25,30 +25,29 @@ const Pincode = React.memo(React.forwardRef(({
   const valuesStr = useMemo(() => values.map(val => val || ' ').join(''), [values]);
   const isValid = useMemo(() => /^\S+$/.test(valuesStr), [valuesStr]);
 
-  self.length = length;
-  self.validate = validate;
-  self.format = format;
-  self.setValues = setValues;
-  self.paste = (str) => {
+  const paste = useCallback((str) => {
     const pastedData = str
       .trim()
-      .slice(0, self.length)
+      .slice(0, length)
       .split('')
-      .map((item) => self.format(item));
-    if (pastedData && pastedData.length === self.length) {
+      .map((item) => format(item));
+    if (pastedData && pastedData.length === length) {
       const allIsValid = pastedData
-        .map((item) => self.validate.test(item))
+        .map((item) => validate.test(item))
         .filter(valid => valid)
         .length === pastedData.length;
       if (allIsValid) {
-        self.setValues(pastedData);
+        setValues(pastedData);
       }
     }
-  };
+  }, [length, length, validate, setValues]);
   useEffect(() => {
     ref.current.inputs = ref.current.querySelectorAll('.fpincode-input');
-    _hiddenRef.current.paste = self.paste;
   }, []);
+
+  useEffect(() => {
+    _hiddenRef.current.paste = paste;
+  }, [paste]);
 
   self.isValid = isValid;
   self.valuesStr = valuesStr;
@@ -108,9 +107,9 @@ const Pincode = React.memo(React.forwardRef(({
     e.preventDefault();
     const currentIndex = +e.target.dataset.index;
     if (currentIndex === 0) {
-      self.paste(e.clipboardData.getData('text/plain'));
+      paste(e.clipboardData.getData('text/plain'));
     }
-  }, []);
+  }, [paste]);
   const onKeyDown = useCallback((e) => {
     const currentIndex = +e.target.dataset.index;
     if (e.key === 'Backspace' || e.key === 'Delete') {
