@@ -40,7 +40,7 @@ const Pincode = React.memo(React.forwardRef(({
         setValues(pastedData);
       }
     }
-  }, [length, length, validate, setValues]);
+  }, [length, format, validate, setValues]);
   useEffect(() => {
     ref.current.inputs = ref.current.querySelectorAll('.fpincode-input');
   }, []);
