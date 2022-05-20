@@ -1,16 +1,3 @@
-@import '~tippy.js/animations/perspective-extreme.css';
-@import '~tippy.js/animations/perspective-subtle.css';
-@import '~tippy.js/animations/perspective.css';
-@import '~tippy.js/animations/scale-extreme.css';
-@import '~tippy.js/animations/scale-subtle.css';
-@import '~tippy.js/animations/scale.css';
-@import '~tippy.js/animations/shift-away-extreme.css';
-@import '~tippy.js/animations/shift-away-subtle.css';
-@import '~tippy.js/animations/shift-away.css';
-@import '~tippy.js/animations/shift-toward-extreme.css';
-@import '~tippy.js/animations/shift-toward-subtle.css';
-@import '~tippy.js/animations/shift-toward.css';
-
 .tippy-box[data-animation=fade][data-state=hidden] {
   opacity: 0
 }

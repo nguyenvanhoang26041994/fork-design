@@ -1,6 +1,6 @@
 {
   "name": "fork-design",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Fork Design",
   "main": "lib/index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "build:unpkg": "npm run clean-dist && cross-env NODE_ENV=production webpack",
     "clean-lib": "rimraf \"lib\"",
     "build:lib": "npm run clean-lib && babel src -d lib",
-    "build": "npm run build:lib && npm run build:unpkg",
+    "build:css": "sass --load-path=node_modules/tippy.js/animations src/styles/index.scss dist/fork-design.min.css --no-source-map",
+    "build": "npm run build:lib && npm run build:unpkg && npm run build:css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,7 +25,7 @@
     "dist",
     "lib"
   ],
-  "unpkg": "dist/fork-ui.min.js",
+  "unpkg": "dist/fork-design.min.js",
   "bugs": {
     "url": "https://github.com/nguyenvanhoang26041994/fork-design/issues"
   },

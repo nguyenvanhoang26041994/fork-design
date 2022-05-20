@@ -1,6 +1,19 @@
 @import './fade.scss';
 @import './slide.scss';
 @import './zoom.scss';
+@import './tippy/perspective-extreme.scss';
+@import './tippy/perspective-subtle.scss';
+@import './tippy/perspective.scss';
+@import './tippy/scale-extreme.scss';
+@import './tippy/scale-subtle.scss';
+@import './tippy/scale.scss';
+@import './tippy/shift-away-extreme.scss';
+@import './tippy/shift-away-subtle.scss';
+@import './tippy/shift-away.scss';
+@import './tippy/shift-toward-extreme.scss';
+@import './tippy/shift-toward-subtle.scss';
+@import './tippy/shift-toward.scss';
+
 
 .animated {
   -webkit-animation-duration: 1s;

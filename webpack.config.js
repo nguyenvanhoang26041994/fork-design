@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   entry: './src',
   output: {
-    filename: 'fork-ui.min.js',
+    filename: 'fork-design.min.js',
     libraryTarget: 'umd',
     umdNamedDefine: true,
   },
