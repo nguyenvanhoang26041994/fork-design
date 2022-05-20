@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nguyenvanhoang26041994/fork-ui-v2.git"
+    "url": "git+https://github.com/nguyenvanhoang26041994/fork-design.git"
   },
   "keywords": [
     "fork",
@@ -28,9 +28,9 @@
   ],
   "unpkg": "dist/fork-ui.min.js",
   "bugs": {
-    "url": "https://github.com/nguyenvanhoang26041994/fork-ui-v2/issues"
+    "url": "https://github.com/nguyenvanhoang26041994/fork-design/issues"
   },
-  "homepage": "https://github.com/nguyenvanhoang26041994/fork-ui-v2#readme",
+  "homepage": "https://github.com/nguyenvanhoang26041994/fork-design#readme",
   "dependencies": {
     "@tippyjs/react": "^4.2.6",
     "antd": "^4.20.5",
