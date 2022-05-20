@@ -1,6 +1,6 @@
 {
   "name": "fork-design",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Fork Design",
   "main": "lib/index.js",
   "scripts": {
