@@ -3,7 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
-import ChevronDown from '../../icons/ChevronDown';
+import ChevronDown from '../icons/ChevronDown';
 import Animated from '../Animated';
 import Memo from '../Memo';
 

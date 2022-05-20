@@ -2,9 +2,9 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
-import Check from '../../icons/Check';
-import X from '../../icons/X';
-import Ban from '../../icons/Ban';
+import Check from '../icons/Check';
+import X from '../icons/X';
+import Ban from '../icons/Ban';
 import useStepper from './useStepper';
 
 const mStatus = Object.freeze({

@@ -5,7 +5,7 @@ import getBeginDateOfTheNextMonth from '../../utils/getBeginDateOfTheNextMonth';
 import getBeginDateOfThePrevMonth from '../../utils/getBeginDateOfThePrevMonth';
 
 import Button from '../Button';
-import Refresh from '../../icons'
+import Refresh from '../icons/Refresh'
 import Calendar from '../Calendar';
 
 const noop = f => f;

@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import X from '../../icons/X';
+import X from '../icons/X';
 
 const Chip = ({
     className,

@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import Clock from '../../icons/Clock';
+import Clock from '../icons/Clock';
 
 const Content = ({ className, ...otherProps}) => <div className={cn('ftimeline-content', className)} {...otherProps} />;
 const Button = ({ className, ...otherProps}) => <div className={cn('ftimeline-btn', className)} {...otherProps} />;

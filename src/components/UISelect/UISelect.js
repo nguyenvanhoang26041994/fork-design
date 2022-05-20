@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Overlay from '../Overlay';
 import Searchbox from '../Searchbox';
-import ChevronDown from '../../icons/ChevronDown';
+import ChevronDown from '../icons/ChevronDown';
 import Loader from '../Loader';
 
 const UISelect = ({ className, overlay, ...otherProps }) => {

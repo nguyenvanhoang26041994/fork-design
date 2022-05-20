@@ -3,7 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
-import X from '../../icons/X';
+import X from '../icons/X';
 
 const Closer = ({ className, ...otherProps }) => {
   return (
