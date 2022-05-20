@@ -1,7 +1,7 @@
 {
-  "name": "fork-ui",
+  "name": "fork-design",
   "version": "1.0.0",
-  "description": "Fork UI",
+  "description": "Fork Design",
   "main": "lib/index.js",
   "scripts": {
     "clean-dist": "rimraf \"dist\"",
