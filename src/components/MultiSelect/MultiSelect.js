@@ -1,7 +1,7 @@
 import React, {  useCallback, useContext, useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import { omit } from 'lodash';
+import omit from 'lodash/omit';
 
 import UISelect from '../UISelect';
 import Chip from '../Chip';

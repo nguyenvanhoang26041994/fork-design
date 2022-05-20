@@ -1,5 +1,6 @@
 import { useState, useMemo, useCallback } from 'react';
-import { trim, debounce } from 'lodash';
+import trim from 'lodash/trim';
+import debounce from 'lodash/debounce';
 
 /**
  * 

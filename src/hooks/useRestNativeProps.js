@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { pick } from 'lodash';
+import pick from 'lodash/pick';
 
 const useRestNativeProps = (props) => {
   return useMemo(() => pick(props, [

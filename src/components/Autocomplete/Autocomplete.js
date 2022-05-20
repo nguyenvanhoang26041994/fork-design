@@ -9,7 +9,9 @@ import React, {
 import UIAutoComplete from '../UIAutoComplete';
 import usePureMeansure from '../../hooks/usePureMeansure';
 import useRestNativeProps from '../../hooks/useRestNativeProps';
-import { omit, trim, debounce } from 'lodash';
+import omit from 'lodash/omit';
+import trim from 'lodash/trim';
+import debounce from 'lodash/debounce';
 
 const useAutoComplete = (props, ref) => {
   const inputRef = useRef();

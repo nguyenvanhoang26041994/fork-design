@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState, useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { trim } from 'lodash';
+import trim from 'lodash/trim';
 import cn from 'classnames';
 
 const Pincode = React.memo(React.forwardRef(({

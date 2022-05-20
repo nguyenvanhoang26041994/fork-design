@@ -18,18 +18,18 @@
   ],
   "author": "Hoang Nguyen",
   "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "unpkg": "dist/fork-ui.min.js",
   "bugs": {
     "url": "https://github.com/nguyenvanhoang26041994/fork-ui-v2/issues"
   },
   "homepage": "https://github.com/nguyenvanhoang26041994/fork-ui-v2#readme",
-  "externals": {
-    "react": "React",
-    "react-dom": "ReactDOM",
-    "lodash": "_",
-    "classnames": "cn"
-  },
   "dependencies": {
     "@tippyjs/react": "^4.2.6",
+    "antd": "^4.20.5",
     "classnames": "^2.3.1",
     "lodash": "^4.17.21",
     "prop-types": "^15.8.1",

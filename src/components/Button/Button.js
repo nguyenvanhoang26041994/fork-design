@@ -3,7 +3,8 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Loader from '../Loader';
-import { isString, isNumber } from 'lodash';
+import isString from 'lodash/isString';
+import isNumber from 'lodash/isNumber';
 
 const mColors = Object.freeze({
   default: 'fbtn-default',

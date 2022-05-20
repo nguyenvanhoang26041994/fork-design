@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
-import { reduce } from 'lodash';
+import reduce from 'lodash/reduce';
 
 import useRestNativeProps from '../useRestNativeProps';
 import useCommon from './useCommon';

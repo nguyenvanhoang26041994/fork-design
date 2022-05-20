@@ -1,4 +1,5 @@
-import { isArray, isObject } from 'lodash';
+import isArray from 'lodash/isArray';
+import isObject from 'lodash/isObject';
 
 /**
  * Find latest props based on dependencies.

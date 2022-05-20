@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useEffect } from 'react';
-import { reduce } from 'lodash';
+import reduce from 'lodash/reduce';
 
 const useMultipleCommon = (props, {
   localRef,

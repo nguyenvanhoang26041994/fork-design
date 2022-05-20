@@ -1,5 +1,7 @@
 import { useState, useMemo, useCallback } from 'react';
-import { reduce, debounce, trim } from 'lodash';
+import reduce from 'lodash/reduce';
+import debounce from 'lodash/debounce';
+import trim from 'lodash/trim';
 
 const useStaticCommon = (props, {
   searchboxRef,
