@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import Button from '../Button';
-import X from '../icons/X';
+import X from '../../icons/X';
 
 const Closer = ({ className, ...otherProps }) => {
   return (
