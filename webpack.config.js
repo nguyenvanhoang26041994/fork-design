@@ -53,20 +53,6 @@ module.exports = {
       amd: 'resize-observer-polyfill',
     },
   },
-  resolve: {
-    modules: ['node_modules'],
-    extensions: [
-      '.web.tsx',
-      '.web.ts',
-      '.web.jsx',
-      '.web.js',
-      '.ts',
-      '.tsx',
-      '.js',
-      '.jsx',
-      '.json',
-    ],
-  },
   module: {
     rules: [
       {
