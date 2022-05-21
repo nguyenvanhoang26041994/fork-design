@@ -26,9 +26,13 @@ _site
 _data
 dist
 report.html
-/lib
+/core
+/HOCs
+/hooks
 /icons
-/es
+/libs
+/utils
+/index.js
 elasticsearch-*
 config/base.yaml
 /.vscode/

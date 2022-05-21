@@ -1,19 +1,13 @@
 {
   "name": "fork-design",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Fork Design",
-  "main": "lib",
-  "unpkg": "dist/fork-design.bundle.js",
-  "style": "dist/fork-design.css",
+  "main": "index.js",
+  "style": "fork-design.css",
   "scripts": {
-    "clean-dist": "rimraf \"dist\"",
-    "build:unpkg": "npm run clean-dist && cross-env NODE_ENV=production webpack",
-    "clean-lib": "rimraf \"lib\"",
-    "build:lib": "npm run clean-lib && babel src -d lib",
-    "clean-icons": "rimraf \"icons\"",
-    "build:icons": "npm run clean-icons && babel src/icons -d icons",
-    "build:css": "sass --load-path=node_modules/tippy.js/animations src/styles/index.scss dist/fork-design.css --no-source-map",
-    "build": "npm run build:lib && npm run build:icons && npm run build:unpkg && npm run build:css",
+    "clean": "rimraf ./core/* ./HOCs/* ./hooks/* ./icons/* ./libs/* ./utils/* ./index.js ./fork-design.css",
+    "build:css": "sass src/styles/index.scss ./fork-design.css --no-source-map",
+    "build": "npm run clean && babel src -d ./ && npm run build:css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,9 +20,14 @@
   "author": "Hoang Nguyen",
   "license": "MIT",
   "files": [
-    "dist",
-    "lib",
-    "icons"
+    "core",
+    "HOCs",
+    "hooks",
+    "icons",
+    "libs",
+    "utils",
+    "index.js",
+    "fork-design.css"
   ],
   "bugs": {
     "url": "https://github.com/nguyenvanhoang26041994/fork-design/issues"
