@@ -3,5 +3,5 @@
     "@babel/preset-env",
     "@babel/preset-react"
   ],
-  "exclude": ["./src/libs"]
+  "exclude": ["./src/libs/fuzzysort.js"]
 }
