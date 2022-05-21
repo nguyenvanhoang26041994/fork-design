@@ -1,6 +1,6 @@
 {
   "name": "fork-design",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Fork Design",
   "main": "index.js",
   "style": "fork-design.css",
@@ -23,13 +23,15 @@
   "license": "MIT",
   "files": [
     "core",
+    "gallery",
     "HOCs",
     "hooks",
     "icons",
     "libs",
     "utils",
     "index.js",
-    "fork-design.css"
+    "fork-design.css",
+    "fork-design-gallery.css"
   ],
   "bugs": {
     "url": "https://github.com/nguyenvanhoang26041994/fork-design/issues"
