@@ -1,5 +1,5 @@
 import React from 'react';
-import withIconEnhancer from '../HOCs/withIconEnhancer';
+import withIconEnhancer from './HOCs/withIconEnhancer';
 
 export default withIconEnhancer('Tallymark4', 'tallymark-4', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

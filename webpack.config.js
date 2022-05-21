@@ -1,11 +1,14 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src',
+  entry: {
+    'fork-design': './src/index.js',
+    'fork-icons': './src/icons/index.js'
+  },
   output: {
-    filename: 'fork-design.min.js',
+    filename: '[name].bundle.js',
+    library: ['FD', 'FI'],
     libraryTarget: 'umd',
-    umdNamedDefine: true,
   },
   externals: {
     react: {

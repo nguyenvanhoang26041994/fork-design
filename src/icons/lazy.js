@@ -1,4 +1,4 @@
-import withIconLazy from '../HOCs/withIconLazy';
+import withIconLazy from './HOCs/withIconLazy';
 
 export const TwoFa = withIconLazy('TwoFa', () => import('./TwoFa'));
 export const ThreeDCubeSphere = withIconLazy('ThreeDCubeSphere', () => import('./ThreeDCubeSphere'));
