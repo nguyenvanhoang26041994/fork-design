@@ -1,6 +1,6 @@
 {
   "name": "fork-design",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Fork Design",
   "main": "index.js",
   "style": "fork-design.css",
