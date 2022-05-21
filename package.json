@@ -1,12 +1,14 @@
 {
   "name": "fork-design",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Fork Design",
   "main": "index.js",
   "style": "fork-design.css",
   "scripts": {
-    "clean": "rimraf ./core/* ./HOCs/* ./hooks/* ./icons/* ./libs/* ./utils/* ./index.js ./fork-design.css",
-    "build:css": "sass src/styles/index.scss ./fork-design.css --no-source-map",
+    "clean": "rimraf ./core/* ./HOCs/* ./hooks/* ./icons/* ./libs/* ./utils/* ./index.js ./fork-design.css ./fork-design-gallery.css",
+    "build:gallery-css": "sass src/gallery/index.scss ./fork-design-gallery.css --no-source-map",
+    "build:core-css": "sass src/styles/index.scss ./fork-design.css --no-source-map",
+    "build:css": "npm run build:core-css && npm run build:gallery-css",
     "build": "npm run clean && babel src -d ./ && npm run build:css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
