@@ -1,21 +1,22 @@
 import React from 'react';
 import cn from 'classnames';
 
+import makeStyle from '../../utils/makeStyle';
 import mapEnumClass from '../../utils/mapEnumClass';
 
-type TDirection = 'row' | 'row-reverse' | 'col' | 'col-reverse';
-type TJustify = 'start' | 'center' | 'end' | 'between' | 'around';
-type TItems = 'stretch' | 'start' | 'center' | 'end' | 'baseline';
-type TContent = 'start' | 'center' | 'end' | 'between' | 'around';
-type TSelf = 'auto' | 'start' | 'center' | 'end' | 'stretch';
-type TWrap = 'wrap' | 'no-wrap' | 'reverse';
-type TGrow = 'grow' | 'no-grow';
-type TShrink = 'shrink' | 'no-shrink';
-type TFlex = 'initial' | '1' | 'auto' | 'none';
-type TW = '1/2' | '6/12' | '1/3' | '4/12' | '2/3' | '8/12' | '1/4' | '3/12' | '3/4' | '9/12' | '1/5' | '2/5' | '3/5' | '4/5' | '1/6' | '2/12' | '5/6' | '10/12' | '1/12' | '5/12' | '7/12' | '11/12' | '12/12' | 'full';
-type TQuery = 'sm' | 'md' | 'lg' | 'xl';
+export type TDirection = 'row' | 'row-reverse' | 'col' | 'col-reverse';
+export type TJustify = 'start' | 'center' | 'end' | 'between' | 'around';
+export type TItems = 'stretch' | 'start' | 'center' | 'end' | 'baseline';
+export type TContent = 'start' | 'center' | 'end' | 'between' | 'around';
+export type TSelf = 'auto' | 'start' | 'center' | 'end' | 'stretch';
+export type TWrap = 'wrap' | 'no-wrap' | 'reverse';
+export type TGrow = 'grow' | 'no-grow';
+export type TShrink = 'shrink' | 'no-shrink';
+export type TFlex = 'initial' | '1' | 'auto' | 'none';
+export type TW = '1/2' | '6/12' | '1/3' | '4/12' | '2/3' | '8/12' | '1/4' | '3/12' | '3/4' | '9/12' | '1/5' | '2/5' | '3/5' | '4/5' | '1/6' | '2/12' | '5/6' | '10/12' | '1/12' | '5/12' | '7/12' | '11/12' | '12/12' | 'full';
+export type TQuery = 'sm' | 'md' | 'lg' | 'xl';
 
-interface FlexBaseProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface FlexBaseProps extends React.HTMLAttributes<HTMLDivElement> {
   direction?: TDirection,
   justify?: TJustify,
   items?: TItems,
@@ -29,6 +30,7 @@ interface FlexBaseProps extends React.HTMLAttributes<HTMLDivElement> {
 };
 
 export interface FlexProps extends FlexBaseProps {
+  sx?: any,
   children?: any,
   sm?: FlexBaseProps,
   md?: FlexBaseProps,
@@ -118,7 +120,7 @@ export const mWidth = Object.freeze({
   'full': 'w-full',
 });
 
-const mDirection = Object.freeze({
+export const mDirection = Object.freeze({
   'row': 'flex-row',
   'col': 'flex-col',
   'col-reverse': 'flex-col-reverse',
@@ -131,6 +133,7 @@ export const mapEnumResponsiveClass = (object: any, propName: any, query: TQuery
   }
   return '';
 };
+
 export const getResponsive = (
   {
     direction,
@@ -172,6 +175,8 @@ export const getResponsiveAll = ({ sm = {}, md = {}, lg = {}, xl = {} }: {
   );
 
 const Flex = React.forwardRef<HTMLDivElement, FlexProps>(({
+  sx,
+  style,
   className,
   children,
   direction,
@@ -207,6 +212,7 @@ const Flex = React.forwardRef<HTMLDivElement, FlexProps>(({
       getResponsiveAll({ sm, md, lg, xl }),
       className
     )}
+    style={makeStyle(sx, style)}
     {...otherProps}
   >
     {children}

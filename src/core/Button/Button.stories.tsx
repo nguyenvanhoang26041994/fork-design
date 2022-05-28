@@ -1,6 +1,7 @@
 import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Button, { ButtonProps } from './Button';
+import Button from './Button';
 import Flex from '../Flex';
 import Power from '../../icons/Power';
 
@@ -20,7 +21,7 @@ export default {
   },
   argTypes: {
     color: {
-      options: ['inherit', 'primary', 'secondary', 'success', 'error', 'info', 'warning'],
+      options: ['default', 'primary', 'secondary', 'success', 'error', 'info', 'warning'],
       control: { type: 'select' },
       description: 'Set button color',
       defaultValue: 'primary',
@@ -35,6 +36,11 @@ export default {
       description: 'Set the loading status of button',
       defaultValue: false,
     },
+    rounded: {
+      control: { type: 'boolean' },
+      description: 'Set shape button to rounded',
+      defaultValue: false,
+    },
     size: {
       options: ['small', 'medium', 'large'],
       control: { type: 'select' },
@@ -42,10 +48,10 @@ export default {
       defaultValue: 'medium',
     },
     variant: {
-      options: ['contained', 'outlined', 'text'],
+      options: ['contained', 'outlined', 'outlined-dashed', 'text'],
       control: { type: 'select' },
       description: 'Set button variant',
-      defaultValue: 'text',
+      defaultValue: 'contained',
     },
     htmlType: {
       options: ['button', 'submit', 'reset'],
@@ -54,16 +60,15 @@ export default {
       defaultValue: 'button',
     },
   },
-};
+} as ComponentMeta<typeof Button>;
 
-const Template = (args: ButtonProps) => <Button {...args}>Click me</Button>;
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args}>Click me</Button>;
 
 export const Basic = Template.bind({});
 Basic.args = {};
 
 export const Color = () => (
-  <Flex style={{ gap: 10 }}>
-    <Button color="inherit">inherit</Button>
+  <Flex sx={{ gap: 10 }}>
     <Button color="primary">primary</Button>
     <Button color="secondary">secondary</Button>
     <Button color="success">success</Button>
@@ -74,8 +79,7 @@ export const Color = () => (
 );
 
 export const Disabled = () => (
-  <Flex style={{ gap: 10 }}>
-    <Button disabled color="inherit">inherit</Button>
+  <Flex sx={{ gap: 10 }}>
     <Button disabled color="primary">primary</Button>
     <Button disabled color="secondary">secondary</Button>
     <Button disabled color="success">success</Button>
@@ -86,8 +90,7 @@ export const Disabled = () => (
 );
 
 export const Loading = () => (
-  <Flex style={{ gap: 10 }}>
-    <Button loading color="inherit">inherit</Button>
+  <Flex sx={{ gap: 10 }}>
     <Button loading color="primary">primary</Button>
     <Button loading color="secondary">secondary</Button>
     <Button loading color="success">success</Button>
@@ -98,7 +101,7 @@ export const Loading = () => (
 );
 
 export const Size = () => (
-  <Flex style={{ gap: 10 }}>
+  <Flex sx={{ gap: 10 }}>
     <Button size="small">small</Button>
     <Button size="medium">medium</Button>
     <Button size="large">large</Button>
@@ -106,7 +109,7 @@ export const Size = () => (
 );
 
 export const Variant = () => (
-  <Flex style={{ gap: 10 }}>
+  <Flex sx={{ gap: 10 }}>
     <Button variant="outlined">outlined</Button>
     <Button variant="outlined-dashed">outlined-dashed</Button>
     <Button variant="contained">contained</Button>
@@ -114,9 +117,11 @@ export const Variant = () => (
   </Flex>
 );
 
-export const Shape = () => (
-  <Flex style={{ gap: 10 }}>
-    <Button shape="default">default</Button>
-    <Button shape="round">round</Button>
+export const Rounded = () => (
+  <Flex sx={{ gap: 10 }}>
+    <Button rounded variant="outlined">outlined</Button>
+    <Button rounded variant="outlined-dashed">outlined-dashed</Button>
+    <Button rounded variant="contained">contained</Button>
+    <Button rounded variant="text">text</Button>
   </Flex>
 );

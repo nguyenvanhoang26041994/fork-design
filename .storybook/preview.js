@@ -1,7 +1,6 @@
 import { themes } from '@storybook/theming';
 
-import '../fork-design.css';
-import '../fork-design-gallery.css';
+import '../src/styles/index.scss';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

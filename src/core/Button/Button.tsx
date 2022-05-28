@@ -6,7 +6,7 @@ import mapEnumClass from '../../utils/mapEnumClass';
 import Spinner from '../Loader/Spinner';
 
 export const mColor = Object.freeze({
-  'inherit': 'fbtn-inherit',
+  'default': 'fbtn-default',
   'primary': 'fbtn-primary',
   'secondary': 'fbtn-secondary',
   'success': 'fbtn-success',
@@ -24,27 +24,20 @@ export const mSize = Object.freeze({
 export const mVariant = Object.freeze({
   'contained': 'fbtn-contained',
   'outlined': 'fbtn-outlined',
+  'outlined-dashed': 'fbtn-outlined-dashed',
   'text': 'fbtn-text',
-});
-
-export const mShape = Object.freeze({
-  'default': 'fbtn-default',
-  'circle': 'fbtn-circle',
-  'round': 'fbtn-round',
 });
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<{}> {
   sx?: object,
-  className?: string,
-  children?: React.ReactElement | string,
-  color?: 'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning',
-  disabled?: boolean,
+  children?: any,
+  color?: 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning',
   loading?: boolean,
   endIcon?: React.ReactElement,
   startIcon?: React.ReactElement,
   size?: 'small' | 'medium' | 'large',
   variant?: 'contained' | 'outlined' | 'outlined-dashed' | 'text',
-  shape?: 'default' | 'round',
+  rounded?: boolean,
   htmlType?: 'button' | 'submit' | 'reset',
 };
 
@@ -60,7 +53,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
   startIcon,
   size,
   variant,
-  shape,
+  rounded,
   htmlType,
   ...otherProps
 }, ref) => (
@@ -71,11 +64,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
       'fbtn',
       {
         'fbtn-loading': loading,
+        'fbtn-rounded': rounded,
       },
       mapEnumClass(mColor, color),
       mapEnumClass(mSize, size),
       mapEnumClass(mVariant, variant),
-      mapEnumClass(mShape, shape),
       className,
     )}
     style={makeStyle(sx, style)}
@@ -97,13 +90,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
 
 Button.displayName = 'Button';
 Button.defaultProps = {
-  sx: {},
   color: 'primary',
   disabled: false,
   loading: false,
   size: 'medium',
-  variant: 'text',
-  shape: 'default',
+  variant: 'contained',
+  rounded: false,
   htmlType: 'button',
 };
 

@@ -34,7 +34,6 @@
     }
   }
 }
-
 .fbtn-spinner {
   left: 50%;
   position: absolute;
@@ -46,28 +45,51 @@
   display: flex;
   justify-content: center;
 }
-.fbtn-start-icon,
-.fbtn-end-icon {
+.fbtn-icon {
   padding-left: 0;
   padding-right: 0;
   width: 2.25em;
   height: 2.25em;
 }
 
-.fbtn-outlined,
-.fbtn-outlined-dashed {
+.fbtn:not(.fbtn-icon) .ficon:nth-child(1) {
+  margin-right: 0.5em;
+}
+.fbtn:not(.fbtn-icon) .ficon:last-child {
+  margin-left: 0.5em;
+}
+
+// border
+.fbtn-solid {
   background-color: transparent;
   border-color: currentColor;
-  
+  border-style: solid;
+}
+.fbtn-dashed {
+  background-color: transparent;
+  border-color: currentColor;
+  border-style: dashed;
+}
 
+.fbtn-default {
+  &.fbtn-solid,
+  &.fbtn-dashed {
+    border-color: var(--border-color);
+
+    &:hover {
+      background-color: var(--btn-bg);
+      color: var(--color);
+      border-color: var(--btn-bg);
+    }
+  }
+}
+
+.fbtn-solid,
+.fbtn-dashed {
   &:disabled,
   &:disabled:hover {
     background-color: transparent;
   }
-}
-
-.fbtn-outlined-dashed {
-  border-style: dashed;
 }
 
 // shape
@@ -75,6 +97,11 @@
   border-radius: 999px;
 }
 
+// colors
+.fbtn-transparent {
+  background-color: transparent;
+  border-color: transparent;
+}
 .fbtn-primary {
   background-color: var(--primary);
   border-color: var(--primary);
@@ -93,9 +120,8 @@
     color: var(--white);
   }
 }
-
-.fbtn-primary.fbtn-outlined,
-.fbtn-primary.fbtn-outlined-dashed {
+.fbtn-primary.fbtn-solid,
+.fbtn-primary.fbtn-dashed {
   background-color: transparent;
   color: var(--primary);
 
@@ -112,14 +138,7 @@
     color: var(--primary-disabled);
   }
 }
-
-.fbtn-primary.fbtn-text {
-  background-color: transparent;
-  color: var(--primary);
-  border-color: transparent;
-}
-
-.fbtn-error {
+.fbtn-danger {
   background-color: var(--danger);
   border-color: var(--danger);
   color: var(--white);
@@ -137,8 +156,8 @@
     color: var(--white);
   }
 }
-.fbtn-error.fbtn-outlined,
-.fbtn-error.fbtn-outlined-dashed {
+.fbtn-danger.fbtn-solid,
+.fbtn-danger.fbtn-dashed {
   background-color: transparent;
   color: var(--danger);
 
