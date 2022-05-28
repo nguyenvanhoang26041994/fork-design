@@ -1,5 +1,3 @@
-const isBrowser = typeof window !== 'undefined';
-
 const registerTopLeft = () => {
   const node = window.document.createElement('div');
   node.classList.add('fportal-top-left');
@@ -50,10 +48,15 @@ const {
   bottomRightNode,
   topCenterNode,
   bottomCenterNode,
-} = (() => {
-  if (!isBrowser) {
-    return null;
-  }
+} = ((): {
+  rootPortal: HTMLElement,
+  topLeftNode: HTMLElement,
+  topRightNode: HTMLElement,
+  bottomLeftNode: HTMLElement,
+  bottomRightNode: HTMLElement,
+  topCenterNode: HTMLElement,
+  bottomCenterNode: HTMLElement,
+} => {
   const rootPortal = window.document.createElement('div');
   rootPortal.id = 'root-portal';
   Object.assign(rootPortal.style, {

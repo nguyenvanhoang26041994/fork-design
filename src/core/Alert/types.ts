@@ -5,5 +5,5 @@ export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: any,
   color?: 'primary' | 'secondary' | 'success' | 'error' | 'warning',
   closable?: boolean,
-  onClose?: (event: React.MouseEvent<{}>) => void,
+  onClose?: React.MouseEventHandler<HTMLButtonElement>,
 };

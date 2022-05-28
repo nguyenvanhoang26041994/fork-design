@@ -1,8 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
-import PropTypes from 'prop-types';
 
-import Button from '../Button';
+import { PanelProps } from './types';
 import ChevronDown from '../../icons/ChevronDown';
 import Animated from '../Animated';
 import Memo from '../Memo';
@@ -16,7 +15,7 @@ const Panel = ({
   onClick,
   disabled,
   ...otherProps
-}) => {
+}: PanelProps): React.ReactElement => {
   return (
     <div
       {...otherProps}
@@ -44,16 +43,6 @@ const Panel = ({
 };
 
 Panel.displayName = 'Collapse.Panel';
-Panel.propTypes = {
-  title: PropTypes.any.isRequired,
-  className: PropTypes.string,
-  defaultActive: PropTypes.bool,
-  onClick: PropTypes.func, // do not set default, onClick will be passed by Collapse so it away exsits
-  children: PropTypes.any,
-  icon: PropTypes.string,
-  fresh: PropTypes.bool,
-  active: PropTypes.bool,
-};
 Panel.defaultProps = {};
 
 export default Panel;

@@ -5,16 +5,16 @@ import X from '../../icons/X';
 import { ChipProps } from './types';
 
 const Chip = ({
-    className,
-    rounded,
-    children,
-    closable,
-    onClose,
-    size,
-    style,
-    clickable,
-    ...otherProps
-  }: ChipProps): React.ReactElement => (
+  className,
+  rounded,
+  children,
+  closable,
+  onClose,
+  size,
+  style,
+  clickable,
+  ...otherProps
+}: ChipProps): React.ReactElement => (
   <div
     className={cn(
       'fchip',
