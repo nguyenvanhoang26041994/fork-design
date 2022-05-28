@@ -1,11 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
-import PropTypes from 'prop-types';
 
-import {
-  makePlacements,
-  placementPropType,
-} from '../placements';
+import makeStyle from '../../utils/makeStyle';
+import mapEnumClass from '../../utils/mapEnumClass';
+import { makePlacements } from '../placements';
+import { PureBadgeProps } from './types';
 
 const mPlacements = makePlacements('fbadge');
 
@@ -16,7 +15,7 @@ const PureBadge = ({
   overlap,
   placement,
   ...otherProps
-}) => {
+}: PureBadgeProps): React.ReactElement => {
   return (
     <span
       className={cn(
@@ -24,7 +23,7 @@ const PureBadge = ({
         {
           'fbadge-overlap': overlap,
         },
-        mPlacements[placement],
+        mapEnumClass(mPlacements, placement),
         className
       )}
       {...otherProps}
@@ -36,13 +35,6 @@ const PureBadge = ({
 };
 
 PureBadge.displayName = 'Badge.PureBadge';
-PureBadge.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.any,
-  overlap: PropTypes.bool,
-  placement: placementPropType,
-  badge: PropTypes.any,
-};
 PureBadge.defaultProps = {
   placement: 'top-end',
 };

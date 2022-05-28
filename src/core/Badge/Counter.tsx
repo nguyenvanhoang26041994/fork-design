@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import cn from 'classnames';
-import PropTypes from 'prop-types';
+
+import { CounterProps } from './types';
 
 const Counter = ({
   className,
@@ -9,7 +10,7 @@ const Counter = ({
   color,
   renderOverflow,
   ...otherProps
-}) => {
+}: CounterProps): React.ReactElement => {
   const displayCount = useMemo(() => {
     if (count > overflow) {
       return renderOverflow(overflow);
@@ -30,17 +31,9 @@ const Counter = ({
 };
 
 Counter.displayName = 'Counter';
-Counter.propTypes = {
-  className: PropTypes.string,
-  color: PropTypes.string,
-  count: PropTypes.number.isRequired,
-  overflow: PropTypes.number,
-  renderOverflow: PropTypes.func,
-};
-
 Counter.defaultProps = {
   overflow: Infinity,
-  renderOverflow: overflow => `${overflow}+`,
+  renderOverflow: (overflow: number) => `${overflow}+`,
 };
 
 export default Counter;
