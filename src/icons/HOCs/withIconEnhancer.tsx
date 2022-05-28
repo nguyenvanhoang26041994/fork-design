@@ -3,7 +3,6 @@ import React from 'react';
 import cn from 'classnames';
 
 import makeStyle from '../../utils/makeStyle';
-
 import IconProps from '../types/Icon';
 
 const withIconEnhancer = (displayName: string, originalName: string, IconComponent: (props: React.SVGAttributes<{}>) => React.ReactElement) => {

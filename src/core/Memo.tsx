@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 
-export default class Memo extends React.Component {
+export default class Memo extends React.Component<{
+  fresh?: boolean,
+  watch?: boolean,
+  children?: any,
+}> {
+  memo: any;
+  childrenNode: any;
+  displayName = 'Memo';
+  defaultProps = {};
+
   componentDidMount() {
     if (this.props.fresh) {
       return;
@@ -49,11 +57,4 @@ export default class Memo extends React.Component {
 
     return <div />;
   }
-}
-
-Memo.displayName = 'Memo';
-Memo.propTypes = {
-  watch: PropTypes.bool,
-  fresh: PropTypes.bool,
 };
-Memo.defaultProps = {};
