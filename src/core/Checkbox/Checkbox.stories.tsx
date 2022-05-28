@@ -50,7 +50,6 @@ export const Color = () => (
     <Checkbox color="primary" />
     <Checkbox color="success" />
     <Checkbox color="error" />
-    <Checkbox color="info" />
     <Checkbox color="warning"/>
   </Flex>
 );
