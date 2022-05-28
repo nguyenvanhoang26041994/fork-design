@@ -5,6 +5,8 @@ import cn from 'classnames';
 import makeStyle from '../../utils/makeStyle';
 import mapEnumClass from '../../utils/mapEnumClass';
 
+import { CheckboxProps } from './types';
+
 export const mColor = Object.freeze({
   'primary': 'fcbox-primary',
   'success': 'fcbox-success',
@@ -18,11 +20,6 @@ export const mSize = Object.freeze({
   'large': 'fcbox-large',
 });
 
-export interface CheckboxProps extends Omit<React.InputHTMLAttributes<{}>, 'size'> {
-  sx?: object,
-  color?: 'primary' | 'success' | 'error' | 'warning',
-  size?: 'small' | 'medium' | 'large',
-}
 const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(({
   sx,
   style,

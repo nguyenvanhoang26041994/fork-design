@@ -1,6 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
-import PropTypes from 'prop-types';
+
+import makeStyle from '../../utils/makeStyle';
+import mapEnumClass from '../../utils/mapEnumClass';
+
+import { SkeletonProps } from './types';
 
 const mShape = Object.freeze({
   circle: 'fskele-circle',
@@ -8,9 +12,8 @@ const mShape = Object.freeze({
   p: 'fskele-p'
 });
 
-const lShape = Object.keys(mShape);
-
 const Skeleton = ({
+  sx,
   className,
   w,
   h,
@@ -18,19 +21,19 @@ const Skeleton = ({
   size,
   shape,
   ...otherProps
-}) => {
+}: SkeletonProps): React.ReactElement => {
   return (
     <div
-      style={{
+      style={makeStyle(sx, {
         width: w,
         height: h,
         fontSize: size,
         ...style
-      }}
+      })}
       className={
         cn(
           'fskele',
-          mShape[shape],
+          mapEnumClass(mShape, shape),
           className,
       )}
       {...otherProps}
@@ -39,14 +42,6 @@ const Skeleton = ({
 };
 
 Skeleton.displayName = 'Skeleton';
-Skeleton.propTypes = {
-  className: PropTypes.string,
-  shape: PropTypes.oneOf(lShape),
-  w: PropTypes.string,
-  h: PropTypes.string,
-  size: PropTypes.string,
-  style: PropTypes.object,
-};
 Skeleton.defaultProps = {};
 
 export default Skeleton;

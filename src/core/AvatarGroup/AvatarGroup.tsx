@@ -1,8 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
-import PropTypes from 'prop-types';
 
-const AvatarGroup = ({ className, ...otherProps }) => {
+const AvatarGroup = ({ className, ...otherProps }: React.HTMLAttributes<HTMLDivElement>): React.ReactElement => {
   return (
     <div
       className={cn('favatar-group', className)}
@@ -12,9 +11,6 @@ const AvatarGroup = ({ className, ...otherProps }) => {
 };
 
 AvatarGroup.displayName = 'AvatarGroup';
-AvatarGroup.propTypes = {
-  className: PropTypes.string,
-};
 AvatarGroup.defaultProps = {};
 
 export default AvatarGroup;

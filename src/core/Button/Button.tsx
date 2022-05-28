@@ -5,6 +5,8 @@ import makeStyle from '../../utils/makeStyle';
 import mapEnumClass from '../../utils/mapEnumClass';
 import Spinner from '../Loader/Spinner';
 
+import { ButtonProps } from './types';
+
 export const mColor = Object.freeze({
   'default': 'fbtn-default',
   'primary': 'fbtn-primary',
@@ -27,19 +29,6 @@ export const mVariant = Object.freeze({
   'text': 'fbtn-text',
 });
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<{}> {
-  sx?: object,
-  children?: any,
-  color?: 'primary' | 'secondary' | 'success' | 'error' | 'warning',
-  loading?: boolean,
-  endIcon?: React.ReactElement,
-  startIcon?: React.ReactElement,
-  size?: 'small' | 'medium' | 'large',
-  variant?: 'contained' | 'outlined' | 'outlined-dashed' | 'text',
-  rounded?: boolean,
-  htmlType?: 'button' | 'submit' | 'reset',
-};
-
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
   sx,
   style,
@@ -55,7 +44,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
   rounded,
   htmlType,
   ...otherProps
-}, ref) => (
+}, ref): React.ReactElement => (
   <button
     ref={ref}
     type={htmlType}
