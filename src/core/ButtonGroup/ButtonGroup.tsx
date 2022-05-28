@@ -1,8 +1,9 @@
 import React from 'react';
 import cn from 'classnames';
-import PropTypes from 'prop-types';
 
-const ButtonGroup = ({ className, fluid, ...otherProps }) => {
+import { ButtonGroupProps } from './types';
+
+const ButtonGroup = ({ className, fluid, ...otherProps }: ButtonGroupProps): React.ReactElement => {
   return (
     <div
       className={cn(
@@ -18,10 +19,6 @@ const ButtonGroup = ({ className, fluid, ...otherProps }) => {
 };
 
 ButtonGroup.displayName = 'ButtonGroup';
-ButtonGroup.propTypes = {
-  className: PropTypes.string,
-  fluid: PropTypes.bool,
-};
 ButtonGroup.defaultProps = {};
 
 export default ButtonGroup;

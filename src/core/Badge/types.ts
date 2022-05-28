@@ -25,3 +25,6 @@ export interface DotProps extends React.HTMLAttributes<HTMLSpanElement> {
 };
 
 export interface BadgeCounterProps extends CounterProps {};
+export interface BadgeDotProps extends DotProps {};
+export interface BadgeLabelProps extends LabelProps {};
+
