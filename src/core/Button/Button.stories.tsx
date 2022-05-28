@@ -108,6 +108,7 @@ export const Size = () => (
 export const Variant = () => (
   <Flex style={{ gap: 10 }}>
     <Button variant="outlined">outlined</Button>
+    <Button variant="outlined-dashed">outlined-dashed</Button>
     <Button variant="contained">contained</Button>
     <Button variant="text">text</Button>
   </Flex>
@@ -116,7 +117,6 @@ export const Variant = () => (
 export const Shape = () => (
   <Flex style={{ gap: 10 }}>
     <Button shape="default">default</Button>
-    <Button shape="circle">circle</Button>
     <Button shape="round">round</Button>
   </Flex>
 );

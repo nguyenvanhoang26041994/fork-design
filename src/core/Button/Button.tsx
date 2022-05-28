@@ -2,6 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import makeStyle from '../../utils/makeStyle';
+import mapEnumClass from '../../utils/mapEnumClass';
 import Spinner from '../Loader/Spinner';
 
 export const mColor = Object.freeze({
@@ -42,8 +43,8 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<{}> {
   endIcon?: React.ReactElement,
   startIcon?: React.ReactElement,
   size?: 'small' | 'medium' | 'large',
-  variant?: 'contained' | 'outlined' | 'text',
-  shape?: 'default' | 'circle' | 'round',
+  variant?: 'contained' | 'outlined' | 'outlined-dashed' | 'text',
+  shape?: 'default' | 'round',
   htmlType?: 'button' | 'submit' | 'reset',
 };
 
@@ -71,10 +72,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
       {
         'fbtn-loading': loading,
       },
-      mColor[color],
-      mSize[size],
-      mVariant[variant],
-      mShape[shape],
+      mapEnumClass(mColor, color),
+      mapEnumClass(mSize, size),
+      mapEnumClass(mVariant, variant),
+      mapEnumClass(mShape, shape),
       className,
     )}
     style={makeStyle(sx, style)}
