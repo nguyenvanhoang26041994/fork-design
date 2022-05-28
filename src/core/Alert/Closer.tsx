@@ -6,14 +6,12 @@ import { ButtonProps } from '../Button/types';
 
 import X from '../../icons/X';
 
-const Closer = ({ className, ...otherProps }: ButtonProps): React.ReactElement => {
-  return (
-    <Button
-      className={cn('falert-closer', className)}
-      {...otherProps}
-    />
-  );
-};
+const Closer = ({ className, ...otherProps }: ButtonProps): any => (
+  <Button
+    className={cn('falert-closer', className)}
+    {...otherProps}
+  />
+);
 
 Closer.displayName = 'Alert.Closer';
 Closer.defaultProps = {

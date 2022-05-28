@@ -15,24 +15,22 @@ const PureBadge = ({
   overlap,
   placement,
   ...otherProps
-}: PureBadgeProps): React.ReactElement => {
-  return (
-    <span
-      className={cn(
-        'fbadge',
-        {
-          'fbadge-overlap': overlap,
-        },
-        mapEnumClass(mPlacements, placement),
-        className
-      )}
-      {...otherProps}
-    >
-      {children}
-      {badge}
-    </span>
-  );
-};
+}: PureBadgeProps): any => (
+  <span
+    className={cn(
+      'fbadge',
+      {
+        'fbadge-overlap': overlap,
+      },
+      mapEnumClass(mPlacements, placement),
+      className
+    )}
+    {...otherProps}
+  >
+    {children}
+    {badge}
+  </span>
+);
 
 PureBadge.displayName = 'Badge.PureBadge';
 PureBadge.defaultProps = {

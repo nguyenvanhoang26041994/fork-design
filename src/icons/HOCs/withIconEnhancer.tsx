@@ -5,8 +5,8 @@ import cn from 'classnames';
 import makeStyle from '../../utils/makeStyle';
 import IconProps from '../types/Icon';
 
-const withIconEnhancer = (displayName: string, originalName: string, IconComponent: (props: React.SVGAttributes<{}>) => React.ReactElement) => {
-  const OutputComponent = ({ className, sx, style, color, size, stroke, ...otherProps }: IconProps): React.ReactElement => {
+const withIconEnhancer = (displayName: string, originalName: string, IconComponent: (props: React.SVGAttributes<{}>) => any) => {
+  const OutputComponent = ({ className, sx, style, color, size, stroke, ...otherProps }: IconProps): any => {
     return (
       <IconComponent
         className={cn('ficon', { [`ficon-${originalName}`]: originalName }, className)}

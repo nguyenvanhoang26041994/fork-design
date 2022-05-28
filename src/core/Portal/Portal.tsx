@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { rootPortal } from './register';
 
 class Portal extends React.Component<{
-  children?: React.ReactNode,
+  children?: any,
   node: HTMLElement,
 }> {
   displayName = 'Portal';

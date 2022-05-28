@@ -7,7 +7,7 @@ import useCollapse from './useCollapse';
 const Collapse = ({
   className,
   ...otherProps
-}: React.HTMLAttributes<HTMLDivElement>): React.ReactElement => (
+}: React.HTMLAttributes<HTMLDivElement>): any => (
   <div
     className={cn('fcollapse', className)}
     {...otherProps}

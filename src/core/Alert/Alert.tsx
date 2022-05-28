@@ -24,18 +24,16 @@ const Alert = ({
   closable,
   onClose,
   ...otherProps
-}: AlertProps): React.ReactElement => {
-  return (
-    <div
-      className={cn('falert', mapEnumClass(mColor, color), className)}
-      style={makeStyle(sx, style)}
-      {...otherProps}
-    >
-      {children}
-      {closable && <Closer onClick={onClose} />}
-    </div>
-  );
-};
+}: AlertProps): any => (
+  <div
+    className={cn('falert', mapEnumClass(mColor, color), className)}
+    style={makeStyle(sx, style)}
+    {...otherProps}
+  >
+    {children}
+    {closable && <Closer onClick={onClose} />}
+  </div>
+);
 
 Alert.ref = alertRef;
 Alert.Closer = Closer;

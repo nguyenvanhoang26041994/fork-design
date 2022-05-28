@@ -8,7 +8,7 @@ const Label = ({
   color,
   label,
   ...otherProps
-}: LabelProps): React.ReactElement => (
+}: LabelProps): any => (
   <sub
     style={{ backgroundColor: color }}
     className={cn('fbadge-label', className)}

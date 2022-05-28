@@ -15,32 +15,30 @@ const Panel = ({
   onClick,
   disabled,
   ...otherProps
-}: PanelProps): React.ReactElement => {
-  return (
-    <div
-      {...otherProps}
-      className={cn(
-        'fpanel', {
-          'fpanel-active': active,
-          'fpanel-disabled': disabled
-        },
-        className
-      )}
-    >
-      <button className="fpanel-title" onClick={onClick} disabled={disabled}>
-        {title}
-        <ChevronDown className="fpanel-icon" />
-      </button>
-      <Animated.Expand isOpen={active} className="fpanel-content">
-        <div className="fpanel-box">
-          <Memo watch={active} fresh={fresh}>
-            {children}
-          </Memo>
-        </div>
-      </Animated.Expand>
-    </div>
-  );
-};
+}: PanelProps): any => (
+  <div
+    {...otherProps}
+    className={cn(
+      'fpanel', {
+        'fpanel-active': active,
+        'fpanel-disabled': disabled
+      },
+      className
+    )}
+  >
+    <button className="fpanel-title" onClick={onClick} disabled={disabled}>
+      {title}
+      <ChevronDown className="fpanel-icon" />
+    </button>
+    <Animated.Expand isOpen={active} className="fpanel-content">
+      <div className="fpanel-box">
+        <Memo watch={active} fresh={fresh}>
+          {children}
+        </Memo>
+      </div>
+    </Animated.Expand>
+  </div>
+);
 
 Panel.displayName = 'Collapse.Panel';
 Panel.defaultProps = {};

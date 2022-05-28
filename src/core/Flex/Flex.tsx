@@ -194,7 +194,7 @@ const Flex = React.forwardRef<HTMLDivElement, FlexProps>(({
   lg,
   xl,
   ...otherProps
-}, ref) => (
+}, ref): any => (
   <div
     ref={ref}
     className={cn(

@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import { ButtonGroupProps } from './types';
 
-const ButtonGroup = ({ className, fluid, ...otherProps }: ButtonGroupProps): React.ReactElement => (
+const ButtonGroup = ({ className, fluid, ...otherProps }: ButtonGroupProps): any => (
   <div
     className={cn(
       'fgroup-btn',

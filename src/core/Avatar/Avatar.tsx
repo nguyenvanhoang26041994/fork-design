@@ -21,21 +21,19 @@ const Avatar = ({
   shape,
   children,
   ...otherProps
-}: AvatarProps): React.ReactElement => {
-  return (
-    <div
-      className={cn('favatar', mapEnumClass(mShape, shape), className)}
-      style={makeStyle(sx, {
-        ...style,
-        color,
-        backgroundImage: src ? `url(${src})` : undefined,
-      })}
-      {...otherProps}
-    >
-      {!src && <span className="favatar-name">{children}</span>}
-    </div>
-  );
-};
+}: AvatarProps): any => (
+  <div
+    className={cn('favatar', mapEnumClass(mShape, shape), className)}
+    style={makeStyle(sx, {
+      ...style,
+      color,
+      backgroundImage: src ? `url(${src})` : undefined,
+    })}
+    {...otherProps}
+  >
+    {!src && <span className="favatar-name">{children}</span>}
+  </div>
+);
 
 Avatar.displayName = 'Avatar';
 Avatar.defaultProps = {

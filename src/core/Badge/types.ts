@@ -12,7 +12,7 @@ export interface CounterProps extends React.HTMLAttributes<HTMLSpanElement> {
   count: number,
   overflow: number,
   color?: string,
-  renderOverflow: (overflow: number) => React.ReactElement | string,
+  renderOverflow: (overflow: number) => any,
 };
 
 export interface LabelProps extends React.HTMLAttributes<HTMLSpanElement> {

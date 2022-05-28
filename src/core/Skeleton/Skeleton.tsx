@@ -21,7 +21,7 @@ const Skeleton = ({
   size,
   shape,
   ...otherProps
-}: SkeletonProps): React.ReactElement => {
+}: SkeletonProps): any => {
   return (
     <div
       style={makeStyle(sx, {

@@ -17,7 +17,7 @@ const BadgeCounter = ({
   color,
   renderOverflow,
   ...otherProps
-}: BadgeCounterProps): React.ReactElement => (
+}: BadgeCounterProps): any => (
   <PureBadge
     badge={(
       <Counter
@@ -32,7 +32,7 @@ const BadgeCounter = ({
   />
 );
 
-const BadgeDot = ({ color, ...otherProps }: BadgeDotProps): React.ReactElement => (
+const BadgeDot = ({ color, ...otherProps }: BadgeDotProps): any => (
   <PureBadge
     badge={<Dot color={color} className="fbadge-ui" />}
     {...otherProps}
@@ -43,7 +43,7 @@ const BadgeLabel = ({
   label,
   color,
   ...otherProps
-}: BadgeLabelProps): React.ReactElement => (
+}: BadgeLabelProps): any => (
   <PureBadge
     badge={(
       <Label

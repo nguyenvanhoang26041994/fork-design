@@ -31,7 +31,7 @@ const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(({
   loading,
   size,
   ...otherProps
-}, ref): React.ReactElement => (
+}, ref): any => (
   <div
     className={cn(
       'fswitch',

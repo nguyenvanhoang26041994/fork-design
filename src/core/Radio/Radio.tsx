@@ -27,7 +27,7 @@ const Radio = React.forwardRef<HTMLInputElement, RadioProps>(({
   color,
   size,
   ...otherProps
-}, ref): React.ReactElement => (
+}, ref): any => (
   <span
     className={cn(
       'fradio',

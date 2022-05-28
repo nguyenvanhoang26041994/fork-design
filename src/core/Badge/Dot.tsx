@@ -13,7 +13,7 @@ const Dot = ({
   className,
   color,
   ...otherProps
-}: DotProps): React.ReactElement => (
+}: DotProps): any => (
   <sub
     style={{ backgroundColor: mapEnumClass(mColor, color) ? undefined : color }}
     className={cn('fbadge-dot', mapEnumClass(mColor, color), className)}

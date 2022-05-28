@@ -10,7 +10,7 @@ const Counter = ({
   color,
   renderOverflow,
   ...otherProps
-}: CounterProps): React.ReactElement => {
+}: CounterProps): any => {
   const displayCount = useMemo(() => {
     if (count > overflow) {
       return renderOverflow(overflow);

@@ -14,7 +14,7 @@ const Chip = ({
   style,
   clickable,
   ...otherProps
-}: ChipProps): React.ReactElement => (
+}: ChipProps): any => (
   <div
     className={cn(
       'fchip',

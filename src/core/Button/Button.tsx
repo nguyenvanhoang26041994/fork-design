@@ -44,7 +44,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
   rounded,
   htmlType,
   ...otherProps
-}, ref): React.ReactElement => (
+}, ref): any => (
   <button
     ref={ref}
     type={htmlType}
