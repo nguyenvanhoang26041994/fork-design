@@ -3,5 +3,9 @@
     "@babel/preset-env",
     "@babel/preset-react"
   ],
-  "exclude": ["./src/libs/fuzzysort.js"]
+  "exclude": ["./src/libs/fuzzysort.js"],
+  "ignore": [
+    "./src/**/*.stories.mdx",
+    "./src/**/*.stories.@(js|jsx|ts|tsx)"
+  ]
 }

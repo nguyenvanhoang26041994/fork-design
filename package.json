@@ -10,7 +10,9 @@
     "build:core-css": "sass src/styles/index.scss ./fork-design.css --no-source-map",
     "build:css": "npm run build:core-css && npm run build:gallery-css",
     "build": "npm run clean && babel src -d ./ && npm run build:css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -47,10 +49,20 @@
     "resize-observer-polyfill": "^1.5.1"
   },
   "devDependencies": {
-    "@babel/core": "7.14.5",
     "@babel/cli": "7.17.10",
+    "@babel/core": "7.14.5",
     "@babel/preset-env": "7.14.5",
     "@babel/preset-react": "7.14.5",
+    "@storybook/addon-actions": "^6.5.3",
+    "@storybook/addon-essentials": "^6.5.3",
+    "@storybook/addon-interactions": "^6.5.3",
+    "@storybook/addon-links": "^6.5.3",
+    "@storybook/addons": "^6.5.3",
+    "@storybook/builder-webpack5": "^6.5.3",
+    "@storybook/manager-webpack5": "^6.5.3",
+    "@storybook/react": "^6.5.3",
+    "@storybook/testing-library": "0.0.11",
+    "@storybook/theming": "^6.5.3",
     "babel-loader": "8.2.2",
     "cross-env": "7.0.3",
     "fs-extra": "10.0.0",

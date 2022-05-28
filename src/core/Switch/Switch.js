@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 import Loader from '../Loader';
 import useSwitch from './useSwitch';
 
-const Switch = React.forwardRef(({ className, style, size, color, disabled, loading, ...otherProps }, ref) => {
+const Switch = React.forwardRef(({ className, style, size, intent, disabled, loading, ...otherProps }, ref) => {
   return (
     <div
       className={cn('fswitch', className)}
       style={{
         ...style,
-        color: color,
+        color: intent,
         '--switch-size': size ? `${size}px` : undefined,
       }}
     >
@@ -42,7 +42,7 @@ Switch.propTypes = {
   loading: PropTypes.bool,
   className: PropTypes.string,
   style: PropTypes.object,
-  color: PropTypes.string,
+  intent: PropTypes.string,
   size: PropTypes.number,
 };
 Switch.defaultProps = {};

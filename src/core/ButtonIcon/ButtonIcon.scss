@@ -1,0 +1,13 @@
+.fbtn-icon {
+  padding-left: 0;
+  padding-right: 0;
+  width: 2.25em;
+  height: 2.25em;
+}
+
+.fbtn:not(.fbtn-icon) .ficon:nth-child(1) {
+  margin-right: 0.5em;
+}
+.fbtn:not(.fbtn-icon) .ficon:last-child {
+  margin-left: 0.5em;
+}
