@@ -29,7 +29,6 @@ const Radio = React.forwardRef<HTMLInputElement, RadioProps>(({
   className,
   children,
   color,
-  disabled,
   size,
   ...otherProps
 }, ref) => {

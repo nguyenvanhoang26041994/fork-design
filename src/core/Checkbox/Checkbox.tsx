@@ -29,7 +29,6 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(({
   className,
   children,
   color,
-  disabled,
   size,
   ...otherProps
 }, ref) => {
