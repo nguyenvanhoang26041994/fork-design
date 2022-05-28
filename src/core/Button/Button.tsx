@@ -11,7 +11,6 @@ export const mColor = Object.freeze({
   'secondary': 'fbtn-secondary',
   'success': 'fbtn-success',
   'error': 'fbtn-error',
-  'info': 'fbtn-info',
   'warning': 'fbtn-warning',
 });
 
@@ -31,7 +30,7 @@ export const mVariant = Object.freeze({
 export interface ButtonProps extends React.ButtonHTMLAttributes<{}> {
   sx?: object,
   children?: any,
-  color?: 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning',
+  color?: 'primary' | 'secondary' | 'success' | 'error' | 'warning',
   loading?: boolean,
   endIcon?: React.ReactElement,
   startIcon?: React.ReactElement,

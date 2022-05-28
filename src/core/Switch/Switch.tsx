@@ -8,10 +8,8 @@ import Loader from '../Loader';
 
 export const mColor = Object.freeze({
   'primary': 'fswitch-primary',
-  'secondary': 'fswitch-secondary',
   'success': 'fswitch-success',
   'error': 'fswitch-error',
-  'info': 'fswitch-info',
   'warning': 'fswitch-warning',
 });
 
@@ -24,7 +22,7 @@ export const mSize = Object.freeze({
 export interface SwitchProps extends Omit<React.InputHTMLAttributes<{}>, 'size'> {
   sx?: object,
   children?: any,
-  color?: 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning',
+  color?: 'primary' | 'success' | 'error' | 'warning',
   loading?: boolean,
   size?: 'small' | 'medium' | 'large',
 }
@@ -43,9 +41,6 @@ const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(({
     <div
       className={cn(
         'fswitch',
-        {
-          'fbtn-loading': loading,
-        },
         mapEnumClass(mColor, color),
         mapEnumClass(mSize, size),
         className,

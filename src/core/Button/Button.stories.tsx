@@ -21,7 +21,7 @@ export default {
   },
   argTypes: {
     color: {
-      options: ['default', 'primary', 'secondary', 'success', 'error', 'info', 'warning'],
+      options: ['default', 'primary', 'secondary', 'success', 'error', 'warning'],
       control: { type: 'select' },
       description: 'Set button color',
       defaultValue: 'primary',
@@ -73,7 +73,6 @@ export const Color = () => (
     <Button color="secondary">secondary</Button>
     <Button color="success">success</Button>
     <Button color="error">error</Button>
-    <Button color="info">info</Button>
     <Button color="warning">warning</Button>
   </Flex>
 );
@@ -84,7 +83,6 @@ export const Disabled = () => (
     <Button disabled color="secondary">secondary</Button>
     <Button disabled color="success">success</Button>
     <Button disabled color="error">error</Button>
-    <Button disabled color="info">info</Button>
     <Button disabled color="warning">warning</Button>
   </Flex>
 );
@@ -95,7 +93,6 @@ export const Loading = () => (
     <Button loading color="secondary">secondary</Button>
     <Button loading color="success">success</Button>
     <Button loading color="error">error</Button>
-    <Button loading color="info">info</Button>
     <Button loading color="warning">warning</Button>
   </Flex>
 );
