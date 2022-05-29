@@ -6,7 +6,7 @@ import Label from './Label';
 
 import PureBadge from './PureBadge';
 
-import { BadgeCounterProps, BadgeDotProps, BadgeLabelProps } from './types';
+import type { BadgeCounterProps, BadgeDotProps, BadgeLabelProps } from './types';
 
 const Badge = () => {};
 Badge.PureBadge = PureBadge;

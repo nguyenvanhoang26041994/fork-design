@@ -10,10 +10,10 @@ const Pincode = React.memo(React.forwardRef(({
   onPincodeCompleted,
   validate,
   format,
-  placeholder
+  placeholder,
 }, hiddenRef) => {
   const [values, setValues] = useState(() => {
-    let _values = [];
+    const _values = [];
     for (let i = 0; i < length; i++) {
       _values.push('')
     }
@@ -64,14 +64,12 @@ const Pincode = React.memo(React.forwardRef(({
     }
   }, [isValid]);
   const updatePincodeAt = useCallback((index, value) => {
-    setValues((prevValues) => {
-      return prevValues.map((val, valIndex) => {
+    setValues((prevValues) => prevValues.map((val, valIndex) => {
         if (valIndex === index) {
           return value || '';
         }
         return val;
-      });
-    });
+      }));
   }, [setValues]);
   const focusPrevInput = useCallback((currentIndex) => {
     const prevInput = ref.current.inputs[currentIndex - 1];
@@ -88,7 +86,7 @@ const Pincode = React.memo(React.forwardRef(({
 
   const onChange = useCallback((e) => {
     const currentIndex = +e.target.dataset.index;
-    let val = format(trim(e.target.value[e.target.value.length - 1]));
+    const val = format(trim(e.target.value[e.target.value.length - 1]));
     if (!val) {
       e.preventDefault();
       return;
@@ -97,7 +95,7 @@ const Pincode = React.memo(React.forwardRef(({
     if (val && validate.test(val)) {
       updatePincodeAt(currentIndex, val);
       focusNextInput(currentIndex);
-      return;
+      
     }
   }, [validate, format, focusNextInput, focusPrevInput]);
   const onClick = useCallback((e) => {

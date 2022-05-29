@@ -6,11 +6,9 @@ import Tab from './Tab';
 import Panel from './Panel';
 import useTabs from './useTabs';
 
-const Tabs = ({ className, ...otherProps }) => {
-  return (
+const Tabs = ({ className, ...otherProps }) => (
     <div className={cn('ftabs', className )} {...otherProps} />
   );
-};
 
 Tabs.Tab = Tab;
 Tabs.Panel = Panel;

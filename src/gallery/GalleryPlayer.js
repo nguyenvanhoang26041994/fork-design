@@ -15,15 +15,14 @@ const GalleryPlayer = ({
   isOpen,
   backDropClass,
   onClose,
-  className
-}) => {
-  return (
-    <React.Fragment>
+  className,
+}) => (
+    <>
       {isOpen && (
         <Portal>
           <div className={cn('fgallery-player-backdrop', backDropClass)}
             style={{
-              backgroundImage: `url(https://i.pinimg.com/originals/ce/53/c5/ce53c5bcd350ba856e5c53c343376fb2.jpg)`
+              backgroundImage: `url(https://i.pinimg.com/originals/ce/53/c5/ce53c5bcd350ba856e5c53c343376fb2.jpg)`,
             }}
           >
             <div className={cn('fgallery-player', className)}>
@@ -42,8 +41,7 @@ const GalleryPlayer = ({
           </div>
         </Portal>
       )}
-    </React.Fragment>
+    </>
   );
-};
 
 export default GalleryPlayer;

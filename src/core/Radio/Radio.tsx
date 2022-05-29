@@ -4,7 +4,7 @@ import cn from 'classnames';
 import makeStyle from '../../utils/makeStyle';
 import mapEnumClass from '../../utils/mapEnumClass';
 
-import { RadioProps } from './types';
+import type { RadioProps } from './types';
 
 export const mColor = Object.freeze({
   'primary': 'fradio-primary',

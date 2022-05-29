@@ -51,13 +51,13 @@ export const mItems = Object.freeze({
   'start': 'items-start',
   'center': 'items-center',
   'end': 'items-end',
-  'baseline': 'items-baseline'
+  'baseline': 'items-baseline',
 });
 
 export const mWrap = Object.freeze({
   'wrap': 'flex-wrap',
   'no-wrap': 'flex-no-wrap',
-  'reverse': 'flex-wrap-reverse'
+  'reverse': 'flex-wrap-reverse',
 });
 
 export const mGrow = Object.freeze({
@@ -210,7 +210,7 @@ const Flex = React.forwardRef<HTMLDivElement, FlexProps>(({
       mapEnumClass(mSelf, self),
       mapEnumClass(mWidth, w),
       getResponsiveAll({ sm, md, lg, xl }),
-      className
+      className,
     )}
     style={makeStyle(sx, style)}
     {...otherProps}

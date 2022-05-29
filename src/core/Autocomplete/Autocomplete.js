@@ -6,12 +6,12 @@ import React, {
   useMemo,
 } from 'react';
 
-import UIAutoComplete from '../UIAutoComplete';
-import usePureMeansure from '../../hooks/usePureMeansure';
-import useRestNativeProps from '../../hooks/useRestNativeProps';
 import omit from 'lodash/omit';
 import trim from 'lodash/trim';
 import debounce from 'lodash/debounce';
+import UIAutoComplete from '../UIAutoComplete';
+import usePureMeansure from '../../hooks/usePureMeansure';
+import useRestNativeProps from '../../hooks/useRestNativeProps';
 
 const useAutoComplete = (props, ref) => {
   const inputRef = useRef();
@@ -39,7 +39,7 @@ const useAutoComplete = (props, ref) => {
     active: UIActive,
     inputRef,
     onChange: onDebouceTextChange,
-    ...restNativeProps
+    ...restNativeProps,
   };
 
   return {
@@ -134,11 +134,9 @@ AutoComplete.defaultProps = {
   },
 };
 
-AutoComplete.Input = React.forwardRef((props, ref) => {
-  return (
+AutoComplete.Input = React.forwardRef((props, ref) => (
     <AutoCompleteInput ref={ref} {...props} loading />
-  );
-});
+  ));
 
 AutoComplete.Option = ({ value, ...otherProps }) => {
   const {
@@ -153,10 +151,10 @@ AutoComplete.Option = ({ value, ...otherProps }) => {
 
   const hide = useMemo(() => !filter({
     value,
-    ...otherProps
+    ...otherProps,
   }, {
     searchText,
-    searchRegex
+    searchRegex,
   }), [
     value,
     otherProps,

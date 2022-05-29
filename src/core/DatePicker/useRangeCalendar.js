@@ -28,9 +28,7 @@ export default (
       }
 
       if (_val < prevStartDate) {
-        setEndDate(prevEndDate => {
-          return prevEndDate > prevStartDate ? prevEndDate : prevStartDate;
-        });
+        setEndDate(prevEndDate => prevEndDate > prevStartDate ? prevEndDate : prevStartDate);
         return _val;
       }
 

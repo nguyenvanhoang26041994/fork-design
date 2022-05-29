@@ -11,11 +11,10 @@ const mStatus = Object.freeze({
   processing: 'fstep-processing',
   completed: 'fstep-completed',
   canceled: 'fstep-canceled',
-  error: 'fstep-error'
+  error: 'fstep-error',
 });
 
-const Button = ({ className, children, ...otherProps }) => {
-  return (
+const Button = ({ className, children, ...otherProps }) => (
     <div className="fstep-btn-wrapper">
       <div className={cn('fstep-btn', className)} {...otherProps}>
         <span className="fstep-btn-child">
@@ -33,7 +32,6 @@ const Button = ({ className, children, ...otherProps }) => {
       </div>
     </div>
   );
-};
 
 const Content = ({ className, ...otherProps }) => <div className={cn('fstep-content', className)} {...otherProps} />;
 const Title = ({ className, ...otherProps }) => <div className={cn('fstep-title', className)} {...otherProps} />;
@@ -48,7 +46,7 @@ Step.propTypes = {
   children: PropTypes.any,
   stepNumber: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   status: PropTypes.string,
-  canceledTitle: PropTypes.any
+  canceledTitle: PropTypes.any,
 };
 Step.defaultProps = {};
 
@@ -57,13 +55,11 @@ const mDisplays = Object.freeze({
   alternate: 'fstepper-alternate',
 });
 
-const Stepper = ({ className, children, display, ...otherProps }) => {
-  return (
+const Stepper = ({ className, children, display, ...otherProps }) => (
     <ul className={cn('fstepper', mDisplays[display], className)} {...otherProps}>
       {children}
     </ul>
   );
-};
 
 Stepper.Step = Step;
 Stepper.Button = Button;

@@ -8,4 +8,4 @@ export const loop = (count, cb) => {
   return rs.map(cb);
 };
 
-export const uniqueId = (prefix = 'uniqueId') => `${prefix}_` + Math.random().toString(36).substr(2, 9);
+export const uniqueId = (prefix = 'uniqueId') => `${prefix}_${  Math.random().toString(36).substr(2, 9)}`;

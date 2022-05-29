@@ -1,11 +1,7 @@
 import React from 'react';
 
-const AsyncAutoComplete = React.forwardRef((props, ref) => {
-  return (
-    <div>
-      
-    </div>
-  );
-});
+const AsyncAutoComplete = React.forwardRef((props, ref) => (
+    <div />
+  ));
 
 export default AsyncAutoComplete;

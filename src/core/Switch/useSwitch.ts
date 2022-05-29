@@ -1,4 +1,5 @@
-import React, { useState, useCallback } from 'react';
+import type React from 'react';
+import { useState, useCallback } from 'react';
 
 const useSwitch = (defaultValue: boolean | undefined) => {
   const [checked, setChecked] = useState(defaultValue);

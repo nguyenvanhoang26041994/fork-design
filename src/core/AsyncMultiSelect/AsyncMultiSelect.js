@@ -51,7 +51,7 @@ const AsyncMultiSelect = React.forwardRef((props, ref) => {
       removeSingleValue,
       computed: {
         _value,
-      }
+      },
     }}>
       <UISelect
         overlay={(
@@ -75,14 +75,12 @@ const AsyncMultiSelect = React.forwardRef((props, ref) => {
                   }}>
                     <Loader.Spinner />
                   </div>
-                ) : displayOptions.map((option, index) => {
-                  return children({
+                ) : displayOptions.map((option, index) => children({
                     key: option[valueKey],
                     value: option[valueKey],
                     data: option,
-                    children: option[nameKey]
-                  }, option, index);
-                })}
+                    children: option[nameKey],
+                  }, option, index))}
             </OverlayBody>
           </Overlay>
         )}

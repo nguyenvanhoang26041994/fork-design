@@ -3,12 +3,10 @@ import { useState, useCallback, useMemo } from 'react';
 const useCollapse = function(defaultProps = { accordion: false, activePanels: [] }) {
   const [activePanels, setActivePanels] = useState(defaultProps.activePanels);
 
-  const objActivePanels = useMemo(() => {
-    return activePanels.reduce((rs, item) => {
+  const objActivePanels = useMemo(() => activePanels.reduce((rs, item) => {
       rs[item] = true;
       return rs;
-    }, {});
-  }, [activePanels]);
+    }, {}), [activePanels]);
 
   const onChange = useCallback((val) => {
     if (defaultProps.accordion) {

@@ -31,7 +31,7 @@ const Drawer = ({ className, isOpen, placement, ...otherProps }) => {
   }, [isOpen, placement]);
 
   return (
-    <React.Fragment>
+    <>
       {delayOpen && (
         <Portal>
           <Dialog.Backdrop
@@ -47,7 +47,7 @@ const Drawer = ({ className, isOpen, placement, ...otherProps }) => {
           </Dialog.Backdrop>
         </Portal>
       )}
-    </React.Fragment>
+    </>
   );
 };
 
@@ -65,7 +65,7 @@ Drawer.propTypes = {
   children: PropTypes.any,
 };
 Drawer.defaultProps = {
-  placement: 'right'
+  placement: 'right',
 };
 
 export default Drawer;

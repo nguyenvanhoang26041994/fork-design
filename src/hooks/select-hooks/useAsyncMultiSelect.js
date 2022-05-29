@@ -131,7 +131,7 @@ const useAsyncMultiSelect = (props, ref) => {
     active: UIActive,
     onClick: onMultipleClick,
     loading: loaders.isSelectedLoading,
-    ...restNativeProps
+    ...restNativeProps,
   };
   const searchboxProps = {
     ref: searchboxRef,

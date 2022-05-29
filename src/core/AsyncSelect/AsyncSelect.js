@@ -69,14 +69,12 @@ const AsyncSelect = React.forwardRef((props, ref) => {
                   }}>
                     <Loader.Spinner />
                   </div>
-                ) : displayOptions.map((option, index) => {
-                  return children({
+                ) : displayOptions.map((option, index) => children({
                     key: option[valueKey],
                     value: option[valueKey],
                     data: option,
                     children: option[nameKey],
-                  }, option, index);
-                })
+                  }, option, index))
               }
             </OverlayBody>
           </Overlay>
@@ -97,7 +95,7 @@ AsyncSelect.propTypes = {
   getOptions: PropTypes.func.isRequired,
   valueKey: PropTypes.string.isRequired,
   nameKey: PropTypes.string.isRequired,
-  onBottomIntersecting: PropTypes.oneOfType([PropTypes.bool, PropTypes.func])
+  onBottomIntersecting: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
 };
 AsyncSelect.defaultProps = {
   delay: 500, // Delay time when you typing ing seachbox

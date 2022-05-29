@@ -20,9 +20,7 @@ const notificationRef = {
   },
   nodes: {},
   instances: new Map(),
-  isDuplicate: (id) => {
-    return id && notificationRef.instances.has(id);
-  },
+  isDuplicate: (id) => id && notificationRef.instances.has(id),
   keepMax: () => {
     if (notificationRef.instances.size > notificationRef.max - 1) {
       let counter = 0;
@@ -105,7 +103,7 @@ PusherNotification.propTypes = {
   renderFunc: PropTypes.func.isRequired,
   autoClose: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
   onUnmounted: PropTypes.func,
-  placement: PropTypes.oneOf(['bottom-left', 'bottom-right', 'top-left', 'top-right'])
+  placement: PropTypes.oneOf(['bottom-left', 'bottom-right', 'top-left', 'top-right']),
 };
 PusherNotification.defaultProps = {
   autoClose: 9000,

@@ -6,20 +6,18 @@ export interface SpinnerProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: string,
   color?: string,
 };
-const Spinner = ({ style, color, size, className, ...otherProps }: SpinnerProps) => {
-  return (
+const Spinner = ({ style, color, size, className, ...otherProps }: SpinnerProps) => (
     <div
       style={{
         ...style,
         color,
-        '--spinner-size': size
+        '--spinner-size': size,
       }}
       className={cn('floader-spinner', className)}
     >
       <div className="floader-spinner-spin" {...otherProps} />
     </div>
   );
-};
 
 Spinner.displayName = 'Loader.Spinner';
 Spinner.defaultProps = {

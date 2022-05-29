@@ -40,8 +40,7 @@ Provider.defaultProps = {
 };
 
 export default (WrappedComponent) => {
-  const ReturnComponent = (props) => {
-    return (
+  const ReturnComponent = (props) => (
       <Provider
         defaultDisplayDate={props.defaultDisplayDate}
         defaultStartDate={props.defaultStartDate}
@@ -50,8 +49,7 @@ export default (WrappedComponent) => {
       >
         <WrappedComponent {...props} />
       </Provider>
-    )
-  };
+    );
 
   ReturnComponent.defaultProps = {
     now: new Date(Date.now()),

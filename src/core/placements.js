@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
-export const makePlacements = (prefix) => {
-  return {
+export const makePlacements = (prefix) => ({
     'top': `${prefix}-top`,
     'top-end': `${prefix}-top-end`,
     'top-start': `${prefix}-top-start`,
@@ -14,8 +13,7 @@ export const makePlacements = (prefix) => {
     'left': `${prefix}-left`,
     'left-end': `${prefix}-left-end`,
     'left-start': `${prefix}-left-start`,
-  }
-};
+  });
 
 export const placementPropType = PropTypes.oneOf([
   'top',

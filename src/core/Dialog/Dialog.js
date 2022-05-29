@@ -8,15 +8,13 @@ import Body from './Body';
 import Footer from './Footer';
 import Closer from './Closer';
 
-const Dialog = React.forwardRef(({ className, ...otherProps }, ref) => {
-  return (
+const Dialog = React.forwardRef(({ className, ...otherProps }, ref) => (
     <div
       ref={ref}
       className={cn('fdialog', className)}
       {...otherProps}
     />
-  );
-});
+  ));
 
 Dialog.Backdrop = Backdrop;
 Dialog.Header = Header;

@@ -8,13 +8,11 @@ import SingleCalendar from './Calendar.Single';
 import RangeCalendar from './Calendar.Range';
 import CoupleCalendar from './Calendar.Couple';
 
-const DatePicker = ({}) => {
-  return (
+const DatePicker = ({}) => (
     <Provider>
       <Calendar />
     </Provider>
   );
-};
 
 DatePicker.Calendar = Calendar;
 DatePicker.SingleCalendar = SingleCalendar;

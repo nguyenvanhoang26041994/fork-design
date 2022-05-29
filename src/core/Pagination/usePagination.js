@@ -16,7 +16,7 @@ const usePagination = function(_defaultProps) {
     currentPage: 1,
     pageSize: 10,
     max: 5,
-    ..._defaultProps
+    ..._defaultProps,
   }), []);
 
   const [currentPage, setCurrentPage] = useState(defaultProps.currentPage);
@@ -67,14 +67,14 @@ const usePagination = function(_defaultProps) {
   return [
     {
       currentPage,
-      startPage: startPage,
-      endPage: endPage,
-      pageSize: pageSize,
-      total: total,
+      startPage,
+      endPage,
+      pageSize,
+      total,
       max,
       isFirstPage,
       isLastPage,
-      onChange: onChange,
+      onChange,
       goNext,
       goPrev,
     },
@@ -83,7 +83,7 @@ const usePagination = function(_defaultProps) {
       setTotal,
       setPageSize,
       setMax,
-    }
+    },
   ];
 };
 

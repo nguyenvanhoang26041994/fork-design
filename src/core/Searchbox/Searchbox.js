@@ -6,8 +6,7 @@ import Search from '../../icons/Search';
 import X from '../../icons/X';
 import Loader from '../Loader';
 
-const Searchbox = React.forwardRef(({ className, loading, ...otherProps }, ref) => {
-  return (
+const Searchbox = React.forwardRef(({ className, loading, ...otherProps }, ref) => (
     <div className={cn('fsearchbox', className)}>
       <Textbox
         className="fsearchbox-textbox"
@@ -20,8 +19,7 @@ const Searchbox = React.forwardRef(({ className, loading, ...otherProps }, ref) 
         : <Search className="fsearchbox-search-icon" />
       }
     </div>
-  )
-});
+  ));
 
 Searchbox.displayName = 'Searchbox';
 Searchbox.propTypes = {};

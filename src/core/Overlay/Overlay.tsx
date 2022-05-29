@@ -1,5 +1,6 @@
 import React from 'react';
-import Tippy, { TippyProps } from '@tippyjs/react';
+import type { TippyProps } from '@tippyjs/react';
+import Tippy from '@tippyjs/react';
 
 const Overlay = (props: TippyProps): any => <Tippy {...props}/>;
 

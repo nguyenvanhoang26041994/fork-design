@@ -2,7 +2,7 @@ import {
   useRef,
   useState,
   useCallback,
-  useImperativeHandle
+  useImperativeHandle,
 } from 'react';
 import usePureMeansure from '../usePureMeansure';
 

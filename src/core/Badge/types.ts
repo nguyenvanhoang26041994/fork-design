@@ -1,6 +1,6 @@
-import React from 'react';
+import type React from 'react';
 
-import { placementType } from '../types/placementTypes';
+import type { placementType } from '../types/placementTypes';
 
 export interface PureBadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   badge: React.ReactNode,

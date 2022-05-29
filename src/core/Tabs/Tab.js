@@ -2,14 +2,12 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-const Tab = ({ className, active, ...otherProps }) => {
-  return (
+const Tab = ({ className, active, ...otherProps }) => (
     <button
       className={cn('ftabs-tab', { 'ftabs-tab-active': active }, className)}
       {...otherProps}
     />
   );
-};
 
 Tab.displayName = 'Tabs.Tab';
 Tab.propTypes = {

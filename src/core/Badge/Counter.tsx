@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import cn from 'classnames';
 
-import { CounterProps } from './types';
+import type { CounterProps } from './types';
 
 const Counter = ({
   className,

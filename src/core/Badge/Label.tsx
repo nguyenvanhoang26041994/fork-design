@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { LabelProps } from './types';
+import type { LabelProps } from './types';
 
 const Label = ({
   className,

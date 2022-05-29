@@ -98,7 +98,7 @@ const useAsyncSingleSelect = (props, ref) => {
     ref: UIRef,
     active: UIActive,
     loading: loaders.isSelectedLoading,
-    ...restNativeProps
+    ...restNativeProps,
   };
   const searchboxProps = {
     ref: searchboxRef,

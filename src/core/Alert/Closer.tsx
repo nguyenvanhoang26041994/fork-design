@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import Button from '../Button';
-import { ButtonProps } from '../Button/types';
+import type { ButtonProps } from '../Button/types';
 
 import X from '../../icons/X';
 

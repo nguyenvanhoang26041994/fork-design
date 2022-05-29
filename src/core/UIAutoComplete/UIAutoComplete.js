@@ -4,8 +4,7 @@ import cn from 'classnames';
 import Overlay from '../Overlay';
 import Loader from '../Loader';
 
-const UIAutoComplete = ({ className, overlay, ...otherProps }) => {
-  return (
+const UIAutoComplete = ({ className, overlay, ...otherProps }) => (
     <Overlay
       className={cn('fautocomplete-overlay-container', className)}
       role="autocomplete"
@@ -13,14 +12,13 @@ const UIAutoComplete = ({ className, overlay, ...otherProps }) => {
       {...otherProps}
     />
   );
-};
 UIAutoComplete.defaultProps = {
   placement: 'bottom-start',
   trigger: 'click',
   hideOnClick: true,
   arrow: false,
   maxWidth: 'none',
-  offset: [0, 5]
+  offset: [0, 5],
 };
 UIAutoComplete.Option = ({ className, onSelect, value, active, hide, ...otherProps }) => {
   const _onClick = useCallback(() => onSelect(value), [onSelect, value]);
@@ -36,8 +34,7 @@ UIAutoComplete.Option = ({ className, onSelect, value, active, hide, ...otherPro
   );
 };
 
-UIAutoComplete.AutoCompleteInput = React.forwardRef(({ className, inputRef, onChange, loading, ...otherProps }, ref) => {
-  return (
+UIAutoComplete.AutoCompleteInput = React.forwardRef(({ className, inputRef, onChange, loading, ...otherProps }, ref) => (
     <button className={cn('fautocomplete-input', className)} ref={ref}>
       <input
         ref={inputRef}
@@ -46,8 +43,7 @@ UIAutoComplete.AutoCompleteInput = React.forwardRef(({ className, inputRef, onCh
       />
       {loading && <Loader.Spinner className="fautocomplete-loading" />}
     </button>
-  );
-});
+  ));
 
 UIAutoComplete.Overlay = React.forwardRef(({ className, children, onBottomIntersecting, ...otherProps }, ref) => {
   const _ref = ref || useRef();

@@ -14,12 +14,10 @@ const useStaticCommon = (props, {
   const onDebouceSearchboxChange = useMemo(() => debounce(onSearchboxChange, props.delay), [onSearchboxChange, props.delay]);
 
   // display options but in object shape
-  const _options = useMemo(() => {
-    return reduce(props.children, (rs, item) => {
+  const _options = useMemo(() => reduce(props.children, (rs, item) => {
       rs[item.props.value] = item.props;
       return rs;
-    }, {});
-  }, [props.children]);
+    }, {}), [props.children]);
 
   const onShown = useCallback(() => {
     setUIActive(true);

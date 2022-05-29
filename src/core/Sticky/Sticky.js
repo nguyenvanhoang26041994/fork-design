@@ -10,7 +10,7 @@ const Sticky = React.forwardRef(({
   stickyContainer,
   marginTop,
   marginBottom,
-  children,
+  ...otherProps
 }, ref) => {
   const id = useUniqueId();
   const localRef = useRef(null);
@@ -43,9 +43,7 @@ const Sticky = React.forwardRef(({
   }, [stickyRef]);
 
   return (
-    <span className={cn('fsticky', className)} id={id} ref={stickyRef}>
-      {children}
-    </span>
+    <span className={cn('fsticky', className)} id={id} ref={stickyRef} {...otherProps} />
   );
 });
 

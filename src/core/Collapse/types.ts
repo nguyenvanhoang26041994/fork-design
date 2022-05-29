@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 
 export interface PanelProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title' | 'onClick'> {
   title?: string | React.ReactNode,

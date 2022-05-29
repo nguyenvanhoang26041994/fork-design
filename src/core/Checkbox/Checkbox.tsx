@@ -1,11 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
 
-
 import makeStyle from '../../utils/makeStyle';
 import mapEnumClass from '../../utils/mapEnumClass';
 
-import { CheckboxProps } from './types';
+import type { CheckboxProps } from './types';
 
 export const mColor = Object.freeze({
   'primary': 'fcbox-primary',

@@ -2,8 +2,7 @@ import React, { useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-const useCalcPercent = (percent) => {
-  return useMemo(() => {
+const useCalcPercent = (percent) => useMemo(() => {
     if (percent < 0) {
       return 0;
     }
@@ -14,7 +13,6 @@ const useCalcPercent = (percent) => {
 
     return percent;
   }, [percent]);
-};
 
 const LinearProgress = ({
   className,

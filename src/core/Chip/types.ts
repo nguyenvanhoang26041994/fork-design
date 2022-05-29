@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 
 export interface ChipProps extends Omit<React.InputHTMLAttributes<{}>, 'size'> {
   rounded?: boolean,

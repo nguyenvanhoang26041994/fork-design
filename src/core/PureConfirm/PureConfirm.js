@@ -12,8 +12,7 @@ const PureConfirm = ({
   noText,
   yesText,
   ...otherProps
-}) => {
-  return (
+}) => (
     <Dialog className={cn('fpureconfirm', className)} {...otherProps}>
       <Dialog.Body>
         {children}
@@ -24,7 +23,6 @@ const PureConfirm = ({
       </Dialog.Footer>
     </Dialog>
   );
-};
 
 PureConfirm.defaultProps = {
   noText: 'No',

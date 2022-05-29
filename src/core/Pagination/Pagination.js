@@ -15,20 +15,16 @@ const loop = (start, end, cb) => {
   return rs;
 };
 
-const Pagination = ({ className, ...otherProps }) => {
-  return (
+const Pagination = ({ className, ...otherProps }) => (
     <div className={cn('fpagination', className )} {...otherProps} />
   );
-};
 
-const Page = ({ className, active, ...otherProps }) => {
-  return (
+const Page = ({ className, active, ...otherProps }) => (
     <Button
       className={cn({'fbtn-primary': active }, className)}
       {...otherProps}
      />
   );
-};
 
 const Next = props => <Button color="transparent" icon={<ChevronRight />} {...props} />
 const Prev = props => <Button color="transparent" icon={<ChevronLeft />} {...props} />

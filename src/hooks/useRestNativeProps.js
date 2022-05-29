@@ -1,8 +1,7 @@
 import { useMemo } from 'react';
 import pick from 'lodash/pick';
 
-const useRestNativeProps = (props) => {
-  return useMemo(() => pick(props, [
+const useRestNativeProps = (props) => useMemo(() => pick(props, [
     'className',
     'style',
     'onClick',
@@ -14,6 +13,5 @@ const useRestNativeProps = (props) => {
     'onKeyDown',
     'onFocus',
   ]), [props]);
-};
 
 export default useRestNativeProps;

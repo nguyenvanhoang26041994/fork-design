@@ -6,7 +6,7 @@ import makeStyle from '../../utils/makeStyle';
 import mapEnumClass from '../../utils/mapEnumClass';
 import Loader from '../Loader';
 
-import { SwitchProps } from './types';
+import type { SwitchProps } from './types';
 
 export const mColor = Object.freeze({
   'primary': 'fswitch-primary',

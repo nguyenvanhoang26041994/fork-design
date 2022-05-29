@@ -3,8 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import Memo from '../Memo';
 
-const Panel = ({ className, active, fresh, ...otherProps }) => {
-  return (
+const Panel = ({ className, active, fresh, ...otherProps }) => (
     <Memo watch={active} fresh={fresh}>
       <div
         className={cn('ftabs-panel', { 'ftabs-panel-active': active }, className)}
@@ -12,7 +11,6 @@ const Panel = ({ className, active, fresh, ...otherProps }) => {
       />
     </Memo>
   );
-};
 
 Panel.displayName = 'Tabs.Panel';
 Panel.propTypes = {

@@ -2,11 +2,10 @@ import React from 'react';
 
 const mColors = Object.freeze({
   primary: 'var(--primary)',
-  skeleton: 'var(--skeleton-color)'
+  skeleton: 'var(--skeleton-color)',
 });
 
-const NiceSpinner = ({ size, color }) => {
-  return (
+const NiceSpinner = ({ size, color }) => (
     <div className="floader-nice-spinner"
       style={{
         '--nice-spinner-color': mColors[color] || color,
@@ -14,7 +13,6 @@ const NiceSpinner = ({ size, color }) => {
       }}
     />
   );
-};
 
 NiceSpinner.defaultProps = {
   size: 50,

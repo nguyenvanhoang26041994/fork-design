@@ -1,5 +1,3 @@
-export default (inputRef) => {
-  return {
+export default (inputRef) => ({
     inputProps: {},
-  };
-};
+  });

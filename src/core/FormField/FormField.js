@@ -34,7 +34,7 @@ const FormField = React.forwardRef(({ className, onClick, filled, ...otherProps 
         isFocus,
         setFocus,
         isDisabled,
-        setDisabled
+        setDisabled,
       }}
     >
       <div
@@ -55,11 +55,9 @@ FormField.defaultProps = {
   onClick: f => f,
 };
 
-FormField.Label = ({ className, ...otherProps }) => {
-  return (
+FormField.Label = ({ className, ...otherProps }) => (
     <label className={cn('fform-field-label')} {...otherProps} />
   );
-};
 
 const withFocus = (InputComponent) => {
   const OutputComponent = React.forwardRef(({ onFocus, onBlur, disabled, ...otherProps }, ref) => {

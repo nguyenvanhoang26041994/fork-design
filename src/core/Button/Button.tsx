@@ -5,7 +5,7 @@ import makeStyle from '../../utils/makeStyle';
 import mapEnumClass from '../../utils/mapEnumClass';
 import Spinner from '../Loader/Spinner';
 
-import { ButtonProps } from './types';
+import type { ButtonProps } from './types';
 
 export const mColor = Object.freeze({
   'default': 'fbtn-default',

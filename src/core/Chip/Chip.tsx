@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import X from '../../icons/X';
-import { ChipProps } from './types';
+import type { ChipProps } from './types';
 
 const Chip = ({
   className,
@@ -22,11 +22,11 @@ const Chip = ({
         'fchip-rounded': rounded,
         'fchip-clickable': clickable,
       },
-      className
+      className,
     )}
     style={{
       fontSize: size,
-      ...style
+      ...style,
     }}
     {...otherProps}
   >

@@ -4,12 +4,12 @@ import cn from 'classnames';
 import makeStyle from '../../utils/makeStyle';
 import mapEnumClass from '../../utils/mapEnumClass';
 
-import { SkeletonProps } from './types';
+import type { SkeletonProps } from './types';
 
 const mShape = Object.freeze({
   circle: 'fskele-circle',
   rect: 'fskele-rect',
-  p: 'fskele-p'
+  p: 'fskele-p',
 });
 
 const Skeleton = ({
@@ -21,25 +21,23 @@ const Skeleton = ({
   size,
   shape,
   ...otherProps
-}: SkeletonProps): any => {
-  return (
-    <div
-      style={makeStyle(sx, {
-        width: w,
-        height: h,
-        fontSize: size,
-        ...style
-      })}
-      className={
-        cn(
-          'fskele',
-          mapEnumClass(mShape, shape),
-          className,
-      )}
-      {...otherProps}
-    />
-  );
-};
+}: SkeletonProps): any => (
+  <div
+    style={makeStyle(sx, {
+      width: w,
+      height: h,
+      fontSize: size,
+      ...style,
+    })}
+    className={
+      cn(
+        'fskele',
+        mapEnumClass(mShape, shape),
+        className,
+    )}
+    {...otherProps}
+  />
+);
 
 Skeleton.displayName = 'Skeleton';
 Skeleton.defaultProps = {};

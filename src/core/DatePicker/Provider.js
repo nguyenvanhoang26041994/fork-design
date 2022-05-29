@@ -5,15 +5,13 @@ import withSingleCalendar from './withSingleCalendar';
 const CalendarContextChildren = ({ children }) =>  children;
 const EnhanderCalendarContext = withSingleCalendar(CalendarContextChildren);
 
-const Provider = ({ children, defaultDisplayDate, ...otherProps }) => {
-  return (
+const Provider = ({ children, defaultDisplayDate, ...otherProps }) => (
     <Context.Provider {...otherProps}>
       <EnhanderCalendarContext>
         {children}
       </EnhanderCalendarContext>
     </Context.Provider>
   );
-};
 
 Provider.defaultProps = {
   defaultDisplayDate: new Date(Date.now()),

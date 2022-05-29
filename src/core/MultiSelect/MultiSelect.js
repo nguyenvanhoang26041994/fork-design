@@ -160,10 +160,10 @@ MultiSelect.Option = ({ value, ...otherProps }) => {
 
   const hide = useMemo(() => !filter({
     value,
-    ...otherProps
+    ...otherProps,
   }, {
     searchText,
-    searchRegex
+    searchRegex,
   }), [
     value,
     otherProps,

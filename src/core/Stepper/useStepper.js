@@ -110,6 +110,6 @@ export default (defaultProps = {}) => {
       setFinishStep,
       setSkipable,
       checkSkipable,
-    }
+    },
   ];
 }

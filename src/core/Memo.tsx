@@ -7,8 +7,11 @@ export default class Memo extends React.Component<{
   children?: any,
 }> {
   memo: any;
+
   childrenNode: any;
+
   displayName = 'Memo';
+
   defaultProps = {};
 
   componentDidMount() {

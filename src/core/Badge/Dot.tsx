@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import mapEnumClass from '../../utils/mapEnumClass';
 
-import { DotProps } from './types';
+import type { DotProps } from './types';
 
 const mColor = Object.freeze({
   transparent: 'fbadge-dot-transparent',

@@ -4,7 +4,7 @@ import cn from 'classnames';
 import makeStyle from '../../utils/makeStyle';
 import mapEnumClass from '../../utils/mapEnumClass';
 
-import { AvatarProps } from './types';
+import type { AvatarProps } from './types';
 
 const mShape = Object.freeze({
   square: 'favatar-square',

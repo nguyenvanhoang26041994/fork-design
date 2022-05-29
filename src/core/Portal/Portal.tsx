@@ -8,7 +8,9 @@ class Portal extends React.Component<{
   node: HTMLElement,
 }> {
   displayName = 'Portal';
+
   defaultProps = { node: rootPortal };
+
   render() {
     if (typeof window === 'undefined') {
       return null;

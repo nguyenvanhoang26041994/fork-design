@@ -8,18 +8,14 @@ const useMultipleCommon = (props, {
   UIRef,
 }) => {
   // Still value but in object shape
-  const _value = useMemo(() => {
-    return reduce(value, (rs, item) => {
+  const _value = useMemo(() => reduce(value, (rs, item) => {
       rs[item] = true;
       return rs;
-    }, {})
-  }, [value]);
+    }, {}), [value]);
 
   // remove one item from array value
   const removeSingleValue = useCallback((singleValue) => {
-    setValue(prev => prev.filter(item => {
-      return item !== singleValue;
-    }));
+    setValue(prev => prev.filter(item => item !== singleValue));
   }, [setValue]);
 
   // toogle(remove or add) one item from array value
@@ -54,9 +50,9 @@ const useMultipleCommon = (props, {
     }
     if (UIRef.current._tippy.state.isVisible) {
       return UIRef.current._tippy.hide();
-    } else {
+    } 
       return UIRef.current._tippy.show();
-    }
+    
   }, []);
 
   const onClickOutside = useCallback(instance => instance.hide(), []);

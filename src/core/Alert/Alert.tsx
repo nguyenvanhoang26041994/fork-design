@@ -6,7 +6,7 @@ import mapEnumClass from '../../utils/mapEnumClass';
 import Closer from './Closer';
 import { alertRef }  from './PusherAlert';
 
-import { AlertProps } from './types';
+import type { AlertProps } from './types';
 
 export const mColor = Object.freeze({
   'primary': 'falert-primary',

@@ -47,18 +47,14 @@ const useMultiSelect = (props, ref) => {
   });
 
   // selected options(map to array value but contain more information such as name, avatar, ...etc)
-  const selectedOptions = useMemo(() => {
-    return value.map((item) => {
-      return _options[item];
-    });
-  }, [_options, value]);
+  const selectedOptions = useMemo(() => value.map((item) => _options[item]), [_options, value]);
 
   const restNativeProps = useRestNativeProps(props);
   const UIProps = {
     ref: UIRef,
     active: UIActive,
     onClick: onMultipleClick,
-    ...restNativeProps
+    ...restNativeProps,
   };
   const searchboxProps = {
     ref: searchboxRef,

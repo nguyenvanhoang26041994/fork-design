@@ -9,8 +9,7 @@ const mAnimations = Object.freeze({
 
 const lAnimations = Object.keys(mAnimations);
 
-const Dots = ({ style, color, size, animation, className, ...otherProps }) => {
-  return (
+const Dots = ({ style, color, size, animation, className, ...otherProps }) => (
     <div
       style={{
         ...style,
@@ -25,7 +24,6 @@ const Dots = ({ style, color, size, animation, className, ...otherProps }) => {
       <div className="floader-dot floader-dot-3" />
     </div>
   );
-};
 
 Dots.displayName = 'Loader.Dots';
 Dots.propTypes = {
@@ -33,7 +31,7 @@ Dots.propTypes = {
   color: PropTypes.string,
   size: PropTypes.string,
   className: PropTypes.string,
-  animation: PropTypes.oneOf(lAnimations)
+  animation: PropTypes.oneOf(lAnimations),
 };
 Dots.defaultProps = {
   animation: 'buble',

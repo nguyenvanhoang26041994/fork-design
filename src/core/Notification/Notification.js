@@ -9,14 +9,12 @@ const Notification = ({
   className,
   hasDot,
   ...otherProps
-}) => {
-  return (
+}) => (
     <div
       className={cn('fnotification', { 'fnotification-has-dot': hasDot }, className)}
       {...otherProps}
     />
   );
-};
 
 Notification.ref = notificationRef;
 Notification.Avatar = Avatar;

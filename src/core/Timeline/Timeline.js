@@ -13,21 +13,19 @@ const mAlign = Object.freeze({
   alternate: 'ftimeline-alternate',
 });
 
-const Timeline = ({ className, reverse, align, ...otherProps }) => {
-  return (
+const Timeline = ({ className, reverse, align, ...otherProps }) => (
     <ul
       className={cn(
         'ftimeline',
         mAlign[align],
         {
-          'ftimeline-reverse': reverse
+          'ftimeline-reverse': reverse,
         },
-        className
+        className,
       )}
       {...otherProps}
     />
   );
-};
 
 Timeline.displayName = 'Timeline';
 Content.displayName = 'Timeline.Content';

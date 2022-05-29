@@ -3,10 +3,9 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import Badge from '../Badge';
 
-const PureBadge = Badge.PureBadge;
+const {PureBadge} = Badge;
 
-const Avatar = ({ className, badge, ...otherProps }) => {
-  return (
+const Avatar = ({ className, badge, ...otherProps }) => (
     <PureBadge
       className={cn('fnotification-avatar', className)}
       badge={(
@@ -17,7 +16,6 @@ const Avatar = ({ className, badge, ...otherProps }) => {
       {...otherProps}
     />
   );
-};
 
 Avatar.displayName = 'Notification.Avatar';
 Avatar.propTypes = {

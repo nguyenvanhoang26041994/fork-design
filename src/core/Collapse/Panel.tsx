@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { PanelProps } from './types';
+import type { PanelProps } from './types';
 import ChevronDown from '../../icons/ChevronDown';
 import Animated from '../Animated';
 import Memo from '../Memo';
@@ -21,12 +21,12 @@ const Panel = ({
     className={cn(
       'fpanel', {
         'fpanel-active': active,
-        'fpanel-disabled': disabled
+        'fpanel-disabled': disabled,
       },
-      className
+      className,
     )}
   >
-    <button className="fpanel-title" onClick={onClick} disabled={disabled}>
+    <button type="button" className="fpanel-title" onClick={onClick} disabled={disabled}>
       {title}
       <ChevronDown className="fpanel-icon" />
     </button>

@@ -49,7 +49,7 @@ const useSingleSelect = (props, ref) => {
   const UIProps = {
     ref: UIRef,
     active: UIActive,
-    ...restNativeProps
+    ...restNativeProps,
   };
   const searchboxProps = {
     ref: searchboxRef,

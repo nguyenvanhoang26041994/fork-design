@@ -24,7 +24,7 @@ const Modal = ({
     modalRef,
     portalRef,
     modalStyle,
-  } = useModalMeansure(isOpen, style, { centered: centered, margin: margin });
+  } = useModalMeansure(isOpen, style, { centered, margin });
 
   const onBackdropClick = useCallback((e) => {
     if (onOutsideClick && modalRef.current && !modalRef.current.contains(e.target)) {
@@ -33,7 +33,7 @@ const Modal = ({
   }, [modalRef, onOutsideClick]);
 
   return (
-    <React.Fragment>
+    <>
       {delayOpen && (
         <Portal>
           <Dialog.Backdrop className="fmodal-backdrop" ref={portalRef} onClick={onBackdropClick}>
@@ -46,7 +46,7 @@ const Modal = ({
           </Dialog.Backdrop>
         </Portal>
       )}
-    </React.Fragment>
+    </>
   );
 };
 

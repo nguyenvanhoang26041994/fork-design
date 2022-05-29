@@ -4,7 +4,7 @@ import cn from 'classnames';
 import makeStyle from '../../utils/makeStyle';
 import mapEnumClass from '../../utils/mapEnumClass';
 import { makePlacements } from '../placements';
-import { PureBadgeProps } from './types';
+import type { PureBadgeProps } from './types';
 
 const mPlacements = makePlacements('fbadge');
 
@@ -23,7 +23,7 @@ const PureBadge = ({
         'fbadge-overlap': overlap,
       },
       mapEnumClass(mPlacements, placement),
-      className
+      className,
     )}
     {...otherProps}
   >
