@@ -38,62 +38,62 @@ export interface FlexProps extends FlexBaseProps {
   xl?: FlexBaseProps
 };
 
-export const mJustify = Object.freeze({
+export const mJustify = {
   'start': 'justify-start',
   'center': 'justify-center',
   'end': 'justify-end',
   'between': 'justify-between',
   'around': 'justify-around',
-});
+} as const;
 
-export const mItems = Object.freeze({
+export const mItems = {
   'stretch': 'items-stretch',
   'start': 'items-start',
   'center': 'items-center',
   'end': 'items-end',
   'baseline': 'items-baseline',
-});
+} as const;
 
-export const mWrap = Object.freeze({
+export const mWrap = {
   'wrap': 'flex-wrap',
   'no-wrap': 'flex-no-wrap',
   'reverse': 'flex-wrap-reverse',
-});
+} as const;
 
-export const mGrow = Object.freeze({
+export const mGrow = {
   'grow': 'flex-grow',
   'no-grow': 'flex-no-grow',
-});
+} as const;
 
-export const mShrink = Object.freeze({
+export const mShrink = {
   'shrink': 'flex-shrink',
   'no-shrink': 'flex-no-shrink',
-});
+} as const;
 
-export const mFlex = Object.freeze({
+export const mFlex = {
   'initial': 'flex-initial',
   '1': 'flex-1',
   'auto': 'flex-auto',
   'none': 'flex-none',
-});
+} as const;
 
-export const mContent = Object.freeze({
+export const mContent = {
   'start': 'content-start',
   'center': 'content-center',
   'end': 'content-end',
   'between': 'content-between',
   'around': 'content-around',
-});
+} as const;
 
-export const mSelf = Object.freeze({
+export const mSelf = {
   'auto': 'self-auto',
   'start': 'self-start',
   'center': 'self-center',
   'end': 'self-end',
   'stretch': 'self-stretch',
-});
+} as const;
 
-export const mWidth = Object.freeze({
+export const mWidth = {
   '1/2': 'w-1/2',
   '6/12': 'w-6/12',
   '1/3': 'w-1/3',
@@ -118,14 +118,14 @@ export const mWidth = Object.freeze({
   '11/12': 'w-11/12',
   '12/12': 'w-12/12',
   'full': 'w-full',
-});
+} as const;
 
-export const mDirection = Object.freeze({
+export const mDirection = {
   'row': 'flex-row',
   'col': 'flex-col',
   'col-reverse': 'flex-col-reverse',
   'row-reverse': 'flex-row-reverse',
-});
+} as const;
 
 export const mapEnumResponsiveClass = (object: any, propName: any, query: TQuery) => {
   if (typeof propName === 'string') {

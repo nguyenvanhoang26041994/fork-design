@@ -3,7 +3,6 @@ import type { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Radio from './Radio';
 import Flex from '../Flex';
-import Power from '../../icons/Power';
 
 export default {
   /* 👇 The title prop is optional.

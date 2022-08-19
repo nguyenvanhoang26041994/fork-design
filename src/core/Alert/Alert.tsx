@@ -8,12 +8,12 @@ import { alertRef }  from './PusherAlert';
 
 import type { AlertProps } from './types';
 
-export const mColor = Object.freeze({
+export const mColor = {
   'primary': 'falert-primary',
   'success': 'falert-success',
   'error': 'falert-error',
   'warning': 'falert-warning',
-});
+} as const;
 
 const Alert = ({
   sx,
@@ -24,7 +24,7 @@ const Alert = ({
   closable,
   onClose,
   ...otherProps
-}: AlertProps): any => (
+}: AlertProps) => (
   <div
     className={cn('falert', mapEnumClass(mColor, color), className)}
     style={makeStyle(sx, style)}

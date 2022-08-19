@@ -17,7 +17,7 @@ const BadgeCounter = ({
   color,
   renderOverflow,
   ...otherProps
-}: BadgeCounterProps): any => (
+}: BadgeCounterProps) => (
   <PureBadge
     badge={(
       <Counter
@@ -32,7 +32,7 @@ const BadgeCounter = ({
   />
 );
 
-const BadgeDot = ({ color, ...otherProps }: BadgeDotProps): any => (
+const BadgeDot = ({ color, ...otherProps }: BadgeDotProps) => (
   <PureBadge
     badge={<Dot color={color} className="fbadge-ui" />}
     {...otherProps}
@@ -43,7 +43,7 @@ const BadgeLabel = ({
   label,
   color,
   ...otherProps
-}: BadgeLabelProps): any => (
+}: BadgeLabelProps) => (
   <PureBadge
     badge={(
       <Label

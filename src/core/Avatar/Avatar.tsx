@@ -6,10 +6,10 @@ import mapEnumClass from '../../utils/mapEnumClass';
 
 import type { AvatarProps } from './types';
 
-const mShape = Object.freeze({
+const mShape = {
   square: 'favatar-square',
   circle: 'favatar-circle',
-});
+} as const;
 
 const Avatar = ({
   sx,
@@ -21,7 +21,7 @@ const Avatar = ({
   shape,
   children,
   ...otherProps
-}: AvatarProps): any => (
+}: AvatarProps) => (
   <div
     className={cn('favatar', mapEnumClass(mShape, shape), className)}
     style={makeStyle(sx, {

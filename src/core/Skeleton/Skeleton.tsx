@@ -6,11 +6,11 @@ import mapEnumClass from '../../utils/mapEnumClass';
 
 import type { SkeletonProps } from './types';
 
-const mShape = Object.freeze({
+const mShape = {
   circle: 'fskele-circle',
   rect: 'fskele-rect',
   p: 'fskele-p',
-});
+} as const;
 
 const Skeleton = ({
   sx,
@@ -21,7 +21,7 @@ const Skeleton = ({
   size,
   shape,
   ...otherProps
-}: SkeletonProps): any => (
+}: SkeletonProps) => (
   <div
     style={makeStyle(sx, {
       width: w,

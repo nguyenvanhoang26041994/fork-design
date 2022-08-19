@@ -7,27 +7,27 @@ import Spinner from '../Loader/Spinner';
 
 import type { ButtonProps } from './types';
 
-export const mColor = Object.freeze({
+export const mColor = {
   'default': 'fbtn-default',
   'primary': 'fbtn-primary',
   'secondary': 'fbtn-secondary',
   'success': 'fbtn-success',
   'error': 'fbtn-error',
   'warning': 'fbtn-warning',
-});
+} as const;
 
-export const mSize = Object.freeze({
+export const mSize = {
   'small': 'fbtn-small',
   'medium': 'fbtn-medium',
   'large': 'fbtn-large',
-});
+} as const;
 
-export const mVariant = Object.freeze({
+export const mVariant = {
   'contained': 'fbtn-contained',
   'outlined': 'fbtn-outlined',
   'outlined-dashed': 'fbtn-outlined-dashed',
   'text': 'fbtn-text',
-});
+} as const;
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
   sx,
@@ -44,7 +44,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
   rounded,
   htmlType,
   ...otherProps
-}, ref): any => (
+}, ref) => (
   <button
     ref={ref}
     type={htmlType}

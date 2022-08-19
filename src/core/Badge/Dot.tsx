@@ -5,15 +5,15 @@ import mapEnumClass from '../../utils/mapEnumClass';
 
 import type { DotProps } from './types';
 
-const mColor = Object.freeze({
+const mColor = {
   transparent: 'fbadge-dot-transparent',
-});
+} as const;
 
 const Dot = ({
   className,
   color,
   ...otherProps
-}: DotProps): any => (
+}: DotProps) => (
   <sub
     style={{ backgroundColor: mapEnumClass(mColor, color) ? undefined : color }}
     className={cn('fbadge-dot', mapEnumClass(mColor, color), className)}

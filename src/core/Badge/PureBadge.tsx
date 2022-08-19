@@ -15,7 +15,7 @@ const PureBadge = ({
   overlap,
   placement,
   ...otherProps
-}: PureBadgeProps): any => (
+}: PureBadgeProps) => (
   <span
     className={cn(
       'fbadge',

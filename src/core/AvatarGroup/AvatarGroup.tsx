@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-const AvatarGroup = ({ className, ...otherProps }: React.HTMLAttributes<HTMLDivElement>): any => (
+const AvatarGroup = ({ className, ...otherProps }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn('favatar-group', className)}
     {...otherProps}

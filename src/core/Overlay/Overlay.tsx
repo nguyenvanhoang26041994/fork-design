@@ -2,7 +2,7 @@ import React from 'react';
 import type { TippyProps } from '@tippyjs/react';
 import Tippy from '@tippyjs/react';
 
-const Overlay = (props: TippyProps): any => <Tippy {...props}/>;
+const Overlay = (props: TippyProps) => <Tippy {...props}/>;
 
 Overlay.displayName = 'Overlay';
 Overlay.defaultProps = {

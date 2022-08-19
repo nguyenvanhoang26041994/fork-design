@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import Overlay from '../Overlay';
 
-const Popover = ({ overlay, className, ...otherProps }: { overlay?: any, className?: string }): any => (
+const Popover = ({ overlay, className, ...otherProps }: { overlay?: any, className?: string }) => (
   <Overlay
     className={cn('fpopover', className)}
     content={overlay}

@@ -15,7 +15,7 @@ const Panel = ({
   onClick,
   disabled,
   ...otherProps
-}: PanelProps): any => (
+}: PanelProps) => (
   <div
     {...otherProps}
     className={cn(

@@ -8,18 +8,18 @@ import Loader from '../Loader';
 
 import type { SwitchProps } from './types';
 
-export const mColor = Object.freeze({
+export const mColor = {
   'primary': 'fswitch-primary',
   'success': 'fswitch-success',
   'error': 'fswitch-error',
   'warning': 'fswitch-warning',
-});
+} as const;
 
-export const mSize = Object.freeze({
+export const mSize = {
   'small': 'fswitch-small',
   'medium': 'fswitch-medium',
   'large': 'fswitch-large',
-});
+} as const;
 
 const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(({
   sx,
@@ -31,7 +31,7 @@ const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(({
   loading,
   size,
   ...otherProps
-}, ref): any => (
+}, ref) => (
   <div
     className={cn(
       'fswitch',

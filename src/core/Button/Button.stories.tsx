@@ -67,12 +67,48 @@ export const Basic = Template.bind({});
 Basic.args = {};
 
 export const Color = () => (
-  <Flex sx={{ gap: 10 }}>
+  <Flex sx={{ gap: '100' }}>
     <Button color="primary">primary</Button>
     <Button color="secondary">secondary</Button>
     <Button color="success">success</Button>
     <Button color="error">error</Button>
     <Button color="warning">warning</Button>
+  </Flex>
+);
+
+export const A = () => (
+  <Flex direction="col">
+    <Flex>
+      <Flex w="5/12" sx={{ bgColor: 'danger' }}>1</Flex>
+      <Flex w="5/12" sx={{ bgColor: 'success' }}>2</Flex>
+      <Flex w="2/12" sx={{ bgColor: 'warning' }}>3</Flex>
+    </Flex>
+    <Flex>
+      <Flex flex="1" sx={{ bgColor: 'primary' }}>4</Flex>
+      <Flex flex="1" sx={{ bgColor: 'primary' }}>5</Flex>
+    </Flex>
+  </Flex>
+);
+
+export const B = () => (
+  <Flex direction="col">
+    <Flex>
+      <Flex
+        sm={{ w: 'full' }}
+        md={{ w: 'full' }}
+        lg={{ w: '5/12' }}
+        xl={{ w: '5/12' }}
+        sx={{ bgColor: 'danger' }}
+      >
+        1
+      </Flex>
+      <Flex w="5/12" sx={{ bgColor: 'success' }}>2</Flex>
+      <Flex w="2/12" sx={{ bgColor: 'warning' }}>3</Flex>
+    </Flex>
+    <Flex>
+      <Flex flex="1" sx={{ bgColor: 'primary' }}>4</Flex>
+      <Flex flex="1" sx={{ bgColor: 'primary' }}>5</Flex>
+    </Flex>
   </Flex>
 );
 

@@ -6,7 +6,7 @@ import type { ButtonProps } from '../Button/types';
 
 import X from '../../icons/X';
 
-const Closer = ({ className, ...otherProps }: ButtonProps): any => (
+const Closer = ({ className, ...otherProps }: ButtonProps) => (
   <Button
     className={cn('falert-closer', className)}
     {...otherProps}
