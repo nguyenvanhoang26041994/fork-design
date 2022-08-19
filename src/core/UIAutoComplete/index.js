@@ -1,1 +1,1 @@
-export { default } from './UIAutoComplete';
+export { default } from './UIAutocomplete';

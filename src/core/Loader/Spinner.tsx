@@ -11,7 +11,6 @@ const Spinner = ({ style, color, size, className, ...otherProps }: SpinnerProps)
       style={{
         ...style,
         color,
-        '--spinner-size': size,
       }}
       className={cn('floader-spinner', className)}
     >

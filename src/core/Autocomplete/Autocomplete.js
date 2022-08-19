@@ -9,11 +9,11 @@ import React, {
 import omit from 'lodash/omit';
 import trim from 'lodash/trim';
 import debounce from 'lodash/debounce';
-import UIAutoComplete from '../UIAutoComplete';
+import UIAutocomplete from '../UIAutocomplete';
 import usePureMeansure from '../../hooks/usePureMeansure';
 import useRestNativeProps from '../../hooks/useRestNativeProps';
 
-const useAutoComplete = (props, ref) => {
+const useAutocomplete = (props, ref) => {
   const inputRef = useRef();
   const UIRef = useRef();
   const bounds = usePureMeansure(UIRef);
@@ -60,7 +60,7 @@ const useAutoComplete = (props, ref) => {
   };
 };
 
-const { Overlay, AutoCompleteInput, Option } = UIAutoComplete;
+const { Overlay, AutocompleteInput, Option } = UIAutocomplete;
 const Context = React.createContext({
   selectedOption: null,
   value: '',
@@ -71,7 +71,7 @@ const Context = React.createContext({
   searchRegex: null,
 });
 
-const AutoComplete = React.forwardRef((props, ref) => {
+const Autocomplete = React.forwardRef((props, ref) => {
   const {
     inputRef,
     UIRef,
@@ -83,7 +83,7 @@ const AutoComplete = React.forwardRef((props, ref) => {
     onSelect,
     hideOverlay,
     UIProps,
-  } = useAutoComplete(props, ref);
+  } = useAutocomplete(props, ref);
 
   const {
     render,
@@ -99,7 +99,7 @@ const AutoComplete = React.forwardRef((props, ref) => {
         onSelect,
       }}
     >
-      <UIAutoComplete
+      <UIAutocomplete
         overlay={(
           <Overlay style={{ width: bounds.width }}>
             {children}
@@ -109,17 +109,17 @@ const AutoComplete = React.forwardRef((props, ref) => {
         onHidden={onHidden}
       >
         {render(UIProps, selectedOption)}
-      </UIAutoComplete>
+      </UIAutocomplete>
     </Context.Provider>
   );
 });
 
-AutoComplete.defaultProps = {
+Autocomplete.defaultProps = {
   delay: 200, // Delay time when you typing ing seachbox
   onChanged: f => f,
   // default render the main UI
   render: (props, selectedOption) => (
-    <AutoComplete.Input
+    <Autocomplete.Input
       {...props}
       defaultValue={selectedOption.text}
     />
@@ -134,11 +134,11 @@ AutoComplete.defaultProps = {
   },
 };
 
-AutoComplete.Input = React.forwardRef((props, ref) => (
-    <AutoCompleteInput ref={ref} {...props} loading />
+Autocomplete.Input = React.forwardRef((props, ref) => (
+    <AutocompleteInput ref={ref} {...props} loading />
   ));
 
-AutoComplete.Option = ({ value, ...otherProps }) => {
+Autocomplete.Option = ({ value, ...otherProps }) => {
   const {
     hideOverlay,
     filter,
@@ -170,7 +170,7 @@ AutoComplete.Option = ({ value, ...otherProps }) => {
     />
   );
 };
-AutoComplete.Option.defaultProps = {
+Autocomplete.Option.defaultProps = {
   value: '',
 };
-export default AutoComplete;
+export default Autocomplete;

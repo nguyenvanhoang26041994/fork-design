@@ -10,11 +10,6 @@ const Closer = ({ className, ...otherProps }) => (
   );
 
 Closer.displayName = 'Dialog.Closer';
-Closer.propTypes = {
-  className: PropTypes.string,
-  color: Button.propTypes.color,
-  icon: Button.propTypes.icon,
-};
 Closer.defaultProps = {
   color: 'transparent',
   rounded: true,

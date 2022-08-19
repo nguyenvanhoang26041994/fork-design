@@ -43,5 +43,5 @@ export { default as Select } from './core/Select';
 export { default as AsyncSelect } from './core/AsyncSelect';
 export { default as MultiSelect } from './core/MultiSelect';
 export { default as AsyncMultiSelect } from './core/AsyncMultiSelect';
-export { default as AutoComplete } from './core/AutoComplete';
+export { default as Autocomplete } from './core/Autocomplete';
 export { default as FormField } from './core/FormField';

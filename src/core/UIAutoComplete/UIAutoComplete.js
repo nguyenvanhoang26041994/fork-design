@@ -4,7 +4,7 @@ import cn from 'classnames';
 import Overlay from '../Overlay';
 import Loader from '../Loader';
 
-const UIAutoComplete = ({ className, overlay, ...otherProps }) => (
+const UIAutocomplete = ({ className, overlay, ...otherProps }) => (
     <Overlay
       className={cn('fautocomplete-overlay-container', className)}
       role="autocomplete"
@@ -12,7 +12,7 @@ const UIAutoComplete = ({ className, overlay, ...otherProps }) => (
       {...otherProps}
     />
   );
-UIAutoComplete.defaultProps = {
+UIAutocomplete.defaultProps = {
   placement: 'bottom-start',
   trigger: 'click',
   hideOnClick: true,
@@ -20,7 +20,7 @@ UIAutoComplete.defaultProps = {
   maxWidth: 'none',
   offset: [0, 5],
 };
-UIAutoComplete.Option = ({ className, onSelect, value, active, hide, ...otherProps }) => {
+UIAutocomplete.Option = ({ className, onSelect, value, active, hide, ...otherProps }) => {
   const _onClick = useCallback(() => onSelect(value), [onSelect, value]);
   return (
     <button
@@ -34,7 +34,7 @@ UIAutoComplete.Option = ({ className, onSelect, value, active, hide, ...otherPro
   );
 };
 
-UIAutoComplete.AutoCompleteInput = React.forwardRef(({ className, inputRef, onChange, loading, ...otherProps }, ref) => (
+UIAutocomplete.AutocompleteInput = React.forwardRef(({ className, inputRef, onChange, loading, ...otherProps }, ref) => (
     <button className={cn('fautocomplete-input', className)} ref={ref}>
       <input
         ref={inputRef}
@@ -45,7 +45,7 @@ UIAutoComplete.AutoCompleteInput = React.forwardRef(({ className, inputRef, onCh
     </button>
   ));
 
-UIAutoComplete.Overlay = React.forwardRef(({ className, children, onBottomIntersecting, ...otherProps }, ref) => {
+UIAutocomplete.Overlay = React.forwardRef(({ className, children, onBottomIntersecting, ...otherProps }, ref) => {
   const _ref = ref || useRef();
   const bottomRef = useRef();
   const localRef = useRef({
@@ -87,4 +87,4 @@ UIAutoComplete.Overlay = React.forwardRef(({ className, children, onBottomInters
   );
 });
 
-export default UIAutoComplete;
+export default UIAutocomplete;
