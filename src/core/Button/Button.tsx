@@ -8,12 +8,10 @@ import Spinner from '../Loader/Spinner';
 import type { ButtonProps } from './types';
 
 export const mColor = {
-  'default': 'fbtn-default',
   'primary': 'fbtn-primary',
-  'secondary': 'fbtn-secondary',
   'success': 'fbtn-success',
   'error': 'fbtn-error',
-  'warning': 'fbtn-warning',
+  'secondary': 'fbtn-secondary',
 } as const;
 
 export const mSize = {
@@ -25,7 +23,7 @@ export const mSize = {
 export const mVariant = {
   'contained': 'fbtn-contained',
   'outlined': 'fbtn-outlined',
-  'outlined-dashed': 'fbtn-outlined-dashed',
+  'dashed': 'fbtn-dashed',
   'text': 'fbtn-text',
 } as const;
 
@@ -39,9 +37,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
   loading,
   endIcon,
   startIcon,
+  icon,
   size,
   variant,
   rounded,
+  upercase,
   htmlType,
   ...otherProps
 }, ref) => (
@@ -53,6 +53,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
       {
         'fbtn-loading': loading,
         'fbtn-rounded': rounded,
+        'fbtn-upercase': upercase,
+        'fbtn-icon': !!icon,
       },
       mapEnumClass(mColor, color),
       mapEnumClass(mSize, size),
@@ -65,6 +67,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
   >
     {loading && <Spinner className="fbtn-spinner" />}
     <span className="fbtn-child">
+      {icon}
       {startIcon && (
         <span className='fbtn-start-icon'>{startIcon}</span>
       )}
